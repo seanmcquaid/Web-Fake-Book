@@ -2,27 +2,39 @@
 
 This repo will be a copy of the native app iRealB but for the web!
 
-## Home
+## Front End
 
-Has links to charts searcher and the option to add a chart
+React
+Styled Components
+RxJs + Axios Observable
+React-Router-Dom
 
-## Add Chart
+## Back End
 
-User must write the chart in functional harmony terms
-User must select a default key
-User must select how many bars
-User must select time signature
-User can technically enter a chord per beat
-User can add in Section markers (AABA)
-User can add in repeats
+Mongoose + MongoDB
+Express/Node
 
-## Chart Info
+### Home
 
-Chart is displayed in default key
-User can transpose the chart to a different key
+1. Has links to charts searcher and the option to add a chart
 
-## Charts Searcher
+### Add Chart
 
-All charts for the site are displayed in a list (with pagination)
-Can search for specific chart (use fuzzy search)
-Can select a chart and be taken to the chart info page
+1. User must write the chart in functional harmony terms
+2. User must select a default key
+3. User must select how many bars
+4. User must select time signature
+5. User can technically enter a chord per beat
+6. User can add in Section markers (AABA)
+7. User can add in repeats
+
+### Chart Info
+
+1. Chart is displayed in default key
+2. User can transpose the chart to a different key
+
+### Charts Searcher
+
+1. All charts for the site are displayed in a list (with pagination)
+2. Can search for specific chart (use fuzzy search)
+3. Can select a chart and be taken to the chart info page
