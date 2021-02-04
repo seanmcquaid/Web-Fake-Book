@@ -72,6 +72,7 @@
       "@server": ["src/Server"]
     }
   },
-  "include": ["src/**/*.ts", "spec/**/*.ts"],
-  "exclude": ["src/public/"]
+  "include": ["src/**/*.ts", "spec/**/*.ts", "**/*.ts", "**/*.js"],
+  "exclude": ["src/public/"],
+  "allowJs": true
 }
