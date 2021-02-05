@@ -1,7 +1,7 @@
-import { IUser } from "@entities/User";
-import { getRandomInt } from "@shared/functions";
-import { IUserDao } from "./UserDao";
-import MockDaoMock from "../MockDb/MockDao.mock";
+import { IUser } from '@entities/User';
+import { getRandomInt } from '@shared/functions';
+import { IUserDao } from './UserDao';
+import MockDaoMock from '../MockDb/MockDao.mock';
 
 class UserDao extends MockDaoMock implements IUserDao {
   public async getOne(email: string): Promise<IUser | null> {
@@ -35,7 +35,7 @@ class UserDao extends MockDaoMock implements IUserDao {
         return;
       }
     }
-    throw new Error("User not found");
+    throw new Error('User not found');
   }
 
   public async delete(id: number): Promise<void> {
@@ -47,7 +47,7 @@ class UserDao extends MockDaoMock implements IUserDao {
         return;
       }
     }
-    throw new Error("User not found");
+    throw new Error('User not found');
   }
 }
 

@@ -8,10 +8,10 @@ import Layout from './Layout';
 const App: React.FC = () => (
   <Layout>
     <BrowserRouter>
-      <Route exact path='/' component={Home} />
-      <Route exact path='/addChart' component={AddChart} />
-      <Route exact path='/charts' component={Charts} />
-      <Route exact path='/chartInfo/:id' component={ChartInfo} />
+      <Route exact path="/" component={Home} />
+      <Route exact path="/addChart" component={AddChart} />
+      <Route exact path="/charts" component={Charts} />
+      <Route exact path="/chartInfo/:id" component={ChartInfo} />
     </BrowserRouter>
   </Layout>
 );

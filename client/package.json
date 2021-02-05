@@ -49,6 +49,8 @@
     "@types/jest": "^26.0.15",
     "@types/react-router-dom": "^5.1.7",
     "@types/styled-components": "^5.1.7",
-    "cypress": "^6.4.0"
+    "cypress": "^6.4.0",
+    "prettier": "^2.2.1",
+    "tslint-plugin-prettier": "^2.3.0"
   }
 }

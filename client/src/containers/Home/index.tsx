@@ -8,8 +8,8 @@ const Home: React.FC = () => (
       <H1>Web Fake Book</H1>
     </Header>
     <Main>
-      <LinkButton to='/charts'>View Charts</LinkButton>
-      <LinkButton to='/addChart'>Add Chart</LinkButton>
+      <LinkButton to="/charts">View Charts</LinkButton>
+      <LinkButton to="/addChart">Add Chart</LinkButton>
     </Main>
   </PageContainer>
 );
