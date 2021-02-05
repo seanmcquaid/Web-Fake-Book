@@ -4,15 +4,15 @@ This repo will be a copy of the native app iRealB but for the web!
 
 ## Front End
 
-React
-Styled Components
-RxJs + Axios Observable
-React-Router-Dom
+1. React
+2. Styled Components
+3. RxJs + Axios Observable
+4. React-Router-Dom
 
 ## Back End
 
-Mongoose + MongoDB
-Express/Node
+1. Mongoose + MongoDB
+2. Express/Node
 
 ### Home
 
