@@ -1,11 +1,27 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { createGlobalStyle } from 'styled-components';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+
+const GlobalStyles = createGlobalStyle`
+  * {
+    margin: 0;
+    padding: 0;
+  }
+  
+  body,
+  html,
+  #root {
+    height: 100%;
+    width: 100%;
+  }
+`;
 
 ReactDOM.render(
   <React.StrictMode>
     <App />
+    <GlobalStyles />
   </React.StrictMode>,
   document.getElementById('root')
 );
