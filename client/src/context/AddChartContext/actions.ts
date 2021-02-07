@@ -1,4 +1,4 @@
-import { Actions, ActionTypes, Chord } from '.';
+import { Actions, ActionTypes } from './types';
 
 export const setNumberOfBars = (numberOfBars: number): ActionTypes => ({
   type: Actions.SET_NUMBER_OF_BARS,
