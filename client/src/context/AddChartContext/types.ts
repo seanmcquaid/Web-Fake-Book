@@ -1,12 +1,16 @@
+export type FunctionalNumber = 1 | 2 | 3 | 4 | 5 | 6 | 7;
+
+export type ChordQuality =
+  | 'Minor'
+  | 'Major'
+  | 'Half Diminished'
+  | 'Diminished'
+  | 'Augmented'
+  | 'Minor Major';
+
 export type Chord = {
-  functionalNumber: 1 | 2 | 3 | 4 | 5 | 6 | 7;
-  quality:
-    | 'Minor'
-    | 'Major'
-    | 'Half Diminished'
-    | 'Diminished'
-    | 'Augmented'
-    | 'Minor Major';
+  functionalNumber: FunctionalNumber;
+  chordQuality: ChordQuality;
   isSeventhChord: boolean;
 };
 
@@ -14,37 +18,47 @@ export type Bar = {
   chords: Chord[];
 };
 
+export type DefaultKey =
+  | 'C'
+  | 'F'
+  | 'Bb'
+  | 'Eb'
+  | 'Ab'
+  | 'Db'
+  | 'Gb'
+  | 'B'
+  | 'E'
+  | 'A'
+  | 'D'
+  | 'G';
+
+export type NumberOfBars = 0 | 12 | 16 | 32;
+
+export type BeatsPerMeasure = 2 | 3 | 4 | 5 | 6 | 7 | 8;
+
+export type NoteValuePerBeat = 4 | 8 | 16 | 32;
+
+export type Genre =
+  | 'Bebop'
+  | 'Hard Bop'
+  | 'Blues'
+  | 'Afro Cuban'
+  | 'Cool'
+  | 'Dixieland'
+  | 'Free'
+  | 'Funk'
+  | 'Fusion'
+  | 'Latin'
+  | 'Standard'
+  | 'Swing';
+
 export type StateTypes = {
-  defaultKey:
-    | 'C'
-    | 'F'
-    | 'Bb'
-    | 'Eb'
-    | 'Ab'
-    | 'Db'
-    | 'Gb'
-    | 'B'
-    | 'E'
-    | 'A'
-    | 'D'
-    | 'G';
-  numberOfBars: 0 | 12 | 16 | 32;
+  defaultKey: DefaultKey;
+  numberOfBars: NumberOfBars;
   bars: Bar[];
-  beatsPerMeasure: 2 | 3 | 4 | 5 | 6 | 7 | 8;
-  noteValuePerBeat: 4 | 8 | 16 | 32;
-  genre:
-    | 'Bebop'
-    | 'Hard Bop'
-    | 'Blues'
-    | 'Afro Cuban'
-    | 'Cool'
-    | 'Dixieland'
-    | 'Free'
-    | 'Funk'
-    | 'Fusion'
-    | 'Latin'
-    | 'Standard'
-    | 'Swing';
+  beatsPerMeasure: BeatsPerMeasure;
+  noteValuePerBeat: NoteValuePerBeat;
+  genre: Genre;
 };
 
 export enum Actions {
@@ -59,23 +73,23 @@ export enum Actions {
 export type ActionTypes =
   | {
       type: Actions.SET_NUMBER_OF_BARS;
-      payload: { numberOfBars: 12 | 16 | 32 };
+      payload: { numberOfBars: NumberOfBars };
     }
   | {
       type: Actions.SET_DEFAULT_KEY;
-      payload: { defaultKey: string };
+      payload: { defaultKey: DefaultKey };
     }
   | {
       type: Actions.SET_BEATS_PER_MEASURE;
-      payload: { beatsPerMeasure: number };
+      payload: { beatsPerMeasure: BeatsPerMeasure };
     }
   | {
       type: Actions.SET_NOTE_VALUE_PER_BEAT;
-      payload: { noteValuePerBeat: number };
+      payload: { noteValuePerBeat: NoteValuePerBeat };
     }
   | {
       type: Actions.SET_GENRE;
-      payload: { genre: string };
+      payload: { genre: Genre };
     }
   | {
       type: Actions.UPDATE_CHORD_IN_BAR;
