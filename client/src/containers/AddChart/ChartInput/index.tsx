@@ -2,8 +2,14 @@ import { useReducer } from 'react';
 import styled from 'styled-components';
 
 type Chord = {
-  functionalNumber: number;
-  quality: string;
+  functionalNumber: 1 | 2 | 3 | 4 | 5 | 6 | 7;
+  quality:
+    | 'Minor'
+    | 'Major'
+    | 'Half Diminished'
+    | 'Diminished'
+    | 'Augmented'
+    | 'Minor Major';
   isSeventhChord: boolean;
 };
 
@@ -11,24 +17,49 @@ type Bar = {
   chords: Chord[];
   isRepeat: boolean;
   isSection: boolean;
-  sectionMarker?: string;
+  sectionMarker?: 'A' | 'B';
 };
 
 type State = {
-  defaultKey: string;
-  numberOfBars: number;
+  defaultKey:
+    | 'C'
+    | 'F'
+    | 'Bb'
+    | 'Eb'
+    | 'Ab'
+    | 'Db'
+    | 'Gb'
+    | 'B'
+    | 'E'
+    | 'A'
+    | 'D'
+    | 'G';
+  numberOfBars: 0 | 12 | 16 | 32;
   bars: Bar[];
-  beatsPerMeasure: number;
-  noteValuePerBeat: number;
+  beatsPerMeasure: 2 | 3 | 4 | 5 | 6 | 7 | 8;
+  noteValuePerBeat: 4 | 8 | 16 | 32;
+  genre:
+    | 'Bebop'
+    | 'Hard Bop'
+    | 'Blues'
+    | 'Afro Cuban'
+    | 'Cool'
+    | 'Dixieland'
+    | 'Free'
+    | 'Funk'
+    | 'Fusion'
+    | 'Latin'
+    | 'Standard'
+    | 'Swing';
 };
 
-const initialState = {
+const initialState: State = {
   defaultKey: 'C',
   numberOfBars: 0,
   bars: [],
   beatsPerMeasure: 4,
   noteValuePerBeat: 4,
-  form: 'AABA',
+  genre: 'Standard',
 };
 
 type Action = { type: 'SET_NUMBER_OF_BARS'; payload: number };
