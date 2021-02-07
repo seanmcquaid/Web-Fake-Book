@@ -7,19 +7,25 @@ type DropdownProps = {
   value: string | number;
   options: any[];
   name: string;
+  label?: string;
 };
 
 const Dropdown: React.FC<DropdownProps> = memo(
-  ({ onChange, value, options, name }) => (
-    <StyledDropdown onChange={onChange} value={value} name={name}>
-      {options.map((option: string | number) => (
-        <Option key={nanoid()} value={option}>
-          {option}
-        </Option>
-      ))}
-    </StyledDropdown>
+  ({ onChange, value, options, name, label }) => (
+    <Label>
+      {label}
+      <StyledDropdown onChange={onChange} value={value} name={name}>
+        {options.map((option: string | number) => (
+          <Option key={nanoid()} value={option}>
+            {option}
+          </Option>
+        ))}
+      </StyledDropdown>
+    </Label>
   )
 );
+
+const Label = styled.label``;
 
 const StyledDropdown = styled.select``;
 
