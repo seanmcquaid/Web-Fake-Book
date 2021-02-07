@@ -1,8 +1,8 @@
 import { useCallback, useContext, useMemo } from 'react';
 import styled from 'styled-components';
-import Dropdown from '../../components/Dropdown';
-import { ChartContext } from '../../context/AddChartContext';
-import { setValue } from '../../context/AddChartContext/actions';
+import Dropdown from '../../../components/Dropdown';
+import { ChartContext } from '../../../context/AddChartContext';
+import { setValue } from '../../../context/AddChartContext/actions';
 
 const defaultKeyOptions = [
   'C',
