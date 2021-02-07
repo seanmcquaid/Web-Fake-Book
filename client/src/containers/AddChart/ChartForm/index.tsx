@@ -1,11 +1,14 @@
 import styled from 'styled-components';
 import Dropdowns from './Dropdowns';
 import Chart from './Chart';
+import Button from '../../../components/Button';
 
 const ChartForm: React.FC = () => {
+  const onSubmit = () => {};
   return (
-    <Form>
+    <Form onSubmit={onSubmit}>
       <Dropdowns />
+      <Button type="submit">Submit</Button>
       <Chart />
     </Form>
   );
