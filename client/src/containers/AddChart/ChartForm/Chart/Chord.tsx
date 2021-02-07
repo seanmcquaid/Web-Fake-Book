@@ -42,15 +42,10 @@ const Chord: React.FC<ChordProps> = ({ barIndex, beatIndex }) => {
     (event: React.ChangeEvent<HTMLSelectElement | HTMLInputElement>) => {
       const name: string = event.currentTarget.name;
       const value: string | boolean =
-        name === 'isSeventhChord'
-          ? event.currentTarget.value === 'on'
-            ? true
-            : false
-          : event.currentTarget.value;
-      console.log(event.currentTarget.value);
+        name === 'isSeventhChord' ? !isSeventhChord : event.currentTarget.value;
       dispatch(updateChordInBar(barIndex, beatIndex, name, value));
     },
-    [dispatch, barIndex, beatIndex]
+    [dispatch, barIndex, beatIndex, isSeventhChord]
   );
 
   return (
