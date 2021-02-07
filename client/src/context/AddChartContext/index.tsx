@@ -11,7 +11,7 @@ export const initialState: StateTypes = {
   genre: 'Standard',
 };
 
-const ChartContext = createContext<{
+export const ChartContext = createContext<{
   state: StateTypes;
   dispatch: Dispatch<ActionTypes>;
 }>({

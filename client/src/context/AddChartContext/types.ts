@@ -1,6 +1,6 @@
-export type FunctionalNumber = '%' | 1 | 2 | 3 | 4 | 5 | 6 | 7;
+export type FunctionalNumberTypes = '%' | 1 | 2 | 3 | 4 | 5 | 6 | 7;
 
-export type ChordQuality =
+export type ChordQualityTypes =
   | '%'
   | 'Minor'
   | 'Major'
@@ -9,17 +9,27 @@ export type ChordQuality =
   | 'Augmented'
   | 'Minor Major';
 
-export type Chord = {
-  functionalNumber: FunctionalNumber;
-  chordQuality: ChordQuality;
+export type ChordTypes = {
+  functionalNumber: FunctionalNumberTypes;
+  chordQuality: ChordQualityTypes;
   isSeventhChord: boolean;
 };
 
-export type Bar = {
-  chords: Chord[];
+export type ChordKeyNames =
+  | 'functionalNumber'
+  | 'chordQuality'
+  | 'isSeventhChord';
+
+export type ChordKeyValues =
+  | FunctionalNumberTypes
+  | ChordQualityTypes
+  | boolean;
+
+export type BarType = {
+  chords: ChordTypes[];
 };
 
-export type DefaultKey =
+export type DefaultKeyTypes =
   | 'C'
   | 'F'
   | 'Bb'
@@ -33,13 +43,13 @@ export type DefaultKey =
   | 'D'
   | 'G';
 
-export type NumberOfBars = 0 | 12 | 16 | 32;
+export type NumberOfBarsTypes = 0 | 12 | 16 | 32;
 
-export type BeatsPerMeasure = 2 | 3 | 4 | 5 | 6 | 7 | 8;
+export type BeatsPerMeasureTypes = 2 | 3 | 4 | 5 | 6 | 7 | 8;
 
-export type NoteValuePerBeat = 4 | 8 | 16 | 32;
+export type NoteValuePerBeatTypes = 4 | 8 | 16 | 32;
 
-export type Genre =
+export type GenreTypes =
   | 'Bebop'
   | 'Hard Bop'
   | 'Blues'
@@ -54,12 +64,12 @@ export type Genre =
   | 'Swing';
 
 export type StateTypes = {
-  defaultKey: DefaultKey;
-  numberOfBars: NumberOfBars;
-  bars: Bar[];
-  beatsPerMeasure: BeatsPerMeasure;
-  noteValuePerBeat: NoteValuePerBeat;
-  genre: Genre;
+  defaultKey: DefaultKeyTypes;
+  numberOfBars: NumberOfBarsTypes;
+  bars: BarType[];
+  beatsPerMeasure: BeatsPerMeasureTypes;
+  noteValuePerBeat: NoteValuePerBeatTypes;
+  genre: GenreTypes;
 };
 
 export enum Actions {
@@ -74,30 +84,30 @@ export enum Actions {
 export type ActionTypes =
   | {
       type: Actions.SET_NUMBER_OF_BARS;
-      payload: { numberOfBars: NumberOfBars };
+      payload: { numberOfBars: NumberOfBarsTypes };
     }
   | {
       type: Actions.SET_DEFAULT_KEY;
-      payload: { defaultKey: DefaultKey };
+      payload: { defaultKey: DefaultKeyTypes };
     }
   | {
       type: Actions.SET_BEATS_PER_MEASURE;
-      payload: { beatsPerMeasure: BeatsPerMeasure };
+      payload: { beatsPerMeasure: BeatsPerMeasureTypes };
     }
   | {
       type: Actions.SET_NOTE_VALUE_PER_BEAT;
-      payload: { noteValuePerBeat: NoteValuePerBeat };
+      payload: { noteValuePerBeat: NoteValuePerBeatTypes };
     }
   | {
       type: Actions.SET_GENRE;
-      payload: { genre: Genre };
+      payload: { genre: GenreTypes };
     }
   | {
       type: Actions.UPDATE_CHORD_IN_BAR;
       payload: {
         barIndex: number;
         beatIndex: number;
-        name: 'functionalNumber' | 'chordQuality' | 'isSeventhChord';
-        value: FunctionalNumber | ChordQuality | boolean;
+        name: string;
+        value: string | boolean;
       };
     };

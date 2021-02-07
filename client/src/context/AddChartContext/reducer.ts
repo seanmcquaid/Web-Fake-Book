@@ -1,5 +1,5 @@
 import { initialState } from '.';
-import { Actions, ActionTypes, Bar, Chord, StateTypes } from './types';
+import { Actions, ActionTypes, BarType, ChordTypes, StateTypes } from './types';
 
 const reducer = (
   state: StateTypes = initialState,
@@ -7,12 +7,12 @@ const reducer = (
 ): StateTypes => {
   switch (action.type) {
     case Actions.SET_NUMBER_OF_BARS:
-      let bars: Bar[] = [];
+      let bars: BarType[] = [];
 
       for (let i = 0; i < action.payload.numberOfBars; i++) {
-        const bar: Bar = { chords: [] };
+        const bar: BarType = { chords: [] };
         for (let j = 0; j < state.beatsPerMeasure; j++) {
-          const chord: Chord = {
+          const chord: ChordTypes = {
             functionalNumber: '%',
             chordQuality: '%',
             isSeventhChord: false,
@@ -38,7 +38,7 @@ const reducer = (
         genre: action.payload.genre,
       };
     case Actions.UPDATE_CHORD_IN_BAR:
-      const currentBars: Bar[] = [...state.bars];
+      const currentBars: BarType[] = [...state.bars];
       currentBars[action.payload.barIndex].chords[action.payload.beatIndex] = {
         ...currentBars[action.payload.barIndex].chords[
           action.payload.beatIndex

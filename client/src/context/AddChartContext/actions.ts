@@ -1,39 +1,43 @@
 import {
   Actions,
   ActionTypes,
-  BeatsPerMeasure,
-  Chord,
-  DefaultKey,
-  Genre,
-  NoteValuePerBeat,
-  NumberOfBars,
+  BeatsPerMeasureTypes,
+  ChordTypes,
+  ChordQualityTypes,
+  DefaultKeyTypes,
+  FunctionalNumberTypes,
+  GenreTypes,
+  NoteValuePerBeatTypes,
+  NumberOfBarsTypes,
 } from './types';
 
-export const setNumberOfBars = (numberOfBars: NumberOfBars): ActionTypes => ({
+export const setNumberOfBars = (
+  numberOfBars: NumberOfBarsTypes
+): ActionTypes => ({
   type: Actions.SET_NUMBER_OF_BARS,
   payload: { numberOfBars },
 });
 
-export const setDefaultKey = (defaultKey: DefaultKey): ActionTypes => ({
+export const setDefaultKey = (defaultKey: DefaultKeyTypes): ActionTypes => ({
   type: Actions.SET_DEFAULT_KEY,
   payload: { defaultKey },
 });
 
 export const setBeatsPerMeasure = (
-  beatsPerMeasure: BeatsPerMeasure
+  beatsPerMeasure: BeatsPerMeasureTypes
 ): ActionTypes => ({
   type: Actions.SET_BEATS_PER_MEASURE,
   payload: { beatsPerMeasure },
 });
 
 export const setNoteValuePerBeat = (
-  noteValuePerBeat: NoteValuePerBeat
+  noteValuePerBeat: NoteValuePerBeatTypes
 ): ActionTypes => ({
   type: Actions.SET_NOTE_VALUE_PER_BEAT,
   payload: { noteValuePerBeat },
 });
 
-export const setGenre = (genre: Genre): ActionTypes => ({
+export const setGenre = (genre: GenreTypes): ActionTypes => ({
   type: Actions.SET_GENRE,
   payload: { genre },
 });
@@ -41,8 +45,9 @@ export const setGenre = (genre: Genre): ActionTypes => ({
 export const updateChordInBar = (
   barIndex: number,
   beatIndex: number,
-  chord: Chord
+  name: string,
+  value: string | boolean
 ): ActionTypes => ({
   type: Actions.UPDATE_CHORD_IN_BAR,
-  payload: { barIndex, beatIndex, chord },
+  payload: { barIndex, beatIndex, name, value },
 });
