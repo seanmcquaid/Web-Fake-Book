@@ -1,6 +1,7 @@
-export type FunctionalNumber = 1 | 2 | 3 | 4 | 5 | 6 | 7;
+export type FunctionalNumber = '%' | 1 | 2 | 3 | 4 | 5 | 6 | 7;
 
 export type ChordQuality =
+  | '%'
   | 'Minor'
   | 'Major'
   | 'Half Diminished'
@@ -96,6 +97,7 @@ export type ActionTypes =
       payload: {
         barIndex: number;
         beatIndex: number;
-        chord: Chord;
+        name: 'functionalNumber' | 'chordQuality' | 'isSeventhChord';
+        value: FunctionalNumber | ChordQuality | boolean;
       };
     };
