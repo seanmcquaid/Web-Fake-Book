@@ -6,36 +6,34 @@ const reducer = (
   action: ActionTypes
 ): StateTypes => {
   switch (action.type) {
-    case Actions.SET_NUMBER_OF_BARS:
-      let bars: BarType[] = [];
+    case Actions.SET_VALUE:
+      if (action.payload.key === 'numberOfBars') {
+        let bars: BarType[] = [];
 
-      for (let i = 0; i < action.payload.numberOfBars; i++) {
-        const bar: BarType = { chords: [] };
-        for (let j = 0; j < state.beatsPerMeasure; j++) {
-          const chord: ChordTypes = {
-            functionalNumber: '%',
-            chordQuality: '%',
-            isSeventhChord: false,
-          };
-          bar.chords = [...bar.chords, chord];
+        for (let i = 0; i < action.payload.value; i++) {
+          const bar: BarType = { chords: [] };
+          for (let j = 0; j < state.beatsPerMeasure; j++) {
+            const chord: ChordTypes = {
+              functionalNumber: '%',
+              chordQuality: '%',
+              isSeventhChord: false,
+            };
+            bar.chords = [...bar.chords, chord];
+          }
+          bars = [...bars, bar];
         }
-        bars = [...bars, bar];
-      }
 
+        const numberOfBars = action.payload.value as number;
+
+        return {
+          ...state,
+          numberOfBars,
+          bars,
+        };
+      }
       return {
         ...state,
-        numberOfBars: action.payload.numberOfBars,
-        bars,
-      };
-    case Actions.SET_DEFAULT_KEY:
-      return {
-        ...state,
-        defaultKey: action.payload.defaultKey,
-      };
-    case Actions.SET_GENRE:
-      return {
-        ...state,
-        genre: action.payload.genre,
+        [action.payload.key]: action.payload.value,
       };
     case Actions.UPDATE_CHORD_IN_BAR:
       const currentBars: BarType[] = [...state.bars];
@@ -43,7 +41,7 @@ const reducer = (
         ...currentBars[action.payload.barIndex].chords[
           action.payload.beatIndex
         ],
-        [action.payload.name]: action.payload.value,
+        [action.payload.key]: action.payload.value,
       };
       return {
         ...state,

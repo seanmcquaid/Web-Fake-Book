@@ -4,10 +4,6 @@ import { ChartContext } from '../../../../context/AddChartContext';
 import Chord from './Chord';
 import { nanoid } from 'nanoid';
 import { updateChordInBar } from '../../../../context/AddChartContext/actions';
-import {
-  ChordKeyNames,
-  ChordKeyValues,
-} from '../../../../context/AddChartContext/types';
 
 const Chart: React.FC = memo(() => {
   const { state, dispatch } = useContext(ChartContext);
