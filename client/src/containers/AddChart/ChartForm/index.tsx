@@ -1,6 +1,10 @@
+import { startCase } from 'cypress/types/lodash';
 import { useCallback, useContext, useMemo } from 'react';
 import styled from 'styled-components';
+import Dropdown from '../../../components/Dropdown';
 import { ChartContext } from '../../../context/AddChartContext';
+import { setValue } from '../../../context/AddChartContext/actions';
+import { Actions } from '../../../context/AddChartContext/types';
 import Chart from './Chart';
 
 const defaultKeyOptions = [
@@ -37,14 +41,29 @@ const genreOptions = [
 
 const ChartForm: React.FC = () => {
   const { state, dispatch } = useContext(ChartContext);
+  const defaultKey = useMemo(() => state.defaultKey, [state.defaultKey]);
   const beatsPerMeasure = useMemo(() => state.beatsPerMeasure, [
     state.beatsPerMeasure,
   ]);
 
-  const onChange = useCallback((event: Event) => {}, []);
+  const onChange = useCallback(
+    (event: React.ChangeEvent<HTMLSelectElement>) => {
+      const { name, value } = event.currentTarget;
+      dispatch(setValue(name, value));
+    },
+    [dispatch]
+  );
 
   return (
     <Form>
+      <DropdownsContainer>
+        <Dropdown
+          options={defaultKeyOptions}
+          value={defaultKey}
+          onChange={onChange}
+          name="defaultKey"
+        />
+      </DropdownsContainer>
       <Chart />
     </Form>
   );

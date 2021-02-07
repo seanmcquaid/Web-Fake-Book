@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import H1 from '../../components/Typography/H1';
 import AddChartContext from '../../context/AddChartContext';
+import ChartForm from './ChartForm';
 
 const AddChart: React.FC = () => {
   return (
@@ -9,7 +10,9 @@ const AddChart: React.FC = () => {
         <Header>
           <H1>Add Chart</H1>
         </Header>
-        <Main></Main>
+        <Main>
+          <ChartForm />
+        </Main>
       </PageContainer>
     </AddChartContext>
   );
