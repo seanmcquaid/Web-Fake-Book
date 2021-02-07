@@ -1,5 +1,6 @@
 import { useCallback, useContext, useMemo } from 'react';
 import styled from 'styled-components';
+import Checkbox from '../../../../components/Checkbox';
 import Dropdown from '../../../../components/Dropdown';
 import { ChartContext } from '../../../../context/AddChartContext';
 import { updateChordInBar } from '../../../../context/AddChartContext/actions';
@@ -40,7 +41,13 @@ const Chord: React.FC<ChordProps> = ({ barIndex, beatIndex }) => {
   const onChange = useCallback(
     (event: React.ChangeEvent<HTMLSelectElement | HTMLInputElement>) => {
       const name: string = event.currentTarget.name;
-      const value: string = event.currentTarget.value;
+      const value: string | boolean =
+        name === 'isSeventhChord'
+          ? event.currentTarget.value === 'on'
+            ? true
+            : false
+          : event.currentTarget.value;
+      console.log(event.currentTarget.value);
       dispatch(updateChordInBar(barIndex, beatIndex, name, value));
     },
     [dispatch, barIndex, beatIndex]
@@ -59,6 +66,12 @@ const Chord: React.FC<ChordProps> = ({ barIndex, beatIndex }) => {
         name="chordQuality"
         value={chordQuality}
         options={chordQualityOptions}
+      />
+      <Checkbox
+        onChange={onChange}
+        name="isSeventhChord"
+        checked={isSeventhChord}
+        label="7th Chord?"
       />
     </StyledChord>
   );
