@@ -8,6 +8,7 @@ This repo will be a copy of the native app iRealB but for the web!
 2. Styled Components
 3. RxJs + Axios Observable
 4. React-Router-Dom
+5. Context API (Specifically for the chart pages)
 
 ## Back End
 
