@@ -1,6 +1,6 @@
-import { Action, initialState, State } from '.';
+import { ActionTypes, initialState, StateTypes } from '.';
 
-const reducer = (state: State = initialState, action: Action) => {
+const reducer = (state: StateTypes = initialState, action: ActionTypes) => {
   switch (action.type) {
     case 'SET_NUMBER_OF_BARS':
       return {

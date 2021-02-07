@@ -1,7 +1,7 @@
 import { createContext, Dispatch, useReducer } from 'react';
 import reducer from './reducer';
 
-type Chord = {
+export type Chord = {
   functionalNumber: 1 | 2 | 3 | 4 | 5 | 6 | 7;
   quality:
     | 'Minor'
@@ -13,14 +13,11 @@ type Chord = {
   isSeventhChord: boolean;
 };
 
-type Bar = {
+export type Bar = {
   chords: Chord[];
-  isRepeat: boolean;
-  isSection: boolean;
-  sectionMarker?: 'A' | 'B';
 };
 
-export type State = {
+export type StateTypes = {
   defaultKey:
     | 'C'
     | 'F'
@@ -53,7 +50,7 @@ export type State = {
     | 'Swing';
 };
 
-export const initialState: State = {
+export const initialState: StateTypes = {
   defaultKey: 'C',
   numberOfBars: 0,
   bars: [],
@@ -62,11 +59,48 @@ export const initialState: State = {
   genre: 'Standard',
 };
 
-export type Action = { type: 'SET_NUMBER_OF_BARS'; payload: number };
+export enum Actions {
+  SET_NUMBER_OF_BARS = 'SET_NUMBER_OF_BARS',
+  SET_DEFAULT_KEY = 'SET_DEFAULT_KEY',
+  SET_BEATS_PER_MEASURE = 'SET_BEATS_PER_MEASURE',
+  SET_NOTE_VALUE_PER_BEAT = 'SET_NOTE_VALUE_PER_BEAT',
+  SET_GENRE = 'SET_GENRE',
+  UPDATE_CHORD_IN_BAR = 'UPDATE_CHORD_IN_BAR',
+}
+
+export type ActionTypes =
+  | {
+      type: Actions.SET_NUMBER_OF_BARS;
+      payload: { numberOfBars: number };
+    }
+  | {
+      type: Actions.SET_DEFAULT_KEY;
+      payload: { defaultKey: string };
+    }
+  | {
+      type: Actions.SET_BEATS_PER_MEASURE;
+      payload: { beatsPerMeasure: number };
+    }
+  | {
+      type: Actions.SET_NOTE_VALUE_PER_BEAT;
+      payload: { noteValuePerBeat: number };
+    }
+  | {
+      type: Actions.SET_GENRE;
+      payload: { genre: string };
+    }
+  | {
+      type: Actions.UPDATE_CHORD_IN_BAR;
+      payload: {
+        barIndex: number;
+        beatIndex: number;
+        chord: Chord;
+      };
+    };
 
 const ChartContext = createContext<{
-  state: State;
-  dispatch: Dispatch<Action>;
+  state: StateTypes;
+  dispatch: Dispatch<ActionTypes>;
 }>({
   state: initialState,
   dispatch: () => null,
