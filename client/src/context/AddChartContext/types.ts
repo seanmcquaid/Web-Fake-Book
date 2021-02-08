@@ -29,7 +29,7 @@ export type BarType = {
   chords: ChordTypes[];
 };
 
-export type StateTypes = {
+export type ChartInfoTypes = {
   defaultKey: string;
   numberOfBars: number;
   bars: BarType[];

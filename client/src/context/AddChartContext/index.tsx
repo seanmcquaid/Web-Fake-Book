@@ -1,8 +1,8 @@
 import { createContext, Dispatch, useReducer } from 'react';
 import reducer from './reducer';
-import { ActionTypes, StateTypes } from './types';
+import { ActionTypes, ChartInfoTypes } from './types';
 
-export const initialState: StateTypes = {
+export const initialState: ChartInfoTypes = {
   defaultKey: 'C',
   numberOfBars: 0,
   bars: [],
@@ -12,7 +12,7 @@ export const initialState: StateTypes = {
 };
 
 export const ChartContext = createContext<{
-  state: StateTypes;
+  state: ChartInfoTypes;
   dispatch: Dispatch<ActionTypes>;
 }>({
   state: initialState,
