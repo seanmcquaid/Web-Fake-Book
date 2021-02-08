@@ -17,3 +17,7 @@ export const updateChordInBar = (
   type: Actions.UPDATE_CHORD_IN_BAR,
   payload: { barIndex, beatIndex, key, value },
 });
+
+export const addChartSuccess = (): ActionTypes => ({
+  type: Actions.ADD_CHART_SUCCESS,
+});

@@ -1,10 +1,16 @@
 import { initialState } from '.';
-import { Actions, ActionTypes, BarType, ChordTypes, StateTypes } from './types';
+import {
+  Actions,
+  ActionTypes,
+  BarType,
+  ChordTypes,
+  ChartInfoTypes,
+} from './types';
 
 const reducer = (
-  state: StateTypes = initialState,
+  state: ChartInfoTypes = initialState,
   action: ActionTypes
-): StateTypes => {
+): ChartInfoTypes => {
   switch (action.type) {
     case Actions.SET_VALUE:
       if (action.payload.key === 'numberOfBars') {
@@ -46,6 +52,10 @@ const reducer = (
       return {
         ...state,
         bars: currentBars,
+      };
+    case Actions.ADD_CHART_SUCCESS:
+      return {
+        ...initialState,
       };
     default:
       return {
