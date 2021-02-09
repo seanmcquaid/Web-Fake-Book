@@ -3,6 +3,7 @@ import reducer from './reducer';
 import { ActionTypes, ChartInfoTypes } from './types';
 
 export const initialState: ChartInfoTypes = {
+  name: '',
   defaultKey: 'C',
   numberOfBars: 0,
   bars: [],

@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import Dropdowns from './Dropdowns';
+import Inputs from './Inputs';
 import Chart from './Chart';
 import Button from '../../../components/Button';
 import { useContext } from 'react';
@@ -26,7 +26,7 @@ const ChartInput: React.FC = () => {
 
   return (
     <ChartInputContainer>
-      <Dropdowns />
+      <Inputs />
       <Button type="button" onClick={onClick}>
         Add Chart
       </Button>

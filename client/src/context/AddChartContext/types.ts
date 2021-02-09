@@ -15,21 +15,12 @@ export type ChordTypes = {
   isSeventhChord: boolean;
 };
 
-export type ChordKeyNames =
-  | 'functionalNumber'
-  | 'chordQuality'
-  | 'isSeventhChord';
-
-export type ChordKeyValues =
-  | FunctionalNumberTypes
-  | ChordQualityTypes
-  | boolean;
-
 export type BarType = {
   chords: ChordTypes[];
 };
 
 export type ChartInfoTypes = {
+  name: string;
   defaultKey: string;
   numberOfBars: number;
   bars: BarType[];

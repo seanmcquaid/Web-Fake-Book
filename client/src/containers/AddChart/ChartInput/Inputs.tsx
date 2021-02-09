@@ -1,6 +1,7 @@
 import { useCallback, useContext, useMemo } from 'react';
 import styled from 'styled-components';
 import Dropdown from '../../../components/Dropdown';
+import TextInput from '../../../components/TextInput';
 import { ChartContext } from '../../../context/AddChartContext';
 import { setValue } from '../../../context/AddChartContext/actions';
 
@@ -36,8 +37,9 @@ const genreOptions = [
   'Swing',
 ];
 
-const Dropdowns: React.FC = () => {
+const Inputs: React.FC = () => {
   const { state, dispatch } = useContext(ChartContext);
+  const name = useMemo(() => state.name, [state.name]);
   const defaultKey = useMemo(() => state.defaultKey, [state.defaultKey]);
   const numberOfBars = useMemo(() => state.numberOfBars, [state.numberOfBars]);
   const beatsPerMeasure = useMemo(() => state.beatsPerMeasure, [
@@ -49,7 +51,7 @@ const Dropdowns: React.FC = () => {
   const genre = useMemo(() => state.genre, [state.genre]);
 
   const onChange = useCallback(
-    (event: React.ChangeEvent<HTMLSelectElement>) => {
+    (event: React.ChangeEvent<HTMLSelectElement | HTMLInputElement>) => {
       const { name, value } = event.currentTarget;
       dispatch(setValue(name, value));
     },
@@ -57,7 +59,14 @@ const Dropdowns: React.FC = () => {
   );
 
   return (
-    <DropdownsContainer>
+    <InputsContainer>
+      <TextInput
+        value={name}
+        onChange={onChange}
+        name="name"
+        label="Name"
+        placeholder="Tune name here"
+      />
       <Dropdown
         options={defaultKeyOptions}
         value={defaultKey}
@@ -93,10 +102,10 @@ const Dropdowns: React.FC = () => {
         name="genre"
         label="Genre"
       />
-    </DropdownsContainer>
+    </InputsContainer>
   );
 };
 
-const DropdownsContainer = styled.div``;
+const InputsContainer = styled.div``;
 
-export default Dropdowns;
+export default Inputs;
