@@ -3,14 +3,12 @@ interface Chart {
   defaultKey: string;
   numberOfBars: number;
   bars: {
-    chords: [
-      {
-        functionalNumber: string;
-        chordQuality: string;
-        isSeventhChord: boolean;
-        displayName?: string;
-      }
-    ];
+    chords: {
+      functionalNumber: string;
+      chordQuality: string;
+      isSeventhChord: boolean;
+      displayName?: string;
+    }[];
   };
   beatsPerMeasure: number;
   noteValuePerBeat: number;

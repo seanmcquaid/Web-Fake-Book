@@ -139,7 +139,7 @@ const keys = {
   },
 };
 
-const transposeChart = (chart: Chart, key: KeyTypes) => {
+const transposeChart = (chart: Chart, key: KeyTypes): Chart => {
   const transposedBars = chart.bars.chords.map((chord) => {
     const newChord = { ...chord };
     const functionalNumber = newChord.functionalNumber as FunctionalNumberTypes;
