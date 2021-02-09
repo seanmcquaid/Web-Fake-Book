@@ -2,15 +2,18 @@ interface Chart {
   name: string;
   defaultKey: string;
   numberOfBars: number;
-  bars: [
-    {
-      chord: {
-        functionalNumber: string | number;
-        chordQuality: string;
-        isSeventhChord: boolean;
-      };
-    }
-  ];
+  bars: {
+    chords: [
+      {
+        chord: {
+          functionalNumber: string | number;
+          chordQuality: string;
+          isSeventhChord: boolean;
+          displayName?: string;
+        };
+      }
+    ];
+  };
   beatsPerMeasure: number;
   noteValuePerBeat: number;
   genre: string;

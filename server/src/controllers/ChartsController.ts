@@ -24,7 +24,7 @@ class ChartsController {
   };
 
   public static getChart = async (req: Request, res: Response) => {
-    const { id } = req.params;
+    const { id, key } = req.params;
     const chart = await ChartDao.findOne({ id });
     if (!chart) {
       return res.status(BAD_REQUEST).json({
@@ -33,6 +33,8 @@ class ChartsController {
     }
     return res.status(OK).json({ chart });
   };
+
+  // todo - make endpoint for returning chart in key
 
   public static deleteChart = async (req: Request, res: Response) => {
     const { id } = req.params;
