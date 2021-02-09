@@ -140,17 +140,15 @@ const keys = {
 };
 
 const transposeChart = (chart: Chart, key: KeyTypes) => {
-  const newChart = { ...chart };
-  const transposedBars = newChart.bars.chords.map((chord) => {
+  const transposedBars = chart.bars.chords.map((chord) => {
     const newChord = { ...chord };
     const functionalNumber = newChord.functionalNumber as FunctionalNumberTypes;
     const displayName = keys[key][functionalNumber];
     newChord.displayName = displayName;
     return newChord;
   });
-  newChart.bars.chords = transposedBars;
 
-  return newChart;
+  return { ...chart, bars: { chords: transposedBars } };
 };
 
 export default transposeChart;
