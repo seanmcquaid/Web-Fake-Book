@@ -5,12 +5,10 @@ interface Chart {
   bars: {
     chords: [
       {
-        chord: {
-          functionalNumber: string | number;
-          chordQuality: string;
-          isSeventhChord: boolean;
-          displayName?: string;
-        };
+        functionalNumber: string;
+        chordQuality: string;
+        isSeventhChord: boolean;
+        displayName?: string;
       }
     ];
   };
