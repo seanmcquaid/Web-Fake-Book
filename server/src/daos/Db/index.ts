@@ -8,5 +8,7 @@ export const connectDb = async () => {
     useUnifiedTopology: true,
   });
   const db = mongoose.connection;
-  db.on('error', console.error.bind(console, 'connection error:'));
+  db.on('error', () => {
+    throw new Error('Error connecting');
+  });
 };
