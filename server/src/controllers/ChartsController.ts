@@ -15,18 +15,29 @@ class ChartsController {
       });
     }
     await ChartDao.create(chartInfo);
-    res.status(CREATED).end();
+    return res.status(CREATED).end();
   };
 
   public static getAllCharts = async (req: Request, res: Response) => {
     const charts = await ChartDao.find({});
-    res.status(OK).json({ charts });
+    return res.status(OK).json({ charts });
+  };
+
+  public static getChart = async (req: Request, res: Response) => {
+    const { id } = req.params;
+    const chart = await ChartDao.findOne({ id });
+    if (!chart) {
+      return res.status(BAD_REQUEST).json({
+        error: noChartExistsError,
+      });
+    }
+    return res.status(OK).json({ chart });
   };
 
   public static deleteChart = async (req: Request, res: Response) => {
     const { id } = req.params;
     await ChartDao.findByIdAndDelete(id);
-    res.status(OK).end();
+    return res.status(OK).end();
   };
 
   public static editChart = async (req: Request, res: Response) => {
@@ -41,7 +52,7 @@ class ChartsController {
     const filter = { id };
 
     await ChartDao.findOneAndUpdate(filter, chartInfo);
-    res.status(OK).end();
+    return res.status(OK).end();
   };
 }
 
