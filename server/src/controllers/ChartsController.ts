@@ -2,7 +2,9 @@ import { Request, Response } from 'express';
 import StatusCodes from 'http-status-codes';
 import ChartDao from '@daos/Chart/ChartDao';
 import { chartAlreadyExistsError, noChartExistsError } from '@shared/constants';
+import transposeChart from '@shared/transposeChart';
 import Chart from 'src/models/Chart';
+import { KeyTypes } from '@shared/keys';
 
 const { BAD_REQUEST, CREATED, OK } = StatusCodes;
 
@@ -27,13 +29,20 @@ class ChartsController {
 
   public static getChart = async (req: Request, res: Response) => {
     const { id, key } = req.params;
-    const chart = await ChartDao.findOne({ id });
-    if (!chart) {
+    const foundChart = await ChartDao.findOne({ _id: id });
+    if (!foundChart) {
       return res.status(BAD_REQUEST).json({
         error: noChartExistsError,
       });
     }
-    return res.status(OK).json({ chart });
+
+    const chart: Chart = foundChart.toJSON() as any;
+    const transposedChart = transposeChart(
+      chart,
+      key ? (key as KeyTypes) : (chart.defaultKey as KeyTypes)
+    );
+
+    return res.status(OK).json({ chart: transposedChart });
   };
 
   // todo - make endpoint for returning chart in key
