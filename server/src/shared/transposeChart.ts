@@ -14,17 +14,20 @@ type KeyTypes =
   | 'D'
   | 'G';
 
-type FunctionalNumberTypes = '%' | '1' | '2' | '3' | '4' | '5' | '6' | '7';
-
 const keys = {
   C: {
     '%': '%',
     '1': 'C',
+    b2: 'Db',
     '2': 'D',
+    b3: 'Eb',
     '3': 'E',
     '4': 'F',
+    '#4': 'F#',
     '5': 'G',
+    b6: 'Ab',
     '6': 'A',
+    b7: 'Bb',
     '7': 'B',
   },
   F: {
@@ -142,8 +145,9 @@ const keys = {
 const transposeChart = (chart: Chart, key: KeyTypes): Chart => {
   const transposedBars = chart.bars.chords.map((chord) => {
     const newChord = { ...chord };
-    const functionalNumber = newChord.functionalNumber as FunctionalNumberTypes;
-    const displayName = keys[key][functionalNumber];
+    const functionalNumber = newChord.functionalNumber;
+    const keyName: { [key: string]: string } = keys[key];
+    const displayName = keyName[functionalNumber];
     newChord.displayName = displayName;
     return newChord;
   });
