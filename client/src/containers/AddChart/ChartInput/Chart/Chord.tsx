@@ -5,7 +5,21 @@ import Dropdown from '../../../../components/Dropdown';
 import { ChartContext } from '../../../../context/AddChartContext';
 import { updateChordInBar } from '../../../../context/AddChartContext/actions';
 
-const functionalNumberOptions = ['%', 1, 2, 3, 4, 5, 6, 7];
+const functionalNumberOptions = [
+  '%',
+  '1',
+  'b2',
+  '2',
+  'b3',
+  '3',
+  '4',
+  '#4',
+  '5',
+  'b6',
+  '6',
+  'b7',
+  '7',
+];
 const chordQualityOptions = [
   '%',
   'Minor',

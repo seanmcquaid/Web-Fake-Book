@@ -1,4 +1,17 @@
-export type FunctionalNumberTypes = '%' | 1 | 2 | 3 | 4 | 5 | 6 | 7;
+export type FunctionalNumberTypes =
+  | '%'
+  | '1'
+  | 'b2'
+  | '2'
+  | 'b3'
+  | '3'
+  | '4'
+  | '#4'
+  | '5'
+  | 'b6'
+  | '6'
+  | 'b7'
+  | '7';
 
 export type ChordQualityTypes =
   | '%'
