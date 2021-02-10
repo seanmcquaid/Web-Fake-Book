@@ -4,15 +4,21 @@ const chartSchema = new Schema({
   name: String,
   defaultKey: String,
   numberOfBars: Number,
-  bars: [
-    {
-      chords: {
-        functionalNumber: Schema.Types.Mixed,
-        isSeventhChord: Boolean,
-        chordQuality: String,
+  bars: {
+    type: [
+      {
+        chords: [
+          {
+            functionalNumber: Schema.Types.Mixed,
+            isSeventhChord: Boolean,
+            chordQuality: String,
+          },
+        ],
       },
-    },
-  ],
+    ],
+    default: undefined,
+  },
+
   beatsPerMeasure: Number,
   noteValuePerBeat: Number,
   genre: String,
