@@ -86,6 +86,8 @@ const Chord: React.FC<ChordProps> = ({ barIndex, beatIndex }) => {
   );
 };
 
-const StyledChord = styled.li``;
+const StyledChord = styled.li`
+  list-style: none;
+`;
 
 export default Chord;
