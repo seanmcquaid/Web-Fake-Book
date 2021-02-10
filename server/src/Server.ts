@@ -34,7 +34,7 @@ if (process.env.NODE_ENV === 'production') {
 }
 
 // Add APIs
-app.use('/api', BaseRouter);
+app.use('/', BaseRouter);
 
 connectDb();
 

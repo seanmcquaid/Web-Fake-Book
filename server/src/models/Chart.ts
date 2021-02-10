@@ -8,8 +8,9 @@ interface Chart {
       chordQuality: string;
       isSeventhChord: boolean;
       displayName?: string;
-    }[];
-  };
+    };
+  }[];
+
   beatsPerMeasure: number;
   noteValuePerBeat: number;
   genre: string;

@@ -2,13 +2,15 @@ import { Request, Response } from 'express';
 import StatusCodes from 'http-status-codes';
 import ChartDao from '@daos/Chart/ChartDao';
 import { chartAlreadyExistsError, noChartExistsError } from '@shared/constants';
+import Chart from 'src/models/Chart';
 
 const { BAD_REQUEST, CREATED, OK } = StatusCodes;
 
 class ChartsController {
   public static postAddChart = async (req: Request, res: Response) => {
-    const { chartInfo } = req.body;
+    const chartInfo = req.body;
     const chartExists = await ChartDao.findOne({ name: chartInfo.name });
+
     if (chartExists) {
       return res.status(BAD_REQUEST).json({
         error: chartAlreadyExistsError,
