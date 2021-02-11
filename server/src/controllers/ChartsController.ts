@@ -45,8 +45,6 @@ class ChartsController {
     return res.status(OK).json({ chart: transposedChart });
   };
 
-  // todo - make endpoint for returning chart in key
-
   public static deleteChart = async (req: Request, res: Response) => {
     const { id } = req.params;
     await ChartDao.findByIdAndDelete(id);
