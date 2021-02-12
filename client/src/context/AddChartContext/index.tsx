@@ -20,8 +20,18 @@ export const ChartContext = createContext<{
   dispatch: () => null,
 });
 
-const AddChartContext: React.FC = ({ children }) => {
-  const [state, dispatch] = useReducer(reducer, initialState);
+type AddChartContextProps = {
+  preloadedState?: ChartInfoTypes;
+};
+
+const AddChartContext: React.FC<AddChartContextProps> = ({
+  children,
+  preloadedState,
+}) => {
+  const [state, dispatch] = useReducer(
+    reducer,
+    preloadedState ? preloadedState : initialState
+  );
 
   return (
     <ChartContext.Provider value={{ state, dispatch }}>
