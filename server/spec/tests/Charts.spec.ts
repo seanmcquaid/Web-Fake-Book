@@ -6,7 +6,6 @@ import ChartDao from '@daos/Chart/ChartDao';
 import { pErr } from '@shared/functions';
 import { paramMissingError } from '@shared/constants';
 import { IResponse } from '../support/types';
-import { Document, Query } from 'mongoose';
 
 describe('Charts Routes', () => {
   const { BAD_REQUEST, CREATED, OK } = StatusCodes;
@@ -199,13 +198,23 @@ describe('Charts Routes', () => {
       });
     });
 
-    // it('Provided key is used', (done) => {
-    //   agent.get('/charts/all').end((err: Error, res: IResponse) => {
-    //     pErr(err);
-    //     expect(res.status).toBe(OK);
-    //     done();
-    //   });
-    // });
+    it('Provided key is used', (done) => {
+      spyOn(ChartDao, 'findOne').and.returnValue(
+        Promise.resolve({ toJSON: () => chart }) as any
+      );
+
+      agent.get('/charts/chart/IDHERE/G').end((err: Error, res: IResponse) => {
+        pErr(err);
+        expect(res.status).toBe(OK);
+        expect(res.body.chart.bars[0].chords[0].displayName).toEqual(
+          'Ab Major 7'
+        );
+        expect(res.body.chart.bars[0].chords[1].displayName).toEqual(
+          'G Minor 7'
+        );
+        done();
+      });
+    });
   });
 
   // describe('PUT - /edit/:id', () => {
