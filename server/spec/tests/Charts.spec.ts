@@ -252,13 +252,19 @@ describe('Charts Routes', () => {
     });
   });
 
-  // describe('DELETE - /charts/delete/:id', () => {
-  //   it('', (done) => {
-  //     agent.get('/charts/all').end((err: Error, res: IResponse) => {
-  //       pErr(err);
-  //       expect(res.status).toBe(OK);
-  //       done();
-  //     });
-  //   });
-  // });
+  describe('DELETE - /charts/delete/:id', () => {
+    it('Returns valid status code when deleted', (done) => {
+      spyOn(ChartDao, 'findByIdAndDelete').and.returnValue(
+        Promise.resolve() as any
+      );
+
+      agent
+        .delete('/charts/delete/IDHERE')
+        .end((err: Error, res: IResponse) => {
+          pErr(err);
+          expect(res.status).toBe(OK);
+          done();
+        });
+    });
+  });
 });
