@@ -1,13 +1,9 @@
 import { Response } from 'supertest';
-import { IUser } from '@entities/User';
+import Chart from 'src/models/Chart';
 
 export interface IResponse extends Response {
   body: {
-    users: IUser[];
+    chart: Chart;
     error: string;
   };
-}
-
-export interface IReqBody {
-  user?: IUser;
 }

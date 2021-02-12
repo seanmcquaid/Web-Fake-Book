@@ -5,7 +5,7 @@ import app from '@server';
 import ChartDao from '@daos/Chart/ChartDao';
 import { pErr } from '@shared/functions';
 import { paramMissingError } from '@shared/constants';
-import { IReqBody, IResponse } from '../support/types';
+import { IResponse } from '../support/types';
 import { Document, Query } from 'mongoose';
 
 describe('Charts Routes', () => {
@@ -135,23 +135,78 @@ describe('Charts Routes', () => {
     });
   });
 
-  // describe('GET - /chart/:id/:key*?', () => {
-  //   it('', (done) => {
-  //     agent.get('/charts/all').end((err: Error, res: IResponse) => {
-  //       pErr(err);
-  //       expect(res.status).toBe(OK);
-  //       done();
-  //     });
-  //   });
+  describe('GET - /charts/chart/:id/:key*?', () => {
+    const chart = {
+      name: 'Tune Name Here',
+      defaultKey: 'F',
+      numberOfBars: 1,
+      bars: [
+        {
+          chords: [
+            {
+              functionalNumber: 'b2',
+              chordQuality: 'Major',
+              isSeventhChord: true,
+            },
+            {
+              functionalNumber: '1',
+              chordQuality: 'Minor',
+              isSeventhChord: true,
+            },
+            {
+              functionalNumber: '%',
+              chordQuality: '%',
+              isSeventhChord: false,
+            },
+            {
+              functionalNumber: '%',
+              chordQuality: '%',
+              isSeventhChord: false,
+            },
+          ],
+        },
+      ],
+      beatsPerMeasure: 4,
+      noteValuePerBeat: 4,
+      genre: 'Standard',
+    };
 
-  //   it('', (done) => {
-  //     agent.get('/charts/all').end((err: Error, res: IResponse) => {
-  //       pErr(err);
-  //       expect(res.status).toBe(OK);
-  //       done();
-  //     });
-  //   });
-  // });
+    it('Chart not found returns bad status code', (done) => {
+      spyOn(ChartDao, 'findOne').and.returnValue(Promise.resolve(false) as any);
+
+      agent.get('/charts/chart/IDHERE').end((err: Error, res: IResponse) => {
+        pErr(err);
+        expect(res.status).toBe(BAD_REQUEST);
+        expect(res.body.error).toEqual('No chart with this id exists!');
+        done();
+      });
+    });
+    it('Default key is used if key is not provided', (done) => {
+      spyOn(ChartDao, 'findOne').and.returnValue(
+        Promise.resolve({ toJSON: () => chart }) as any
+      );
+
+      agent.get('/charts/chart/IDHERE').end((err: Error, res: IResponse) => {
+        pErr(err);
+        expect(res.status).toBe(OK);
+        expect(res.body.chart.bars[0].chords[0].displayName).toEqual(
+          'Gb Major 7'
+        );
+        expect(res.body.chart.bars[0].chords[1].displayName).toEqual(
+          'F Minor 7'
+        );
+        done();
+      });
+    });
+
+    // it('Provided key is used', (done) => {
+    //   agent.get('/charts/all').end((err: Error, res: IResponse) => {
+    //     pErr(err);
+    //     expect(res.status).toBe(OK);
+    //     done();
+    //   });
+    // });
+  });
 
   // describe('PUT - /edit/:id', () => {
   //   it('', (done) => {
@@ -163,7 +218,7 @@ describe('Charts Routes', () => {
   //   });
   // });
 
-  // describe('DELETE - /delete/:id', () => {
+  // describe('DELETE - /charts/delete/:id', () => {
   //   it('', (done) => {
   //     agent.get('/charts/all').end((err: Error, res: IResponse) => {
   //       pErr(err);

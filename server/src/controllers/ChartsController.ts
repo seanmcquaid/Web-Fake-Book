@@ -37,7 +37,7 @@ class ChartsController {
     }
 
     const chart: Chart = foundChart.toJSON() as any;
-    const transposedChart = transposeChart(
+    const transposedChart: Chart = transposeChart(
       chart,
       key ? (key as KeyTypes) : (chart.defaultKey as KeyTypes)
     );
