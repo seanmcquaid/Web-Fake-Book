@@ -123,15 +123,17 @@ describe('Charts Routes', () => {
     });
   });
 
-  // describe('GET - /charts/all', () => {
-  //   it('All charts return', (done) => {
-  //     agent.get('/charts/all').end((err: Error, res: IResponse) => {
-  //       pErr(err);
-  //       expect(res.status).toBe(OK);
-  //       done();
-  //     });
-  //   });
-  // });
+  describe('GET - /charts/all', () => {
+    it('All charts return', (done) => {
+      spyOn(ChartDao, 'find').and.returnValue(Promise.resolve() as any);
+
+      agent.get('/charts/all').end((err: Error, res: IResponse) => {
+        pErr(err);
+        expect(res.status).toBe(OK);
+        done();
+      });
+    });
+  });
 
   // describe('GET - /chart/:id/:key*?', () => {
   //   it('', (done) => {
