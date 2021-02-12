@@ -57,6 +57,7 @@ describe('Charts Routes', () => {
       spyOn(ChartDao, 'findOne').and.returnValue(Promise.resolve(true) as any);
 
       spyOn(ChartDao, 'create').and.returnValue();
+
       agent
         .post('/charts/add')
         .type('form')
@@ -69,19 +70,57 @@ describe('Charts Routes', () => {
         });
     });
 
-    // it('Chart is created successfully', (done) => {
-    //   spyOn(ChartDao, 'create').and.returnValue();
-    //   agent
-    //     .post('/charts/add')
-    //     .type('form')
-    //     .send({})
-    //     .end((err: Error, res: IResponse) => {
-    //       pErr(err);
-    //       expect(res.status).toBe(CREATED);
-    //       expect(res.body.error).toBeUndefined();
-    //       done();
-    //     });
-    // });
+    it('Chart is created successfully', (done) => {
+      const body = {
+        name: 'Tune Name Here',
+        defaultKey: 'F',
+        numberOfBars: 1,
+        bars: [
+          {
+            chords: [
+              {
+                functionalNumber: 'b2',
+                chordQuality: 'Major',
+                isSeventhChord: true,
+              },
+              {
+                functionalNumber: '1',
+                chordQuality: 'Minor',
+                isSeventhChord: true,
+              },
+              {
+                functionalNumber: '%',
+                chordQuality: '%',
+                isSeventhChord: false,
+              },
+              {
+                functionalNumber: '%',
+                chordQuality: '%',
+                isSeventhChord: false,
+              },
+            ],
+          },
+        ],
+        beatsPerMeasure: 4,
+        noteValuePerBeat: 4,
+        genre: 'Standard',
+      };
+
+      spyOn(ChartDao, 'findOne').and.returnValue(Promise.resolve(false) as any);
+
+      spyOn(ChartDao, 'create').and.returnValue();
+
+      agent
+        .post('/charts/add')
+        .type('form')
+        .send(body)
+        .end((err: Error, res: IResponse) => {
+          pErr(err);
+          expect(res.status).toBe(CREATED);
+          expect(res.body.error).toBeUndefined();
+          done();
+        });
+    });
   });
 
   // describe('GET - /charts/all', () => {
