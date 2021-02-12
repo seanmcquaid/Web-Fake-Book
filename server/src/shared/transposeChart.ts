@@ -1,7 +1,7 @@
 import Chart from 'src/models/Chart';
 import keys, { KeyTypes } from './keys';
 
-const transposeChart = (chart: Chart, key: KeyTypes) => {
+const transposeChart = (chart: Chart, key: KeyTypes): Chart => {
   const transposedBars = chart.bars.map((bar) => {
     return {
       chords: bar.chords.map((chord) => {

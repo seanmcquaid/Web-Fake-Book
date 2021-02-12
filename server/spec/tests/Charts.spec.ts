@@ -4,7 +4,7 @@ import { SuperTest, Test } from 'supertest';
 import app from '@server';
 import ChartDao from '@daos/Chart/ChartDao';
 import { pErr } from '@shared/functions';
-import { paramMissingError } from '@shared/constants';
+import { noChartExistsError, paramMissingError } from '@shared/constants';
 import { IResponse } from '../support/types';
 
 describe('Charts Routes', () => {
@@ -217,15 +217,40 @@ describe('Charts Routes', () => {
     });
   });
 
-  // describe('PUT - /edit/:id', () => {
-  //   it('', (done) => {
-  //     agent.get('/charts/all').end((err: Error, res: IResponse) => {
-  //       pErr(err);
-  //       expect(res.status).toBe(OK);
-  //       done();
-  //     });
-  //   });
-  // });
+  describe('PUT - /charts/edit/:id', () => {
+    it('Chart does not exist returns a bad status code', (done) => {
+      spyOn(ChartDao, 'findOne').and.returnValue(Promise.resolve(false) as any);
+
+      agent
+        .put('/charts/edit/IDHERE')
+        .type('form')
+        .send({})
+        .end((err: Error, res: IResponse) => {
+          pErr(err);
+          expect(res.status).toBe(BAD_REQUEST);
+          expect(res.body.error).toEqual(noChartExistsError);
+          done();
+        });
+    });
+
+    it('After chart is edited successfully, returns a good status code', (done) => {
+      spyOn(ChartDao, 'findOne').and.returnValue(Promise.resolve(true) as any);
+
+      spyOn(ChartDao, 'findOneAndUpdate').and.returnValue(
+        Promise.resolve() as any
+      );
+
+      agent
+        .put('/charts/edit/IDHERE')
+        .type('form')
+        .send({})
+        .end((err: Error, res: IResponse) => {
+          pErr(err);
+          expect(res.status).toBe(OK);
+          done();
+        });
+    });
+  });
 
   // describe('DELETE - /charts/delete/:id', () => {
   //   it('', (done) => {
