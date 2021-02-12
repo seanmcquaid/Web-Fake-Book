@@ -62,7 +62,81 @@ describe('Add Chart Context - Reducer', () => {
     });
   });
 
-  it('UPDATE_CHORD_IN_BAR', () => {});
+  it('UPDATE_CHORD_IN_BAR', () => {
+    const state: ChartInfoTypes = {
+      name: '',
+      defaultKey: 'C',
+      numberOfBars: 0,
+      bars: [
+        {
+          chords: [
+            {
+              functionalNumber: '%',
+              chordQuality: '%',
+              isSeventhChord: false,
+            },
+          ],
+        },
+      ],
+      beatsPerMeasure: 4,
+      noteValuePerBeat: 4,
+      genre: 'Standard',
+    };
+    const action: ActionTypes = {
+      type: Actions.UPDATE_CHORD_IN_BAR,
+      payload: {
+        key: 'functionalNumber',
+        value: 'b2',
+        barIndex: 0,
+        beatIndex: 0,
+      },
+    };
 
-  it('ADD_CHART_SUCCESS clears state back to initial state', () => {});
+    const result = reducer(state, action);
+    expect(result).toEqual({
+      name: '',
+      defaultKey: 'C',
+      numberOfBars: 0,
+      bars: [
+        {
+          chords: [
+            {
+              functionalNumber: 'b2',
+              chordQuality: '%',
+              isSeventhChord: false,
+            },
+          ],
+        },
+      ],
+      beatsPerMeasure: 4,
+      noteValuePerBeat: 4,
+      genre: 'Standard',
+    });
+  });
+
+  it('ADD_CHART_SUCCESS clears state back to initial state', () => {
+    const state: ChartInfoTypes = {
+      name: 'HELLO',
+      defaultKey: 'C',
+      numberOfBars: 0,
+      bars: [],
+      beatsPerMeasure: 4,
+      noteValuePerBeat: 4,
+      genre: 'Standard',
+    };
+    const action: ActionTypes = {
+      type: Actions.ADD_CHART_SUCCESS,
+    };
+
+    const result = reducer(state, action);
+    expect(result).toEqual({
+      name: '',
+      defaultKey: 'C',
+      numberOfBars: 0,
+      bars: [],
+      beatsPerMeasure: 4,
+      noteValuePerBeat: 4,
+      genre: 'Standard',
+    });
+  });
 });
