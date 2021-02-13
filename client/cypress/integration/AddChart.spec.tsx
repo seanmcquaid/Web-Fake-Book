@@ -3,7 +3,6 @@ describe('Add Chart', () => {
     cy.visit('/addChart');
   });
 
-  // test entire flow of editing each field
   it('Successfully added chart with unique configurations redirects user to charts page', () => {
     cy.get('.sc-jSgupP').type('Blues in Hoss Flat');
     cy.get('[data-testid=defaultKeyDropdown]').select('Db');
