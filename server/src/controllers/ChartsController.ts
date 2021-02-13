@@ -42,7 +42,10 @@ class ChartsController {
       key ? (key as KeyTypes) : (chart.defaultKey as KeyTypes)
     );
 
-    return res.status(OK).json({ chart: transposedChart });
+    return res.status(OK).json({
+      chart: transposedChart,
+      currentKey: key ? key : chart.defaultKey,
+    });
   };
 
   public static deleteChart = async (req: Request, res: Response) => {

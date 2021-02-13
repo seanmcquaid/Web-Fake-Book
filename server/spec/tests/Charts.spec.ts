@@ -194,6 +194,7 @@ describe('Charts Routes', () => {
         expect(res.body.chart.bars[0].chords[1].displayName).toEqual(
           'F Minor 7'
         );
+        expect(res.body.currentKey).toEqual('F');
         done();
       });
     });
@@ -212,6 +213,7 @@ describe('Charts Routes', () => {
         expect(res.body.chart.bars[0].chords[1].displayName).toEqual(
           'G Minor 7'
         );
+        expect(res.body.currentKey).toEqual('G');
         done();
       });
     });
