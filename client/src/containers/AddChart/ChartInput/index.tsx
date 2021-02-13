@@ -28,7 +28,7 @@ const ChartInput: React.FC = () => {
     <ChartInputContainer>
       <Inputs />
       <Button type="button" onClick={onClick}>
-        Add Chart
+        Add This Chart
       </Button>
       <Chart />
     </ChartInputContainer>
