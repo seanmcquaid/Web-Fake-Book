@@ -7,6 +7,7 @@ import { nanoid } from 'nanoid';
 const Chart: React.FC = memo(() => {
   const { state } = useContext(ChartContext);
   const bars = useMemo(() => state.bars, [state.bars]);
+  console.log(state);
 
   return (
     <StyledChart>

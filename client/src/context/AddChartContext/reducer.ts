@@ -8,7 +8,7 @@ import {
 } from './types';
 
 const reducer = (
-  state: ChartInfoTypes = initialState,
+  state: ChartInfoTypes,
   action: ActionTypes
 ): ChartInfoTypes => {
   switch (action.type) {

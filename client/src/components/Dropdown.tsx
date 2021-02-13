@@ -12,9 +12,14 @@ type DropdownProps = {
 
 const Dropdown: React.FC<DropdownProps> = memo(
   ({ onChange, value, options, name, label }) => (
-    <Label>
+    <Label htmlFor={name}>
       {label}
-      <StyledDropdown onChange={onChange} value={value} name={name}>
+      <StyledDropdown
+        onChange={onChange}
+        value={value}
+        name={name}
+        data-testid={`${name}Dropdown`}
+      >
         {options.map((option: string | number) => (
           <Option key={nanoid()} value={option}>
             {option}

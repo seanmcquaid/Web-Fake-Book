@@ -63,18 +63,20 @@ const Chord: React.FC<ChordProps> = ({ barIndex, beatIndex }) => {
   );
 
   return (
-    <StyledChord>
+    <StyledChord data-testid={`bar${barIndex + 1}beat${beatIndex + 1}`}>
       <Dropdown
         onChange={onChange}
         name="functionalNumber"
         value={functionalNumber}
         options={functionalNumberOptions}
+        label="Func Num"
       />
       <Dropdown
         onChange={onChange}
         name="chordQuality"
         value={chordQuality}
         options={chordQualityOptions}
+        label="Quality"
       />
       <Checkbox
         onChange={onChange}
