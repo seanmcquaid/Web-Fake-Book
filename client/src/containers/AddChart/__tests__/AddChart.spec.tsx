@@ -1,15 +1,15 @@
 import Axios from 'axios-observable';
 import { Observable } from 'rxjs';
 import { render, screen, waitFor } from '@testing-library/react';
-import AddChartContext from '../../context/AddChartContext';
-import MockRouter from '../../testUtils/MockRouter';
+import AddChartContext from '../../../context/AddChartContext';
+import MockRouter from '../../../testUtils/MockRouter';
 import { Route } from 'react-router-dom';
-import AddChart from '.';
-import Charts from '../Charts';
+import AddChart from '..';
+import Charts from '../../Charts';
 import userEvent from '@testing-library/user-event';
 
 describe('<AddChart/>', () => {
-  const renderWithContext = () => {
+  const renderWithContextAndRouter = () => {
     render(
       <MockRouter initialRoute="/addChart">
         <AddChartContext>
@@ -26,7 +26,7 @@ describe('<AddChart/>', () => {
       })
     );
 
-    renderWithContext();
+    renderWithContextAndRouter();
 
     userEvent.click(screen.getByText('Add This Chart'));
 
