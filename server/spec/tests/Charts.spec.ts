@@ -4,7 +4,7 @@ import { SuperTest, Test } from 'supertest';
 import app from '@server';
 import ChartDao from '@daos/Chart/ChartDao';
 import { pErr } from '@shared/functions';
-import { noChartExistsError, paramMissingError } from '@shared/constants';
+import { chartAlreadyExistsError, noChartExistsError } from '@shared/constants';
 import { IResponse } from '../support/types';
 
 describe('Charts Routes', () => {
@@ -64,7 +64,7 @@ describe('Charts Routes', () => {
         .end((err: Error, res: IResponse) => {
           pErr(err);
           expect(res.status).toBe(BAD_REQUEST);
-          expect(res.body.error).toEqual('This chart already exists!');
+          expect(res.body.error).toEqual(chartAlreadyExistsError);
           done();
         });
     });
@@ -176,7 +176,7 @@ describe('Charts Routes', () => {
       agent.get('/charts/chart/IDHERE').end((err: Error, res: IResponse) => {
         pErr(err);
         expect(res.status).toBe(BAD_REQUEST);
-        expect(res.body.error).toEqual('No chart with this id exists!');
+        expect(res.body.error).toEqual(noChartExistsError);
         done();
       });
     });
