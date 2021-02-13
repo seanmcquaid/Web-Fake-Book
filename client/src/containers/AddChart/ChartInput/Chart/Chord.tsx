@@ -23,6 +23,7 @@ const functionalNumberOptions = [
 const chordQualityOptions = [
   '%',
   'Minor',
+  'Dominant',
   'Major',
   'Half Diminished',
   'Diminished',
@@ -64,6 +65,7 @@ const Chord: React.FC<ChordProps> = ({ barIndex, beatIndex }) => {
 
   return (
     <StyledChord data-testid={`bar${barIndex + 1}beat${beatIndex + 1}`}>
+      {`Beat ${beatIndex + 1}`}
       <Dropdown
         onChange={onChange}
         name="functionalNumber"
