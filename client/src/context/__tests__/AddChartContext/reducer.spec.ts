@@ -31,6 +31,29 @@ describe('Add Chart Context - Reducer', () => {
       expect(result.bars[0].chords.length).toEqual(4);
     });
 
+    it('beatsPerMeasure creates the correct amount of chords per bar', () => {
+      const state: ChartInfoTypes = {
+        name: '',
+        defaultKey: 'C',
+        numberOfBars: 12,
+        bars: [],
+        beatsPerMeasure: 4,
+        noteValuePerBeat: 4,
+        genre: 'Standard',
+      };
+      const action: ActionTypes = {
+        type: Actions.SET_VALUE,
+        payload: {
+          key: 'beatsPerMeasure',
+          value: 5,
+        },
+      };
+      const result = reducer(state, action);
+
+      expect(result.bars.length).toEqual(12);
+      expect(result.bars[0].chords.length).toEqual(5);
+    });
+
     it('Other key value to change', () => {
       const state: ChartInfoTypes = {
         name: '',
