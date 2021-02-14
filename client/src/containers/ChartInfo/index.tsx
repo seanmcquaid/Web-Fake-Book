@@ -1,10 +1,12 @@
-import { useEffect, useMemo, useReducer } from 'react';
-import { useParams } from 'react-router-dom';
+import { useCallback, useEffect, useMemo, useReducer } from 'react';
+import { useHistory, useParams } from 'react-router-dom';
 import styled from 'styled-components';
+import Button from '../../components/Button';
 import Dropdown from '../../components/Dropdown';
+import LinkButton from '../../components/LinkButton';
 import H1 from '../../components/Typography/H1';
 import { ChartInfoTypes } from '../../context/AddChartContext/types';
-import { getChartInfo } from '../../services';
+import { deleteChart, getChartInfo } from '../../services';
 import Chart from './Chart';
 
 const keyOptions = [
@@ -79,6 +81,7 @@ type ParamTypes = {
 
 const ChartInfo: React.FC = () => {
   const { id } = useParams<ParamTypes>();
+  const history = useHistory();
   const [state, dispatch] = useReducer(reducer, initialState);
   const isLoading = useMemo(() => state.isLoading, [state.isLoading]);
   const selectedKey = useMemo(() => state.selectedKey, [state.selectedKey]);
@@ -91,8 +94,6 @@ const ChartInfo: React.FC = () => {
     chartInfo.noteValuePerBeat,
   ]);
   const bars = useMemo(() => chartInfo.bars, [chartInfo.bars]);
-
-  console.log(bars);
 
   useEffect(() => {
     dispatch({ type: 'LOADING' });
@@ -127,6 +128,17 @@ const ChartInfo: React.FC = () => {
     );
   };
 
+  const deleteButtonOnClick = useCallback(() => {
+    deleteChart(id).subscribe(
+      (resp) => {
+        history.push('/charts');
+      },
+      (err) => {
+        throw err;
+      }
+    );
+  }, [id, history]);
+
   if (isLoading) {
     return <div>LOADING</div>;
   }
@@ -148,6 +160,12 @@ const ChartInfo: React.FC = () => {
           beatsPerMeasure={beatsPerMeasure}
           noteValuePerBeat={noteValuePerBeat}
         />
+        <ButtonsContainer>
+          <Button type="button" onClick={deleteButtonOnClick}>
+            Delete
+          </Button>
+          <LinkButton to={`/editChart/${id}`}>Edit</LinkButton>
+        </ButtonsContainer>
       </Main>
     </PageContainer>
   );
@@ -158,5 +176,7 @@ const PageContainer = styled.div``;
 const Header = styled.header``;
 
 const Main = styled.main``;
+
+const ButtonsContainer = styled.div``;
 
 export default ChartInfo;
