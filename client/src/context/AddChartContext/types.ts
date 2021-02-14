@@ -26,6 +26,7 @@ export type ChordTypes = {
   functionalNumber: FunctionalNumberTypes;
   chordQuality: ChordQualityTypes;
   isSeventhChord: boolean;
+  displayName?: string;
 };
 
 export type BarType = {

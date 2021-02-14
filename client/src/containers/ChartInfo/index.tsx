@@ -5,6 +5,7 @@ import Dropdown from '../../components/Dropdown';
 import H1 from '../../components/Typography/H1';
 import { ChartInfoTypes } from '../../context/AddChartContext/types';
 import { getChartInfo } from '../../services';
+import Chart from './Chart';
 
 const keyOptions = [
   'C',
@@ -25,6 +26,7 @@ type State = {
   isLoading: boolean;
   selectedKey: string;
   errorMessage: string;
+  chartInfo: ChartInfoTypes;
 };
 
 type Action =
@@ -78,7 +80,19 @@ type ParamTypes = {
 const ChartInfo: React.FC = () => {
   const { id } = useParams<ParamTypes>();
   const [state, dispatch] = useReducer(reducer, initialState);
+  const isLoading = useMemo(() => state.isLoading, [state.isLoading]);
   const selectedKey = useMemo(() => state.selectedKey, [state.selectedKey]);
+  const chartInfo = useMemo(() => state.chartInfo, [state.chartInfo]);
+  const name = useMemo(() => chartInfo.name, [chartInfo.name]);
+  const beatsPerMeasure = useMemo(() => chartInfo.beatsPerMeasure, [
+    chartInfo.beatsPerMeasure,
+  ]);
+  const noteValuePerBeat = useMemo(() => chartInfo.noteValuePerBeat, [
+    chartInfo.noteValuePerBeat,
+  ]);
+  const bars = useMemo(() => chartInfo.bars, [chartInfo.bars]);
+
+  console.log(bars);
 
   useEffect(() => {
     dispatch({ type: 'LOADING' });
@@ -103,7 +117,9 @@ const ChartInfo: React.FC = () => {
     });
     getChartInfo(id, key).subscribe(
       (resp) => {
-        console.log(resp);
+        const chartInfo = resp.data.chart;
+        const key = resp.data.currentKey;
+        dispatch({ type: 'SUCCESS', payload: { chartInfo, key } });
       },
       (err) => {
         throw err;
@@ -111,10 +127,14 @@ const ChartInfo: React.FC = () => {
     );
   };
 
+  if (isLoading) {
+    return <div>LOADING</div>;
+  }
+
   return (
     <PageContainer>
       <Header>
-        <H1></H1>
+        <H1>{name}</H1>
       </Header>
       <Main>
         <Dropdown
@@ -122,6 +142,11 @@ const ChartInfo: React.FC = () => {
           name="selectedKey"
           onChange={onChange}
           value={selectedKey}
+        />
+        <Chart
+          bars={bars}
+          beatsPerMeasure={beatsPerMeasure}
+          noteValuePerBeat={noteValuePerBeat}
         />
       </Main>
     </PageContainer>
