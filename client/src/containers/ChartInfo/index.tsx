@@ -29,7 +29,7 @@ type State = {
 
 type Action =
   | { type: 'LOADING' }
-  | { type: 'SUCCESS'; payload: { chartInfo: ChartInfoTypes } }
+  | { type: 'SUCCESS'; payload: { chartInfo: ChartInfoTypes; key: string } }
   | { type: 'CHANGE_KEY'; payload: { key: string } };
 
 const initialState = {
@@ -62,6 +62,7 @@ const reducer = (state: State, action: Action) => {
         ...state,
         isLoading: false,
         chartInfo: action.payload.chartInfo,
+        selectedKey: action.payload.key,
       };
     default:
       return {
@@ -84,8 +85,9 @@ const ChartInfo: React.FC = () => {
 
     getChartInfo(id).subscribe(
       (resp) => {
-        const chartInfo: ChartInfoTypes = resp.data;
-        dispatch({ type: 'SUCCESS', payload: { chartInfo } });
+        const chartInfo = resp.data.chart;
+        const key = resp.data.currentKey;
+        dispatch({ type: 'SUCCESS', payload: { chartInfo, key } });
       },
       (err) => {
         throw err;
