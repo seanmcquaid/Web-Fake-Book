@@ -41,7 +41,21 @@ describe('Chart Info', () => {
     cy.get('.sc-bdfBwQ').should('have.text', 'Charts');
   });
 
-  it('Edit chart - redirect', () => {});
+  it('Edit chart - redirect', () => {
+    cy.intercept('GET', 'http://localhost:8080/charts/charts/*', {
+      statusCode: 200,
+      fixture: 'chartInfo.json',
+    });
+
+    cy.intercept('GET', 'http://localhost:8080/charts/charts/*', {
+      statusCode: 200,
+      fixture: 'chartInfo.json',
+    });
+
+    cy.get('.sc-fodVxV').click();
+
+    cy.get('.sc-bdfBwQ').should('have.text', 'Edit Chart');
+  });
 });
 
 export {};
