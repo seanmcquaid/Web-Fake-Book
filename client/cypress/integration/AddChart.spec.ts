@@ -122,3 +122,5 @@ describe('Add Chart', () => {
     cy.get('.sc-bdfBwQ').should('have.text', 'Charts');
   });
 });
+
+export {};

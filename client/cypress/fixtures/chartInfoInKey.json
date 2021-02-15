@@ -1,0 +1,399 @@
+{
+  "chart": {
+    "_id": "602863701c3bf60865decdb2",
+    "name": "Blues in Hoss Flat",
+    "defaultKey": "Db",
+    "numberOfBars": 12,
+    "bars": [
+      {
+        "chords": [
+          {
+            "_id": "602863701c3bf60865decdb4",
+            "functionalNumber": "1",
+            "chordQuality": "Dominant",
+            "isSeventhChord": true,
+            "displayName": "Eb Dominant 7"
+          },
+          {
+            "_id": "602863701c3bf60865decdb5",
+            "functionalNumber": "%",
+            "chordQuality": "%",
+            "isSeventhChord": false,
+            "displayName": "% %"
+          },
+          {
+            "_id": "602863701c3bf60865decdb6",
+            "functionalNumber": "%",
+            "chordQuality": "%",
+            "isSeventhChord": false,
+            "displayName": "% %"
+          },
+          {
+            "_id": "602863701c3bf60865decdb7",
+            "functionalNumber": "%",
+            "chordQuality": "%",
+            "isSeventhChord": false,
+            "displayName": "% %"
+          }
+        ]
+      },
+      {
+        "chords": [
+          {
+            "_id": "602863701c3bf60865decdb9",
+            "functionalNumber": "4",
+            "chordQuality": "Dominant",
+            "isSeventhChord": true,
+            "displayName": "Ab Dominant 7"
+          },
+          {
+            "_id": "602863701c3bf60865decdba",
+            "functionalNumber": "%",
+            "chordQuality": "%",
+            "isSeventhChord": false,
+            "displayName": "% %"
+          },
+          {
+            "_id": "602863701c3bf60865decdbb",
+            "functionalNumber": "%",
+            "chordQuality": "%",
+            "isSeventhChord": false,
+            "displayName": "% %"
+          },
+          {
+            "_id": "602863701c3bf60865decdbc",
+            "functionalNumber": "%",
+            "chordQuality": "%",
+            "isSeventhChord": false,
+            "displayName": "% %"
+          }
+        ]
+      },
+      {
+        "chords": [
+          {
+            "_id": "602863701c3bf60865decdbe",
+            "functionalNumber": "1",
+            "chordQuality": "Dominant",
+            "isSeventhChord": true,
+            "displayName": "Eb Dominant 7"
+          },
+          {
+            "_id": "602863701c3bf60865decdbf",
+            "functionalNumber": "%",
+            "chordQuality": "%",
+            "isSeventhChord": false,
+            "displayName": "% %"
+          },
+          {
+            "_id": "602863701c3bf60865decdc0",
+            "functionalNumber": "%",
+            "chordQuality": "%",
+            "isSeventhChord": false,
+            "displayName": "% %"
+          },
+          {
+            "_id": "602863701c3bf60865decdc1",
+            "functionalNumber": "%",
+            "chordQuality": "%",
+            "isSeventhChord": false,
+            "displayName": "% %"
+          }
+        ]
+      },
+      {
+        "chords": [
+          {
+            "_id": "602863701c3bf60865decdc3",
+            "functionalNumber": "%",
+            "chordQuality": "%",
+            "isSeventhChord": false,
+            "displayName": "% %"
+          },
+          {
+            "_id": "602863701c3bf60865decdc4",
+            "functionalNumber": "%",
+            "chordQuality": "%",
+            "isSeventhChord": false,
+            "displayName": "% %"
+          },
+          {
+            "_id": "602863701c3bf60865decdc5",
+            "functionalNumber": "%",
+            "chordQuality": "%",
+            "isSeventhChord": false,
+            "displayName": "% %"
+          },
+          {
+            "_id": "602863701c3bf60865decdc6",
+            "functionalNumber": "%",
+            "chordQuality": "%",
+            "isSeventhChord": false,
+            "displayName": "% %"
+          }
+        ]
+      },
+      {
+        "chords": [
+          {
+            "_id": "602863701c3bf60865decdc8",
+            "functionalNumber": "4",
+            "chordQuality": "Dominant",
+            "isSeventhChord": true,
+            "displayName": "Ab Dominant 7"
+          },
+          {
+            "_id": "602863701c3bf60865decdc9",
+            "functionalNumber": "%",
+            "chordQuality": "%",
+            "isSeventhChord": false,
+            "displayName": "% %"
+          },
+          {
+            "_id": "602863701c3bf60865decdca",
+            "functionalNumber": "%",
+            "chordQuality": "%",
+            "isSeventhChord": false,
+            "displayName": "% %"
+          },
+          {
+            "_id": "602863701c3bf60865decdcb",
+            "functionalNumber": "%",
+            "chordQuality": "%",
+            "isSeventhChord": false,
+            "displayName": "% %"
+          }
+        ]
+      },
+      {
+        "chords": [
+          {
+            "_id": "602863701c3bf60865decdcd",
+            "functionalNumber": "%",
+            "chordQuality": "%",
+            "isSeventhChord": false,
+            "displayName": "% %"
+          },
+          {
+            "_id": "602863701c3bf60865decdce",
+            "functionalNumber": "%",
+            "chordQuality": "%",
+            "isSeventhChord": false,
+            "displayName": "% %"
+          },
+          {
+            "_id": "602863701c3bf60865decdcf",
+            "functionalNumber": "%",
+            "chordQuality": "%",
+            "isSeventhChord": false,
+            "displayName": "% %"
+          },
+          {
+            "_id": "602863701c3bf60865decdd0",
+            "functionalNumber": "%",
+            "chordQuality": "%",
+            "isSeventhChord": false,
+            "displayName": "% %"
+          }
+        ]
+      },
+      {
+        "chords": [
+          {
+            "_id": "602863701c3bf60865decdd2",
+            "functionalNumber": "1",
+            "chordQuality": "Dominant",
+            "isSeventhChord": true,
+            "displayName": "Eb Dominant 7"
+          },
+          {
+            "_id": "602863701c3bf60865decdd3",
+            "functionalNumber": "%",
+            "chordQuality": "%",
+            "isSeventhChord": false,
+            "displayName": "% %"
+          },
+          {
+            "_id": "602863701c3bf60865decdd4",
+            "functionalNumber": "%",
+            "chordQuality": "%",
+            "isSeventhChord": false,
+            "displayName": "% %"
+          },
+          {
+            "_id": "602863701c3bf60865decdd5",
+            "functionalNumber": "%",
+            "chordQuality": "%",
+            "isSeventhChord": false,
+            "displayName": "% %"
+          }
+        ]
+      },
+      {
+        "chords": [
+          {
+            "_id": "602863701c3bf60865decdd7",
+            "functionalNumber": "3",
+            "chordQuality": "Half Diminished",
+            "isSeventhChord": true,
+            "displayName": "G Half Diminished 7"
+          },
+          {
+            "_id": "602863701c3bf60865decdd8",
+            "functionalNumber": "%",
+            "chordQuality": "%",
+            "isSeventhChord": false,
+            "displayName": "% %"
+          },
+          {
+            "_id": "602863701c3bf60865decdd9",
+            "functionalNumber": "6",
+            "chordQuality": "Dominant",
+            "isSeventhChord": true,
+            "displayName": "C Dominant 7"
+          },
+          {
+            "_id": "602863701c3bf60865decdda",
+            "functionalNumber": "%",
+            "chordQuality": "%",
+            "isSeventhChord": false,
+            "displayName": "% %"
+          }
+        ]
+      },
+      {
+        "chords": [
+          {
+            "_id": "602863701c3bf60865decddc",
+            "functionalNumber": "2",
+            "chordQuality": "Minor",
+            "isSeventhChord": true,
+            "displayName": "F Minor 7"
+          },
+          {
+            "_id": "602863701c3bf60865decddd",
+            "functionalNumber": "%",
+            "chordQuality": "%",
+            "isSeventhChord": false,
+            "displayName": "% %"
+          },
+          {
+            "_id": "602863701c3bf60865decdde",
+            "functionalNumber": "%",
+            "chordQuality": "%",
+            "isSeventhChord": false,
+            "displayName": "% %"
+          },
+          {
+            "_id": "602863701c3bf60865decddf",
+            "functionalNumber": "%",
+            "chordQuality": "%",
+            "isSeventhChord": false,
+            "displayName": "% %"
+          }
+        ]
+      },
+      {
+        "chords": [
+          {
+            "_id": "602863701c3bf60865decde1",
+            "functionalNumber": "5",
+            "chordQuality": "Dominant",
+            "isSeventhChord": true,
+            "displayName": "Bb Dominant 7"
+          },
+          {
+            "_id": "602863701c3bf60865decde2",
+            "functionalNumber": "%",
+            "chordQuality": "%",
+            "isSeventhChord": false,
+            "displayName": "% %"
+          },
+          {
+            "_id": "602863701c3bf60865decde3",
+            "functionalNumber": "%",
+            "chordQuality": "%",
+            "isSeventhChord": false,
+            "displayName": "% %"
+          },
+          {
+            "_id": "602863701c3bf60865decde4",
+            "functionalNumber": "%",
+            "chordQuality": "%",
+            "isSeventhChord": false,
+            "displayName": "% %"
+          }
+        ]
+      },
+      {
+        "chords": [
+          {
+            "_id": "602863701c3bf60865decde6",
+            "functionalNumber": "1",
+            "chordQuality": "Dominant",
+            "isSeventhChord": true,
+            "displayName": "Eb Dominant 7"
+          },
+          {
+            "_id": "602863701c3bf60865decde7",
+            "functionalNumber": "%",
+            "chordQuality": "%",
+            "isSeventhChord": false,
+            "displayName": "% %"
+          },
+          {
+            "_id": "602863701c3bf60865decde8",
+            "functionalNumber": "6",
+            "chordQuality": "Dominant",
+            "isSeventhChord": true,
+            "displayName": "C Dominant 7"
+          },
+          {
+            "_id": "602863701c3bf60865decde9",
+            "functionalNumber": "%",
+            "chordQuality": "%",
+            "isSeventhChord": false,
+            "displayName": "% %"
+          }
+        ]
+      },
+      {
+        "chords": [
+          {
+            "_id": "602863701c3bf60865decdeb",
+            "functionalNumber": "2",
+            "chordQuality": "Minor",
+            "isSeventhChord": true,
+            "displayName": "F Minor 7"
+          },
+          {
+            "_id": "602863701c3bf60865decdec",
+            "functionalNumber": "%",
+            "chordQuality": "%",
+            "isSeventhChord": false,
+            "displayName": "% %"
+          },
+          {
+            "_id": "602863701c3bf60865decded",
+            "functionalNumber": "5",
+            "chordQuality": "Dominant",
+            "isSeventhChord": true,
+            "displayName": "Bb Dominant 7"
+          },
+          {
+            "_id": "602863701c3bf60865decdee",
+            "functionalNumber": "%",
+            "chordQuality": "%",
+            "isSeventhChord": false,
+            "displayName": "% %"
+          }
+        ]
+      }
+    ],
+    "beatsPerMeasure": 4,
+    "noteValuePerBeat": 4,
+    "genre": "Blues",
+    "__v": 0
+  },
+  "currentKey": "Eb"
+}
