@@ -1,9 +1,7 @@
-import { memo, useCallback, useContext } from 'react';
+import { memo, useCallback } from 'react';
 import styled from 'styled-components';
 import Checkbox from '../../../components/Checkbox';
 import Dropdown from '../../../components/Dropdown';
-import { ChartContext } from '../../../context/AddChartContext';
-import { updateChordInBar } from '../../../context/AddChartContext/actions';
 import {
   ChordQualityTypes,
   FunctionalNumberTypes,
@@ -41,22 +39,33 @@ type ChordProps = {
   functionalNumber: FunctionalNumberTypes;
   chordQuality: ChordQualityTypes;
   isSeventhChord: boolean;
+  updateChord: (
+    barIndex: number,
+    beatIndex: number,
+    key: string,
+    value: string | boolean
+  ) => void;
 };
 
 const Chord: React.FC<ChordProps> = memo(
-  ({ barIndex, beatIndex, functionalNumber, chordQuality, isSeventhChord }) => {
-    const { dispatch } = useContext(ChartContext);
-
+  ({
+    barIndex,
+    beatIndex,
+    functionalNumber,
+    chordQuality,
+    isSeventhChord,
+    updateChord,
+  }) => {
     const onChange = useCallback(
       (event: React.ChangeEvent<HTMLSelectElement | HTMLInputElement>) => {
-        const name: string = event.currentTarget.name;
+        const key: string = event.currentTarget.name;
         const value: string | boolean =
-          name === 'isSeventhChord'
+          key === 'isSeventhChord'
             ? !isSeventhChord
             : event.currentTarget.value;
-        dispatch(updateChordInBar(barIndex, beatIndex, name, value));
+        updateChord(barIndex, beatIndex, key, value);
       },
-      [dispatch, barIndex, beatIndex, isSeventhChord]
+      [barIndex, beatIndex, isSeventhChord, updateChord]
     );
 
     return (
