@@ -57,7 +57,7 @@ class ChartsController {
   public static editChart = async (req: Request, res: Response) => {
     const { id } = req.params;
     const { chartInfo } = req.body;
-    const chartExists = await ChartDao.findOne({ id });
+    const chartExists = await ChartDao.findOne({ _id: id });
     if (!chartExists) {
       return res.status(BAD_REQUEST).json({
         error: noChartExistsError,
