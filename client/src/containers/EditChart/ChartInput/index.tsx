@@ -91,10 +91,11 @@ const ChartInput: React.FC = () => {
 
   useEffect(() => {
     getChartInfo(id).subscribe(
-      (resp) => {
+      ({ data }) => {
+        console.log(data);
         dispatch({
           type: 'CHART_SUCCESS',
-          payload: { chartInfo: resp as any },
+          payload: { chartInfo: data.chart as any },
         });
       },
       (err) => {
