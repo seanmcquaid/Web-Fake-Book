@@ -5,7 +5,7 @@ import Dropdown from '../../../components/Dropdown';
 import {
   ChordQualityTypes,
   FunctionalNumberTypes,
-} from '../../../context/AddChartContext/types';
+} from '../../../types/chartTypes';
 
 const functionalNumberOptions = [
   '%',

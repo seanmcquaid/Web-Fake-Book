@@ -2,12 +2,12 @@ import { memo, useCallback, useContext } from 'react';
 import styled from 'styled-components';
 import Checkbox from '../../../../components/Checkbox';
 import Dropdown from '../../../../components/Dropdown';
-import { ChartContext } from '../../../../context/AddChartContext';
+import { AddChartContext } from '../../../../context/AddChartContext';
 import { updateChordInBar } from '../../../../context/AddChartContext/actions';
 import {
   ChordQualityTypes,
   FunctionalNumberTypes,
-} from '../../../../context/AddChartContext/types';
+} from '../../../../types/chartTypes';
 
 const functionalNumberOptions = [
   '%',
@@ -45,7 +45,7 @@ type ChordProps = {
 
 const Chord: React.FC<ChordProps> = memo(
   ({ barIndex, beatIndex, functionalNumber, chordQuality, isSeventhChord }) => {
-    const { dispatch } = useContext(ChartContext);
+    const { dispatch } = useContext(AddChartContext);
 
     const onChange = useCallback(
       (event: React.ChangeEvent<HTMLSelectElement | HTMLInputElement>) => {

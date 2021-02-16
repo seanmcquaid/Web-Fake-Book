@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import Chord from './Chord';
 import { nanoid } from 'nanoid';
 import Button from '../../../components/Button';
-import { ChartInfoTypes } from '../../../context/AddChartContext/types';
+import { ChartInfoTypes } from '../../../types/chartTypes';
 import H2 from '../../../components/Typography/H2';
 import { editChart, getChartInfo } from '../../../services';
 import { useHistory, useParams } from 'react-router-dom';

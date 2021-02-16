@@ -1,9 +1,6 @@
 import reducer from '../../AddChartContext/reducer';
-import {
-  Actions,
-  ActionTypes,
-  ChartInfoTypes,
-} from '../../AddChartContext/types';
+import { ChartInfoTypes } from '../../../types/chartTypes';
+import { Actions, ActionTypes } from '../../AddChartContext/types';
 
 describe('Add Chart Context - Reducer', () => {
   describe('SET_VALUE', () => {

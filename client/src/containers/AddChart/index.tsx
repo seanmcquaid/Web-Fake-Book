@@ -1,10 +1,10 @@
 import styled from 'styled-components';
 import H1 from '../../components/Typography/H1';
-import AddChartContext from '../../context/AddChartContext';
+import AddChartProvider from '../../context/AddChartContext';
 import ChartInput from './ChartInput';
 
 const AddChart: React.FC = () => (
-  <AddChartContext>
+  <AddChartProvider>
     <PageContainer>
       <Header>
         <H1>Add Chart</H1>
@@ -13,7 +13,7 @@ const AddChart: React.FC = () => (
         <ChartInput />
       </Main>
     </PageContainer>
-  </AddChartContext>
+  </AddChartProvider>
 );
 
 const PageContainer = styled.div``;

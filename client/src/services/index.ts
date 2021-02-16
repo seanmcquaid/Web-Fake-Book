@@ -1,5 +1,5 @@
 import Axios from 'axios-observable';
-import { ChartInfoTypes } from '../context/AddChartContext/types';
+import { ChartInfoTypes } from '../types/chartTypes';
 
 const apiUrl: string = process.env.REACT_APP_API_URL as string;
 

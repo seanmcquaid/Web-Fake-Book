@@ -1,7 +1,7 @@
 import { nanoid } from 'nanoid';
 import { memo } from 'react';
 import styled from 'styled-components';
-import { BarType } from '../../../context/AddChartContext/types';
+import { BarType } from '../../../types/chartTypes';
 import Bar from './Bar';
 
 type ChartProps = {

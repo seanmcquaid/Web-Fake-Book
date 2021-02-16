@@ -5,7 +5,7 @@ import Button from '../../components/Button';
 import Dropdown from '../../components/Dropdown';
 import LinkButton from '../../components/LinkButton';
 import H1 from '../../components/Typography/H1';
-import { ChartInfoTypes } from '../../context/AddChartContext/types';
+import { ChartInfoTypes } from '../../types/chartTypes';
 import { deleteChart, getChartInfo } from '../../services';
 import Chart from './Chart';
 

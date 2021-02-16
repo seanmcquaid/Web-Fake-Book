@@ -1,11 +1,6 @@
 import { initialState } from '.';
-import {
-  Actions,
-  ActionTypes,
-  BarType,
-  ChordTypes,
-  ChartInfoTypes,
-} from './types';
+import { BarType, ChordTypes, ChartInfoTypes } from '../../types/chartTypes';
+import { Actions, ActionTypes } from './types';
 
 const reducer = (
   state: ChartInfoTypes,
@@ -62,6 +57,7 @@ const reducer = (
           bars,
         };
       }
+
       return {
         ...state,
         [action.payload.key]: action.payload.value,

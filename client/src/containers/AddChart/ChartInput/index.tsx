@@ -3,13 +3,13 @@ import Inputs from './Inputs';
 import Chart from './Chart';
 import Button from '../../../components/Button';
 import { useContext } from 'react';
-import { ChartContext } from '../../../context/AddChartContext';
+import { AddChartContext } from '../../../context/AddChartContext';
 import { postAddChart } from '../../../services';
 import { addChartSuccess } from '../../../context/AddChartContext/actions';
 import { useHistory } from 'react-router-dom';
 
 const ChartInput: React.FC = () => {
-  const { state, dispatch } = useContext(ChartContext);
+  const { state, dispatch } = useContext(AddChartContext);
   const history = useHistory();
 
   const onClick = () => {

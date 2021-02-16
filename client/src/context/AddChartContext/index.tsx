@@ -1,6 +1,7 @@
 import { createContext, Dispatch, useReducer } from 'react';
 import reducer from './reducer';
-import { ActionTypes, ChartInfoTypes } from './types';
+import { ChartInfoTypes } from '../../types/chartTypes';
+import { ActionTypes } from './types';
 
 export const initialState: ChartInfoTypes = {
   name: '',
@@ -12,7 +13,7 @@ export const initialState: ChartInfoTypes = {
   genre: 'Standard',
 };
 
-export const ChartContext = createContext<{
+export const AddChartContext = createContext<{
   state: ChartInfoTypes;
   dispatch: Dispatch<ActionTypes>;
 }>({
@@ -24,7 +25,7 @@ type AddChartContextProps = {
   preloadedState?: ChartInfoTypes;
 };
 
-const AddChartContext: React.FC<AddChartContextProps> = ({
+const AddChartProvider: React.FC<AddChartContextProps> = ({
   children,
   preloadedState,
 }) => {
@@ -34,10 +35,10 @@ const AddChartContext: React.FC<AddChartContextProps> = ({
   );
 
   return (
-    <ChartContext.Provider value={{ state, dispatch }}>
+    <AddChartContext.Provider value={{ state, dispatch }}>
       {children}
-    </ChartContext.Provider>
+    </AddChartContext.Provider>
   );
 };
 
-export default AddChartContext;
+export default AddChartProvider;

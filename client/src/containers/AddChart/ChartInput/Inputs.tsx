@@ -2,7 +2,7 @@ import { useCallback, useContext, useMemo } from 'react';
 import styled from 'styled-components';
 import Dropdown from '../../../components/Dropdown';
 import TextInput from '../../../components/TextInput';
-import { ChartContext } from '../../../context/AddChartContext';
+import { AddChartContext } from '../../../context/AddChartContext';
 import { setValue } from '../../../context/AddChartContext/actions';
 
 const defaultKeyOptions = [
@@ -38,7 +38,7 @@ const genreOptions = [
 ];
 
 const Inputs: React.FC = () => {
-  const { state, dispatch } = useContext(ChartContext);
+  const { state, dispatch } = useContext(AddChartContext);
   const name = useMemo(() => state.name, [state.name]);
   const defaultKey = useMemo(() => state.defaultKey, [state.defaultKey]);
   const numberOfBars = useMemo(() => state.numberOfBars, [state.numberOfBars]);

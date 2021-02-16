@@ -1,11 +1,11 @@
 import { memo, useContext, useMemo } from 'react';
 import styled from 'styled-components';
-import { ChartContext } from '../../../../context/AddChartContext';
+import { AddChartContext } from '../../../../context/AddChartContext';
 import Chord from './Chord';
 import { nanoid } from 'nanoid';
 
 const Chart: React.FC = memo(() => {
-  const { state } = useContext(ChartContext);
+  const { state } = useContext(AddChartContext);
   const bars = useMemo(() => state.bars, [state.bars]);
 
   return (

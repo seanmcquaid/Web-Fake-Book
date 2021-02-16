@@ -1,7 +1,7 @@
 import { nanoid } from 'nanoid';
 import { memo } from 'react';
 import styled from 'styled-components';
-import { ChordTypes } from '../../../context/AddChartContext/types';
+import { ChordTypes } from '../../../types/chartTypes';
 
 type BarProps = {
   chords: ChordTypes[];
