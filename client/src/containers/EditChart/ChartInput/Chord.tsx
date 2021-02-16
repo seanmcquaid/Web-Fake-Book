@@ -1,13 +1,13 @@
 import { memo, useCallback, useContext } from 'react';
 import styled from 'styled-components';
-import Checkbox from '../../../../components/Checkbox';
-import Dropdown from '../../../../components/Dropdown';
-import { ChartContext } from '../../../../context/AddChartContext';
-import { updateChordInBar } from '../../../../context/AddChartContext/actions';
+import Checkbox from '../../../components/Checkbox';
+import Dropdown from '../../../components/Dropdown';
+import { ChartContext } from '../../../context/AddChartContext';
+import { updateChordInBar } from '../../../context/AddChartContext/actions';
 import {
   ChordQualityTypes,
   FunctionalNumberTypes,
-} from '../../../../context/AddChartContext/types';
+} from '../../../context/AddChartContext/types';
 
 const functionalNumberOptions = [
   '%',

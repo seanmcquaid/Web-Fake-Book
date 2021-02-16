@@ -11,3 +11,6 @@ export const getChartInfo = (id: string, key?: string) =>
 
 export const deleteChart = (id: string) =>
   Axios.delete(`${apiUrl}/charts/delete/${id}`);
+
+export const editChart = (id: string, chartInfo: ChartInfoTypes) =>
+  Axios.put(`${apiUrl}/charts/edit/${id}`, chartInfo);
