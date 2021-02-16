@@ -10,7 +10,6 @@ interface Chart {
       displayName?: string;
     }[];
   }[];
-
   beatsPerMeasure: number;
   noteValuePerBeat: number;
   genre: string;

@@ -63,7 +63,7 @@ class ChartsController {
         error: noChartExistsError,
       });
     }
-    const filter = { id };
+    const filter = { _id: id };
 
     await ChartDao.findOneAndUpdate(filter, chartInfo);
     return res.status(OK).end();
