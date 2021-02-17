@@ -9,6 +9,10 @@ type StateTypes = {
   charts: ChartInfoTypes[];
   searchText: string;
   filteredCharts: ChartInfoTypes[];
+  totalPages: number;
+  currentPage: number;
+  resultsPerPage: number;
+  currentCharts: ChartInfoTypes[];
 };
 
 const initialState: StateTypes = {
@@ -16,12 +20,18 @@ const initialState: StateTypes = {
   charts: [],
   filteredCharts: [],
   searchText: '',
+  totalPages: 0,
+  currentPage: 0,
+  resultsPerPage: 0,
+  currentCharts: [],
 };
 
 type ActionTypes =
   | { type: 'LOADING' }
   | { type: 'SUCCESS'; payload: { charts: ChartInfoTypes[] } }
-  | { type: 'SEARCH_TEXT'; payload: { searchText: string } };
+  | { type: 'SEARCH_TEXT'; payload: { searchText: string } }
+  | { type: 'INCREMENT_PAGE' }
+  | { type: 'DECREMENT_PAGE' };
 
 const reducer = (state: StateTypes, action: ActionTypes) => {
   switch (action.type) {
