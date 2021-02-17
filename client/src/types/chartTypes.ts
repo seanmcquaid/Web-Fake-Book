@@ -34,6 +34,7 @@ export type BarType = {
 };
 
 export type ChartInfoTypes = {
+  id?: string;
   name: string;
   defaultKey: string;
   numberOfBars: number;
