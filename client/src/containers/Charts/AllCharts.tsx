@@ -1,6 +1,7 @@
-import { useReducer } from 'react';
+import { useCallback, useEffect, useMemo, useReducer } from 'react';
 import styled from 'styled-components';
 import TextInput from '../../components/TextInput';
+import { getAllCharts } from '../../services';
 import { ChartInfoTypes } from '../../types/chartTypes';
 import ChartsList from './ChartsList';
 
@@ -63,11 +64,34 @@ const reducer = (state: StateTypes, action: ActionTypes) => {
 
 const AllCharts: React.FC = () => {
   const [state, dispatch] = useReducer(reducer, initialState);
+  const searchText = useMemo(() => state.searchText, [state.searchText]);
+  const currentCharts = useMemo(() => state.currentCharts, [
+    state.currentCharts,
+  ]);
+
+  useEffect(() => {
+    dispatch({ type: 'LOADING' });
+
+    getAllCharts().subscribe(
+      ({ data }) => {
+        const charts = data.charts;
+        dispatch({ type: 'SUCCESS', payload: { charts } });
+      },
+      (err) => {
+        console.log(err);
+      }
+    );
+  }, []);
+
+  const onChange = useCallback((event: React.ChangeEvent<HTMLInputElement>) => {
+    const searchText = event.currentTarget.value;
+    dispatch({ type: 'SEARCH_TEXT', payload: { searchText } });
+  }, []);
 
   return (
     <>
-      <TextInput />
-      <ChartsList />
+      <TextInput onChange={onChange} value={searchText} name="searchText" />
+      <ChartsList charts={currentCharts} />
       <ButtonsContainer></ButtonsContainer>
     </>
   );

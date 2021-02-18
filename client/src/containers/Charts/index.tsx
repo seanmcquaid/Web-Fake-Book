@@ -1,12 +1,15 @@
 import styled from 'styled-components';
 import H1 from '../../components/Typography/H1';
+import AllCharts from './AllCharts';
 
 const Charts: React.FC = () => (
   <PageContainer>
     <Header>
       <H1>Charts</H1>
     </Header>
-    <Main></Main>
+    <Main>
+      <AllCharts />
+    </Main>
   </PageContainer>
 );
 
