@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useMemo, useReducer } from 'react';
 import styled from 'styled-components';
+import Button from '../../components/Button';
 import TextInput from '../../components/TextInput';
 import { getAllCharts } from '../../services';
 import { ChartInfoTypes } from '../../types/chartTypes';
@@ -12,8 +13,6 @@ type StateTypes = {
   filteredCharts: ChartInfoTypes[];
   totalPages: number;
   currentPage: number;
-  resultsPerPage: number;
-  currentCharts: ChartInfoTypes[];
 };
 
 const initialState: StateTypes = {
@@ -23,8 +22,6 @@ const initialState: StateTypes = {
   searchText: '',
   totalPages: 0,
   currentPage: 0,
-  resultsPerPage: 0,
-  currentCharts: [],
 };
 
 type ActionTypes =
@@ -41,18 +38,38 @@ const reducer = (state: StateTypes, action: ActionTypes) => {
         ...state,
         isLoading: true,
       };
+    case 'INCREMENT_PAGE':
+      return {
+        ...state,
+        currentPage: state.currentPage + 1,
+      };
+    case 'DECREMENT_PAGE':
+      return {
+        ...state,
+        currentPage: state.currentPage - 1,
+      };
     case 'SUCCESS':
       return {
         ...state,
         charts: action.payload.charts,
         filteredCharts: action.payload.charts,
+        totalPages: Math.floor(
+          action.payload.charts.length / 5 < 1
+            ? 0
+            : action.payload.charts.length / 5
+        ),
       };
     case 'SEARCH_TEXT':
+      const filteredCharts = state.charts.filter(({ name }) =>
+        name.toUpperCase().includes(action.payload.searchText.toUpperCase())
+      );
       return {
         ...state,
         searchText: action.payload.searchText,
-        filteredCharts: state.charts.filter(({ name }) =>
-          name.includes(action.payload.searchText)
+        filteredCharts,
+        currentPage: 0,
+        totalPages: Math.floor(
+          filteredCharts.length / 5 < 1 ? 0 : filteredCharts.length / 5
         ),
       };
     default:
@@ -65,9 +82,15 @@ const reducer = (state: StateTypes, action: ActionTypes) => {
 const AllCharts: React.FC = () => {
   const [state, dispatch] = useReducer(reducer, initialState);
   const searchText = useMemo(() => state.searchText, [state.searchText]);
-  const currentCharts = useMemo(() => state.currentCharts, [
-    state.currentCharts,
+  const filteredCharts = useMemo(() => state.filteredCharts, [
+    state.filteredCharts,
   ]);
+  const currentPage = useMemo(() => state.currentPage, [state.currentPage]);
+  const totalPages = useMemo(() => state.totalPages, [state.totalPages]);
+  const currentCharts = useMemo(
+    () => filteredCharts.slice(currentPage * 5, (currentPage + 1) * 5),
+    [filteredCharts, currentPage]
+  );
 
   useEffect(() => {
     dispatch({ type: 'LOADING' });
@@ -88,15 +111,43 @@ const AllCharts: React.FC = () => {
     dispatch({ type: 'SEARCH_TEXT', payload: { searchText } });
   }, []);
 
+  const nextPageButtonOnClick = useCallback(() => {
+    dispatch({ type: 'INCREMENT_PAGE' });
+  }, []);
+
+  const prevPageButtonOnClick = useCallback(() => {
+    dispatch({ type: 'DECREMENT_PAGE' });
+  }, []);
+
   return (
     <>
       <TextInput onChange={onChange} value={searchText} name="searchText" />
       <ChartsList charts={currentCharts} />
-      <ButtonsContainer></ButtonsContainer>
+      <PageButtonsContainer>
+        <Button
+          type="button"
+          onClick={prevPageButtonOnClick}
+          disabled={currentPage === 0}
+        >
+          Prev
+        </Button>
+        <PageNumber>
+          Page {currentPage + 1} of {totalPages + 1}
+        </PageNumber>
+        <Button
+          type="button"
+          onClick={nextPageButtonOnClick}
+          disabled={currentPage === totalPages}
+        >
+          Next
+        </Button>
+      </PageButtonsContainer>
     </>
   );
 };
 
-const ButtonsContainer = styled.div``;
+const PageButtonsContainer = styled.div``;
+
+const PageNumber = styled.span``;
 
 export default AllCharts;

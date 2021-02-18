@@ -9,11 +9,10 @@ type ChartsListProps = {
 
 const ChartsList: React.FC<ChartsListProps> = memo(({ charts }) => (
   <Charts>
-    {console.log(charts)}
-    {charts.map(({ name, id }) => (
-      <Chart key={id}>
+    {charts.map(({ name, _id }) => (
+      <Chart key={_id}>
         {name}
-        <LinkButton to={`/chartInfo/${id}`}>Info</LinkButton>
+        <LinkButton to={`/chartInfo/${_id}`}>Info</LinkButton>
       </Chart>
     ))}
   </Charts>
