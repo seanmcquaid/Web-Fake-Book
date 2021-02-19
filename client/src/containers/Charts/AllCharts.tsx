@@ -53,7 +53,7 @@ const reducer = (state: StateTypes, action: ActionTypes) => {
         ...state,
         charts: action.payload.charts,
         filteredCharts: action.payload.charts,
-        totalPages: Math.floor(
+        totalPages: Math.ceil(
           action.payload.charts.length / 5 < 1
             ? 0
             : action.payload.charts.length / 5
@@ -63,12 +63,13 @@ const reducer = (state: StateTypes, action: ActionTypes) => {
       const filteredCharts = state.charts.filter(({ name }) =>
         name.toUpperCase().includes(action.payload.searchText.toUpperCase())
       );
+
       return {
         ...state,
         searchText: action.payload.searchText,
         filteredCharts,
         currentPage: 0,
-        totalPages: Math.floor(
+        totalPages: Math.ceil(
           filteredCharts.length / 5 < 1 ? 0 : filteredCharts.length / 5
         ),
       };
@@ -132,12 +133,12 @@ const AllCharts: React.FC = () => {
           Prev
         </Button>
         <PageNumber>
-          Page {currentPage + 1} of {totalPages + 1}
+          Page {currentPage + 1} of {totalPages}
         </PageNumber>
         <Button
           type="button"
           onClick={nextPageButtonOnClick}
-          disabled={currentPage === totalPages}
+          disabled={currentPage + 1 === totalPages}
         >
           Next
         </Button>
