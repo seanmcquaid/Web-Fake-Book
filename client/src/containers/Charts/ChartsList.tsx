@@ -1,4 +1,3 @@
-import { memo } from 'react';
 import styled from 'styled-components';
 import LinkButton from '../../components/LinkButton';
 import { ChartInfoTypes } from '../../types/chartTypes';
@@ -7,7 +6,7 @@ type ChartsListProps = {
   charts: ChartInfoTypes[];
 };
 
-const ChartsList: React.FC<ChartsListProps> = memo(({ charts }) => (
+const ChartsList: React.FC<ChartsListProps> = ({ charts }) => (
   <Charts>
     {charts.map(({ name, _id }) => (
       <Chart key={_id}>
@@ -16,7 +15,7 @@ const ChartsList: React.FC<ChartsListProps> = memo(({ charts }) => (
       </Chart>
     ))}
   </Charts>
-));
+);
 
 const Charts = styled.ul``;
 
