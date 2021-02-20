@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import H1 from '../../components/Typography/H1';
-import ChartInput from './ChartInput';
+import EditChartInput from './EditChartInput';
 
 const EditChart: React.FC = () => (
   <PageContainer>
@@ -8,7 +8,7 @@ const EditChart: React.FC = () => (
       <H1>Edit Chart</H1>
     </Header>
     <Main>
-      <ChartInput />
+      <EditChartInput />
     </Main>
   </PageContainer>
 );

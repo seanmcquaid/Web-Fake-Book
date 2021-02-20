@@ -6,7 +6,7 @@ import Button from '../../../components/Button';
 import H2 from '../../../components/Typography/H2';
 import { editChart, getChartInfo } from '../../../services';
 import { useHistory, useParams } from 'react-router-dom';
-import { ChartInputStateTypes } from './reducer/types';
+import { EditChartInputStateTypes } from './reducer/types';
 import reducer from './reducer';
 import {
   loadChartSuccess,
@@ -14,7 +14,7 @@ import {
   updateChordInBar,
 } from './reducer/actions';
 
-const initialState: ChartInputStateTypes = {
+const initialState: EditChartInputStateTypes = {
   isLoading: false,
   chartInfo: {
     name: '',
@@ -31,7 +31,7 @@ type ParamTypes = {
   id: string;
 };
 
-const ChartInput: React.FC = () => {
+const EditChartInput: React.FC = () => {
   const { id } = useParams<ParamTypes>();
   const [state, dispatch] = useReducer(reducer, initialState);
   const isLoading = useMemo(() => state.isLoading, [state.isLoading]);
@@ -125,4 +125,4 @@ const Chords = styled.ol`
   align-items: center;
 `;
 
-export default ChartInput;
+export default EditChartInput;

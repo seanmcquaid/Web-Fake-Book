@@ -1,20 +1,20 @@
 import { ChartInfoTypes } from '../../../../types/chartTypes';
 
-export enum ChartInputActions {
+export enum EditChartInputActions {
   LOADING = 'LOADING',
   UPDATE_CHORD_IN_BAR = 'UPDATE_CHORD_IN_BAR',
   LOAD_CHART_SUCCESS = 'LOAD_CHART_SUCCESS',
 }
 
-export type ChartInputStateTypes = {
+export type EditChartInputStateTypes = {
   isLoading: boolean;
   chartInfo: ChartInfoTypes;
 };
 
-export type ChartInputActionTypes =
-  | { type: ChartInputActions.LOADING }
+export type EditChartInputActionTypes =
+  | { type: EditChartInputActions.LOADING }
   | {
-      type: ChartInputActions.UPDATE_CHORD_IN_BAR;
+      type: EditChartInputActions.UPDATE_CHORD_IN_BAR;
       payload: {
         barIndex: number;
         beatIndex: number;
@@ -23,7 +23,7 @@ export type ChartInputActionTypes =
       };
     }
   | {
-      type: ChartInputActions.LOAD_CHART_SUCCESS;
+      type: EditChartInputActions.LOAD_CHART_SUCCESS;
       payload: {
         chartInfo: ChartInfoTypes;
       };
