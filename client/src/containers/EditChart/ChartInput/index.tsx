@@ -6,8 +6,13 @@ import Button from '../../../components/Button';
 import H2 from '../../../components/Typography/H2';
 import { editChart, getChartInfo } from '../../../services';
 import { useHistory, useParams } from 'react-router-dom';
-import { ChartInputActions, ChartInputStateTypes } from './reducer/types';
-import chartInputReducer from './reducer';
+import { ChartInputStateTypes } from './reducer/types';
+import reducer from './reducer';
+import {
+  loadChartSuccess,
+  loadingChart,
+  updateChordInBar,
+} from './reducer/actions';
 
 const initialState: ChartInputStateTypes = {
   isLoading: false,
@@ -28,19 +33,18 @@ type ParamTypes = {
 
 const ChartInput: React.FC = () => {
   const { id } = useParams<ParamTypes>();
-  const [state, dispatch] = useReducer(chartInputReducer, initialState);
+  const [state, dispatch] = useReducer(reducer, initialState);
   const isLoading = useMemo(() => state.isLoading, [state.isLoading]);
   const bars = useMemo(() => state.chartInfo.bars, [state.chartInfo.bars]);
   const name = useMemo(() => state.chartInfo.name, [state.chartInfo.name]);
   const history = useHistory();
 
   useEffect(() => {
+    dispatch(loadingChart());
+
     getChartInfo(id).subscribe(
       ({ data }) => {
-        dispatch({
-          type: ChartInputActions.LOAD_CHART_SUCCESS,
-          payload: { chartInfo: data.chart as any },
-        });
+        dispatch(loadChartSuccess(data.chart as any));
       },
       (err) => {
         throw err;
@@ -66,10 +70,7 @@ const ChartInput: React.FC = () => {
       key: string,
       value: string | boolean
     ) => {
-      dispatch({
-        type: ChartInputActions.UPDATE_CHORD_IN_BAR,
-        payload: { barIndex, beatIndex, key, value },
-      });
+      dispatch(updateChordInBar(barIndex, beatIndex, key, value));
     },
     []
   );

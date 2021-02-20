@@ -4,7 +4,7 @@ import {
   ChartInputActions,
 } from './types';
 
-const chartInputReducer = (
+const reducer = (
   state: ChartInputStateTypes,
   action: ChartInputActionTypes
 ) => {
@@ -40,4 +40,4 @@ const chartInputReducer = (
   }
 };
 
-export default chartInputReducer;
+export default reducer;
