@@ -3,17 +3,13 @@ import styled from 'styled-components';
 import Chord from './Chord';
 import { nanoid } from 'nanoid';
 import Button from '../../../components/Button';
-import { ChartInfoTypes } from '../../../types/chartTypes';
 import H2 from '../../../components/Typography/H2';
 import { editChart, getChartInfo } from '../../../services';
 import { useHistory, useParams } from 'react-router-dom';
+import { ChartInputActions, ChartInputStateTypes } from './reducer/types';
+import chartInputReducer from './reducer';
 
-type State = {
-  isLoading: boolean;
-  chartInfo: ChartInfoTypes;
-};
-
-const initialState: State = {
+const initialState: ChartInputStateTypes = {
   isLoading: false,
   chartInfo: {
     name: '',
@@ -26,64 +22,13 @@ const initialState: State = {
   },
 };
 
-type Action =
-  | { type: 'LOADING' }
-  | {
-      type: 'UPDATE_CHORD_IN_BAR';
-      payload: {
-        barIndex: number;
-        beatIndex: number;
-        key: string;
-        value: boolean | string;
-      };
-    }
-  | {
-      type: 'CHART_SUCCESS';
-      payload: {
-        chartInfo: ChartInfoTypes;
-      };
-    };
-
-const reducer = (state: State, action: Action) => {
-  switch (action.type) {
-    case 'LOADING':
-      return { ...state, isLoading: true };
-    case 'UPDATE_CHORD_IN_BAR':
-      const currentBars = [...state.chartInfo.bars];
-      currentBars[action.payload.barIndex].chords[action.payload.beatIndex] = {
-        ...currentBars[action.payload.barIndex].chords[
-          action.payload.beatIndex
-        ],
-        [action.payload.key]: action.payload.value,
-      };
-      return {
-        ...state,
-        chartInfo: {
-          ...state.chartInfo,
-          bars: currentBars,
-        },
-      };
-    case 'CHART_SUCCESS':
-      return {
-        ...state,
-        isLoading: false,
-        chartInfo: {
-          ...action.payload.chartInfo,
-        },
-      };
-
-    default:
-      return { ...state };
-  }
-};
-
 type ParamTypes = {
   id: string;
 };
 
 const ChartInput: React.FC = () => {
   const { id } = useParams<ParamTypes>();
-  const [state, dispatch] = useReducer(reducer, initialState);
+  const [state, dispatch] = useReducer(chartInputReducer, initialState);
   const isLoading = useMemo(() => state.isLoading, [state.isLoading]);
   const bars = useMemo(() => state.chartInfo.bars, [state.chartInfo.bars]);
   const name = useMemo(() => state.chartInfo.name, [state.chartInfo.name]);
@@ -92,9 +37,8 @@ const ChartInput: React.FC = () => {
   useEffect(() => {
     getChartInfo(id).subscribe(
       ({ data }) => {
-        console.log(data);
         dispatch({
-          type: 'CHART_SUCCESS',
+          type: ChartInputActions.LOAD_CHART_SUCCESS,
           payload: { chartInfo: data.chart as any },
         });
       },
@@ -123,7 +67,7 @@ const ChartInput: React.FC = () => {
       value: string | boolean
     ) => {
       dispatch({
-        type: 'UPDATE_CHORD_IN_BAR',
+        type: ChartInputActions.UPDATE_CHORD_IN_BAR,
         payload: { barIndex, beatIndex, key, value },
       });
     },
