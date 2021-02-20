@@ -1,16 +1,16 @@
 describe('Chart Info', () => {
   beforeEach(() => {
-    cy.visit('/chartInfo/602863701c3bf60865decdb2');
-  });
-  it('Changing key requests chart in the new key', () => {
-    cy.intercept('GET', 'http://localhost:8080/charts/charts/*', {
+    cy.intercept('GET', 'http://localhost:8080/charts/chart/*', {
       statusCode: 200,
       fixture: 'chartInfo.json',
     });
 
+    cy.visit('/chartInfo/602863701c3bf60865decdb2');
+  });
+  it('Changing key requests chart in the new key', () => {
     cy.get('[data-testid=selectedKeyDropdown]').select('Eb');
 
-    cy.intercept('GET', 'http://localhost:8080/charts/charts/*/Eb', {
+    cy.intercept('GET', 'http://localhost:8080/charts/chart/*/Eb', {
       statusCode: 200,
       fixture: 'chartInfoInKey.json',
     });
@@ -22,11 +22,6 @@ describe('Chart Info', () => {
   });
 
   it('Delete chart - redirect', () => {
-    cy.intercept('GET', 'http://localhost:8080/charts/charts/*', {
-      statusCode: 200,
-      fixture: 'chartInfo.json',
-    });
-
     cy.intercept('DELETE', 'http://localhost:8080/charts/delete/*', {
       statusCode: 200,
     });
@@ -42,12 +37,7 @@ describe('Chart Info', () => {
   });
 
   it('Edit chart - redirect', () => {
-    cy.intercept('GET', 'http://localhost:8080/charts/charts/*', {
-      statusCode: 200,
-      fixture: 'chartInfo.json',
-    });
-
-    cy.intercept('GET', 'http://localhost:8080/charts/charts/*', {
+    cy.intercept('GET', 'http://localhost:8080/charts/chart/*', {
       statusCode: 200,
       fixture: 'chartInfo.json',
     });

@@ -1,11 +1,11 @@
 describe('Charts', () => {
   beforeEach(() => {
-    cy.visit('/charts');
-
     cy.intercept('GET', 'http://localhost:8080/charts/all', {
       statusCode: 200,
-      body: [],
+      body: { charts: [] },
     });
+
+    cy.visit('/charts');
   });
   it('Filter charts by search terms lessens amount of results', () => {
     cy.get('.sc-jSgupP').type('Flat');

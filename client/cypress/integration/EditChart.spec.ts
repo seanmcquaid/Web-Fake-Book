@@ -1,13 +1,13 @@
 describe('EditChart', () => {
   beforeEach(() => {
-    cy.visit('/editChart/602863701c3bf60865decdb2');
-  });
-  it('User is redirected after successfully editing a chart', () => {
     cy.intercept('GET', 'http://localhost:8080/charts/chart/*', {
       statusCode: 200,
       fixture: 'chartInfo.json',
     });
 
+    cy.visit('/editChart/602863701c3bf60865decdb2');
+  });
+  it('User is redirected after successfully editing a chart', () => {
     cy.get(
       '[data-testid=bar2beat1] > [for="functionalNumber"] > [data-testid=functionalNumberDropdown]'
     ).select('b2');
@@ -20,8 +20,15 @@ describe('EditChart', () => {
       }
     );
 
+    cy.intercept('GET', 'http://localhost:8080/charts/all', {
+      statusCode: 200,
+      body: { charts: [] },
+    });
+
     cy.get('.sc-crrsfI').click();
 
     cy.get('.sc-bdfBwQ').should('have.text', 'Charts');
   });
 });
+
+export {};
