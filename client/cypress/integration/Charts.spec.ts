@@ -2,7 +2,7 @@ describe('Charts', () => {
   beforeEach(() => {
     cy.intercept('GET', 'http://localhost:8080/charts/all', {
       statusCode: 200,
-      body: { charts: [] },
+      fixture: 'allCharts.json',
     });
 
     cy.visit('/charts');

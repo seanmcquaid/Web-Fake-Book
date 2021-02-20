@@ -117,6 +117,11 @@ describe('Add Chart', () => {
       statusCode: 200,
     });
 
+    cy.intercept('GET', 'http://localhost:8080/charts/all', {
+      statusCode: 200,
+      fixture: 'allCharts.json',
+    });
+
     cy.get('.sc-crrsfI').click();
 
     cy.get('.sc-bdfBwQ').should('have.text', 'Charts');
