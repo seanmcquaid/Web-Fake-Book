@@ -1,0 +1,2164 @@
+{
+  "charts": [
+    {
+      "_id": "602863701c3bf60865decdb2",
+      "name": "Blues in Hoss Flat",
+      "defaultKey": "Db",
+      "numberOfBars": 12,
+      "bars": [
+        {
+          "_id": "602863701c3bf60865decdb3",
+          "chords": [
+            {
+              "_id": "602863701c3bf60865decdb4",
+              "functionalNumber": "1",
+              "chordQuality": "Dominant",
+              "isSeventhChord": true
+            },
+            {
+              "_id": "602863701c3bf60865decdb5",
+              "functionalNumber": "%",
+              "chordQuality": "%",
+              "isSeventhChord": false
+            },
+            {
+              "_id": "602863701c3bf60865decdb6",
+              "functionalNumber": "%",
+              "chordQuality": "%",
+              "isSeventhChord": false
+            },
+            {
+              "_id": "602863701c3bf60865decdb7",
+              "functionalNumber": "%",
+              "chordQuality": "%",
+              "isSeventhChord": false
+            }
+          ]
+        },
+        {
+          "_id": "602863701c3bf60865decdb8",
+          "chords": [
+            {
+              "_id": "602863701c3bf60865decdb9",
+              "functionalNumber": "4",
+              "chordQuality": "Dominant",
+              "isSeventhChord": true
+            },
+            {
+              "_id": "602863701c3bf60865decdba",
+              "functionalNumber": "%",
+              "chordQuality": "%",
+              "isSeventhChord": false
+            },
+            {
+              "_id": "602863701c3bf60865decdbb",
+              "functionalNumber": "%",
+              "chordQuality": "%",
+              "isSeventhChord": false
+            },
+            {
+              "_id": "602863701c3bf60865decdbc",
+              "functionalNumber": "%",
+              "chordQuality": "%",
+              "isSeventhChord": false
+            }
+          ]
+        },
+        {
+          "_id": "602863701c3bf60865decdbd",
+          "chords": [
+            {
+              "_id": "602863701c3bf60865decdbe",
+              "functionalNumber": "1",
+              "chordQuality": "Dominant",
+              "isSeventhChord": true
+            },
+            {
+              "_id": "602863701c3bf60865decdbf",
+              "functionalNumber": "%",
+              "chordQuality": "%",
+              "isSeventhChord": false
+            },
+            {
+              "_id": "602863701c3bf60865decdc0",
+              "functionalNumber": "%",
+              "chordQuality": "%",
+              "isSeventhChord": false
+            },
+            {
+              "_id": "602863701c3bf60865decdc1",
+              "functionalNumber": "%",
+              "chordQuality": "%",
+              "isSeventhChord": false
+            }
+          ]
+        },
+        {
+          "_id": "602863701c3bf60865decdc2",
+          "chords": [
+            {
+              "_id": "602863701c3bf60865decdc3",
+              "functionalNumber": "%",
+              "chordQuality": "%",
+              "isSeventhChord": false
+            },
+            {
+              "_id": "602863701c3bf60865decdc4",
+              "functionalNumber": "%",
+              "chordQuality": "%",
+              "isSeventhChord": false
+            },
+            {
+              "_id": "602863701c3bf60865decdc5",
+              "functionalNumber": "%",
+              "chordQuality": "%",
+              "isSeventhChord": false
+            },
+            {
+              "_id": "602863701c3bf60865decdc6",
+              "functionalNumber": "%",
+              "chordQuality": "%",
+              "isSeventhChord": false
+            }
+          ]
+        },
+        {
+          "_id": "602863701c3bf60865decdc7",
+          "chords": [
+            {
+              "_id": "602863701c3bf60865decdc8",
+              "functionalNumber": "4",
+              "chordQuality": "Dominant",
+              "isSeventhChord": true
+            },
+            {
+              "_id": "602863701c3bf60865decdc9",
+              "functionalNumber": "%",
+              "chordQuality": "%",
+              "isSeventhChord": false
+            },
+            {
+              "_id": "602863701c3bf60865decdca",
+              "functionalNumber": "%",
+              "chordQuality": "%",
+              "isSeventhChord": false
+            },
+            {
+              "_id": "602863701c3bf60865decdcb",
+              "functionalNumber": "%",
+              "chordQuality": "%",
+              "isSeventhChord": false
+            }
+          ]
+        },
+        {
+          "_id": "602863701c3bf60865decdcc",
+          "chords": [
+            {
+              "_id": "602863701c3bf60865decdcd",
+              "functionalNumber": "%",
+              "chordQuality": "%",
+              "isSeventhChord": false
+            },
+            {
+              "_id": "602863701c3bf60865decdce",
+              "functionalNumber": "%",
+              "chordQuality": "%",
+              "isSeventhChord": false
+            },
+            {
+              "_id": "602863701c3bf60865decdcf",
+              "functionalNumber": "%",
+              "chordQuality": "%",
+              "isSeventhChord": false
+            },
+            {
+              "_id": "602863701c3bf60865decdd0",
+              "functionalNumber": "%",
+              "chordQuality": "%",
+              "isSeventhChord": false
+            }
+          ]
+        },
+        {
+          "_id": "602863701c3bf60865decdd1",
+          "chords": [
+            {
+              "_id": "602863701c3bf60865decdd2",
+              "functionalNumber": "1",
+              "chordQuality": "Dominant",
+              "isSeventhChord": true
+            },
+            {
+              "_id": "602863701c3bf60865decdd3",
+              "functionalNumber": "%",
+              "chordQuality": "%",
+              "isSeventhChord": false
+            },
+            {
+              "_id": "602863701c3bf60865decdd4",
+              "functionalNumber": "%",
+              "chordQuality": "%",
+              "isSeventhChord": false
+            },
+            {
+              "_id": "602863701c3bf60865decdd5",
+              "functionalNumber": "%",
+              "chordQuality": "%",
+              "isSeventhChord": false
+            }
+          ]
+        },
+        {
+          "_id": "602863701c3bf60865decdd6",
+          "chords": [
+            {
+              "_id": "602863701c3bf60865decdd7",
+              "functionalNumber": "3",
+              "chordQuality": "Half Diminished",
+              "isSeventhChord": true
+            },
+            {
+              "_id": "602863701c3bf60865decdd8",
+              "functionalNumber": "%",
+              "chordQuality": "%",
+              "isSeventhChord": false
+            },
+            {
+              "_id": "602863701c3bf60865decdd9",
+              "functionalNumber": "6",
+              "chordQuality": "Dominant",
+              "isSeventhChord": true
+            },
+            {
+              "_id": "602863701c3bf60865decdda",
+              "functionalNumber": "%",
+              "chordQuality": "%",
+              "isSeventhChord": false
+            }
+          ]
+        },
+        {
+          "_id": "602863701c3bf60865decddb",
+          "chords": [
+            {
+              "_id": "602863701c3bf60865decddc",
+              "functionalNumber": "2",
+              "chordQuality": "Minor",
+              "isSeventhChord": true
+            },
+            {
+              "_id": "602863701c3bf60865decddd",
+              "functionalNumber": "%",
+              "chordQuality": "%",
+              "isSeventhChord": false
+            },
+            {
+              "_id": "602863701c3bf60865decdde",
+              "functionalNumber": "%",
+              "chordQuality": "%",
+              "isSeventhChord": false
+            },
+            {
+              "_id": "602863701c3bf60865decddf",
+              "functionalNumber": "%",
+              "chordQuality": "%",
+              "isSeventhChord": false
+            }
+          ]
+        },
+        {
+          "_id": "602863701c3bf60865decde0",
+          "chords": [
+            {
+              "_id": "602863701c3bf60865decde1",
+              "functionalNumber": "5",
+              "chordQuality": "Dominant",
+              "isSeventhChord": true
+            },
+            {
+              "_id": "602863701c3bf60865decde2",
+              "functionalNumber": "%",
+              "chordQuality": "%",
+              "isSeventhChord": false
+            },
+            {
+              "_id": "602863701c3bf60865decde3",
+              "functionalNumber": "%",
+              "chordQuality": "%",
+              "isSeventhChord": false
+            },
+            {
+              "_id": "602863701c3bf60865decde4",
+              "functionalNumber": "%",
+              "chordQuality": "%",
+              "isSeventhChord": false
+            }
+          ]
+        },
+        {
+          "_id": "602863701c3bf60865decde5",
+          "chords": [
+            {
+              "_id": "602863701c3bf60865decde6",
+              "functionalNumber": "1",
+              "chordQuality": "Dominant",
+              "isSeventhChord": true
+            },
+            {
+              "_id": "602863701c3bf60865decde7",
+              "functionalNumber": "%",
+              "chordQuality": "%",
+              "isSeventhChord": false
+            },
+            {
+              "_id": "602863701c3bf60865decde8",
+              "functionalNumber": "6",
+              "chordQuality": "Dominant",
+              "isSeventhChord": true
+            },
+            {
+              "_id": "602863701c3bf60865decde9",
+              "functionalNumber": "%",
+              "chordQuality": "%",
+              "isSeventhChord": false
+            }
+          ]
+        },
+        {
+          "_id": "602863701c3bf60865decdea",
+          "chords": [
+            {
+              "_id": "602863701c3bf60865decdeb",
+              "functionalNumber": "2",
+              "chordQuality": "Minor",
+              "isSeventhChord": true
+            },
+            {
+              "_id": "602863701c3bf60865decdec",
+              "functionalNumber": "%",
+              "chordQuality": "%",
+              "isSeventhChord": false
+            },
+            {
+              "_id": "602863701c3bf60865decded",
+              "functionalNumber": "5",
+              "chordQuality": "Dominant",
+              "isSeventhChord": true
+            },
+            {
+              "_id": "602863701c3bf60865decdee",
+              "functionalNumber": "%",
+              "chordQuality": "%",
+              "isSeventhChord": false
+            }
+          ]
+        }
+      ],
+      "beatsPerMeasure": 4,
+      "noteValuePerBeat": 4,
+      "genre": "Blues",
+      "__v": 0
+    },
+    {
+      "_id": "602dd1a29cf26362c2114a54",
+      "name": "Blues in Hoss Flatss",
+      "defaultKey": "Db",
+      "numberOfBars": 12,
+      "bars": [
+        {
+          "_id": "602dd1a29cf26362c2114a55",
+          "chords": [
+            {
+              "_id": "602dd1a29cf26362c2114a56",
+              "functionalNumber": "1",
+              "chordQuality": "Dominant",
+              "isSeventhChord": true
+            },
+            {
+              "_id": "602dd1a29cf26362c2114a57",
+              "functionalNumber": "%",
+              "chordQuality": "%",
+              "isSeventhChord": false
+            },
+            {
+              "_id": "602dd1a29cf26362c2114a58",
+              "functionalNumber": "%",
+              "chordQuality": "%",
+              "isSeventhChord": false
+            },
+            {
+              "_id": "602dd1a29cf26362c2114a59",
+              "functionalNumber": "%",
+              "chordQuality": "%",
+              "isSeventhChord": false
+            }
+          ]
+        },
+        {
+          "_id": "602dd1a29cf26362c2114a5a",
+          "chords": [
+            {
+              "_id": "602dd1a29cf26362c2114a5b",
+              "functionalNumber": "4",
+              "chordQuality": "Dominant",
+              "isSeventhChord": true
+            },
+            {
+              "_id": "602dd1a29cf26362c2114a5c",
+              "functionalNumber": "%",
+              "chordQuality": "%",
+              "isSeventhChord": false
+            },
+            {
+              "_id": "602dd1a29cf26362c2114a5d",
+              "functionalNumber": "%",
+              "chordQuality": "%",
+              "isSeventhChord": false
+            },
+            {
+              "_id": "602dd1a29cf26362c2114a5e",
+              "functionalNumber": "%",
+              "chordQuality": "%",
+              "isSeventhChord": false
+            }
+          ]
+        },
+        {
+          "_id": "602dd1a29cf26362c2114a5f",
+          "chords": [
+            {
+              "_id": "602dd1a29cf26362c2114a60",
+              "functionalNumber": "1",
+              "chordQuality": "Dominant",
+              "isSeventhChord": true
+            },
+            {
+              "_id": "602dd1a29cf26362c2114a61",
+              "functionalNumber": "%",
+              "chordQuality": "%",
+              "isSeventhChord": false
+            },
+            {
+              "_id": "602dd1a29cf26362c2114a62",
+              "functionalNumber": "%",
+              "chordQuality": "%",
+              "isSeventhChord": false
+            },
+            {
+              "_id": "602dd1a29cf26362c2114a63",
+              "functionalNumber": "%",
+              "chordQuality": "%",
+              "isSeventhChord": false
+            }
+          ]
+        },
+        {
+          "_id": "602dd1a29cf26362c2114a64",
+          "chords": [
+            {
+              "_id": "602dd1a29cf26362c2114a65",
+              "functionalNumber": "%",
+              "chordQuality": "%",
+              "isSeventhChord": false
+            },
+            {
+              "_id": "602dd1a29cf26362c2114a66",
+              "functionalNumber": "%",
+              "chordQuality": "%",
+              "isSeventhChord": false
+            },
+            {
+              "_id": "602dd1a29cf26362c2114a67",
+              "functionalNumber": "%",
+              "chordQuality": "%",
+              "isSeventhChord": false
+            },
+            {
+              "_id": "602dd1a29cf26362c2114a68",
+              "functionalNumber": "%",
+              "chordQuality": "%",
+              "isSeventhChord": false
+            }
+          ]
+        },
+        {
+          "_id": "602dd1a29cf26362c2114a69",
+          "chords": [
+            {
+              "_id": "602dd1a29cf26362c2114a6a",
+              "functionalNumber": "4",
+              "chordQuality": "Dominant",
+              "isSeventhChord": true
+            },
+            {
+              "_id": "602dd1a29cf26362c2114a6b",
+              "functionalNumber": "%",
+              "chordQuality": "%",
+              "isSeventhChord": false
+            },
+            {
+              "_id": "602dd1a29cf26362c2114a6c",
+              "functionalNumber": "%",
+              "chordQuality": "%",
+              "isSeventhChord": false
+            },
+            {
+              "_id": "602dd1a29cf26362c2114a6d",
+              "functionalNumber": "%",
+              "chordQuality": "%",
+              "isSeventhChord": false
+            }
+          ]
+        },
+        {
+          "_id": "602dd1a29cf26362c2114a6e",
+          "chords": [
+            {
+              "_id": "602dd1a29cf26362c2114a6f",
+              "functionalNumber": "%",
+              "chordQuality": "%",
+              "isSeventhChord": false
+            },
+            {
+              "_id": "602dd1a29cf26362c2114a70",
+              "functionalNumber": "%",
+              "chordQuality": "%",
+              "isSeventhChord": false
+            },
+            {
+              "_id": "602dd1a29cf26362c2114a71",
+              "functionalNumber": "%",
+              "chordQuality": "%",
+              "isSeventhChord": false
+            },
+            {
+              "_id": "602dd1a29cf26362c2114a72",
+              "functionalNumber": "%",
+              "chordQuality": "%",
+              "isSeventhChord": false
+            }
+          ]
+        },
+        {
+          "_id": "602dd1a29cf26362c2114a73",
+          "chords": [
+            {
+              "_id": "602dd1a29cf26362c2114a74",
+              "functionalNumber": "1",
+              "chordQuality": "Dominant",
+              "isSeventhChord": true
+            },
+            {
+              "_id": "602dd1a29cf26362c2114a75",
+              "functionalNumber": "%",
+              "chordQuality": "%",
+              "isSeventhChord": false
+            },
+            {
+              "_id": "602dd1a29cf26362c2114a76",
+              "functionalNumber": "%",
+              "chordQuality": "%",
+              "isSeventhChord": false
+            },
+            {
+              "_id": "602dd1a29cf26362c2114a77",
+              "functionalNumber": "%",
+              "chordQuality": "%",
+              "isSeventhChord": false
+            }
+          ]
+        },
+        {
+          "_id": "602dd1a29cf26362c2114a78",
+          "chords": [
+            {
+              "_id": "602dd1a29cf26362c2114a79",
+              "functionalNumber": "3",
+              "chordQuality": "Half Diminished",
+              "isSeventhChord": true
+            },
+            {
+              "_id": "602dd1a29cf26362c2114a7a",
+              "functionalNumber": "%",
+              "chordQuality": "%",
+              "isSeventhChord": false
+            },
+            {
+              "_id": "602dd1a29cf26362c2114a7b",
+              "functionalNumber": "6",
+              "chordQuality": "Dominant",
+              "isSeventhChord": true
+            },
+            {
+              "_id": "602dd1a29cf26362c2114a7c",
+              "functionalNumber": "%",
+              "chordQuality": "%",
+              "isSeventhChord": false
+            }
+          ]
+        },
+        {
+          "_id": "602dd1a29cf26362c2114a7d",
+          "chords": [
+            {
+              "_id": "602dd1a29cf26362c2114a7e",
+              "functionalNumber": "2",
+              "chordQuality": "Minor",
+              "isSeventhChord": true
+            },
+            {
+              "_id": "602dd1a29cf26362c2114a7f",
+              "functionalNumber": "%",
+              "chordQuality": "%",
+              "isSeventhChord": false
+            },
+            {
+              "_id": "602dd1a29cf26362c2114a80",
+              "functionalNumber": "%",
+              "chordQuality": "%",
+              "isSeventhChord": false
+            },
+            {
+              "_id": "602dd1a29cf26362c2114a81",
+              "functionalNumber": "%",
+              "chordQuality": "%",
+              "isSeventhChord": false
+            }
+          ]
+        },
+        {
+          "_id": "602dd1a29cf26362c2114a82",
+          "chords": [
+            {
+              "_id": "602dd1a29cf26362c2114a83",
+              "functionalNumber": "5",
+              "chordQuality": "Dominant",
+              "isSeventhChord": true
+            },
+            {
+              "_id": "602dd1a29cf26362c2114a84",
+              "functionalNumber": "%",
+              "chordQuality": "%",
+              "isSeventhChord": false
+            },
+            {
+              "_id": "602dd1a29cf26362c2114a85",
+              "functionalNumber": "%",
+              "chordQuality": "%",
+              "isSeventhChord": false
+            },
+            {
+              "_id": "602dd1a29cf26362c2114a86",
+              "functionalNumber": "%",
+              "chordQuality": "%",
+              "isSeventhChord": false
+            }
+          ]
+        },
+        {
+          "_id": "602dd1a29cf26362c2114a87",
+          "chords": [
+            {
+              "_id": "602dd1a29cf26362c2114a88",
+              "functionalNumber": "1",
+              "chordQuality": "Dominant",
+              "isSeventhChord": true
+            },
+            {
+              "_id": "602dd1a29cf26362c2114a89",
+              "functionalNumber": "%",
+              "chordQuality": "%",
+              "isSeventhChord": false
+            },
+            {
+              "_id": "602dd1a29cf26362c2114a8a",
+              "functionalNumber": "6",
+              "chordQuality": "Dominant",
+              "isSeventhChord": true
+            },
+            {
+              "_id": "602dd1a29cf26362c2114a8b",
+              "functionalNumber": "%",
+              "chordQuality": "%",
+              "isSeventhChord": false
+            }
+          ]
+        },
+        {
+          "_id": "602dd1a29cf26362c2114a8c",
+          "chords": [
+            {
+              "_id": "602dd1a29cf26362c2114a8d",
+              "functionalNumber": "2",
+              "chordQuality": "Minor",
+              "isSeventhChord": true
+            },
+            {
+              "_id": "602dd1a29cf26362c2114a8e",
+              "functionalNumber": "%",
+              "chordQuality": "%",
+              "isSeventhChord": false
+            },
+            {
+              "_id": "602dd1a29cf26362c2114a8f",
+              "functionalNumber": "5",
+              "chordQuality": "Dominant",
+              "isSeventhChord": true
+            },
+            {
+              "_id": "602dd1a29cf26362c2114a90",
+              "functionalNumber": "%",
+              "chordQuality": "%",
+              "isSeventhChord": false
+            }
+          ]
+        }
+      ],
+      "beatsPerMeasure": 4,
+      "noteValuePerBeat": 4,
+      "genre": "Blues",
+      "__v": 0
+    },
+    {
+      "_id": "602dd1b19cf26362c2114a91",
+      "name": "Blues in Hoss Flatsss",
+      "defaultKey": "Db",
+      "numberOfBars": 12,
+      "bars": [
+        {
+          "_id": "602dd1b19cf26362c2114a92",
+          "chords": [
+            {
+              "_id": "602dd1b19cf26362c2114a93",
+              "functionalNumber": "1",
+              "chordQuality": "Dominant",
+              "isSeventhChord": true
+            },
+            {
+              "_id": "602dd1b19cf26362c2114a94",
+              "functionalNumber": "%",
+              "chordQuality": "%",
+              "isSeventhChord": false
+            },
+            {
+              "_id": "602dd1b19cf26362c2114a95",
+              "functionalNumber": "%",
+              "chordQuality": "%",
+              "isSeventhChord": false
+            },
+            {
+              "_id": "602dd1b19cf26362c2114a96",
+              "functionalNumber": "%",
+              "chordQuality": "%",
+              "isSeventhChord": false
+            }
+          ]
+        },
+        {
+          "_id": "602dd1b19cf26362c2114a97",
+          "chords": [
+            {
+              "_id": "602dd1b19cf26362c2114a98",
+              "functionalNumber": "4",
+              "chordQuality": "Dominant",
+              "isSeventhChord": true
+            },
+            {
+              "_id": "602dd1b19cf26362c2114a99",
+              "functionalNumber": "%",
+              "chordQuality": "%",
+              "isSeventhChord": false
+            },
+            {
+              "_id": "602dd1b19cf26362c2114a9a",
+              "functionalNumber": "%",
+              "chordQuality": "%",
+              "isSeventhChord": false
+            },
+            {
+              "_id": "602dd1b19cf26362c2114a9b",
+              "functionalNumber": "%",
+              "chordQuality": "%",
+              "isSeventhChord": false
+            }
+          ]
+        },
+        {
+          "_id": "602dd1b19cf26362c2114a9c",
+          "chords": [
+            {
+              "_id": "602dd1b19cf26362c2114a9d",
+              "functionalNumber": "1",
+              "chordQuality": "Dominant",
+              "isSeventhChord": true
+            },
+            {
+              "_id": "602dd1b19cf26362c2114a9e",
+              "functionalNumber": "%",
+              "chordQuality": "%",
+              "isSeventhChord": false
+            },
+            {
+              "_id": "602dd1b19cf26362c2114a9f",
+              "functionalNumber": "%",
+              "chordQuality": "%",
+              "isSeventhChord": false
+            },
+            {
+              "_id": "602dd1b19cf26362c2114aa0",
+              "functionalNumber": "%",
+              "chordQuality": "%",
+              "isSeventhChord": false
+            }
+          ]
+        },
+        {
+          "_id": "602dd1b19cf26362c2114aa1",
+          "chords": [
+            {
+              "_id": "602dd1b19cf26362c2114aa2",
+              "functionalNumber": "%",
+              "chordQuality": "%",
+              "isSeventhChord": false
+            },
+            {
+              "_id": "602dd1b19cf26362c2114aa3",
+              "functionalNumber": "%",
+              "chordQuality": "%",
+              "isSeventhChord": false
+            },
+            {
+              "_id": "602dd1b19cf26362c2114aa4",
+              "functionalNumber": "%",
+              "chordQuality": "%",
+              "isSeventhChord": false
+            },
+            {
+              "_id": "602dd1b19cf26362c2114aa5",
+              "functionalNumber": "%",
+              "chordQuality": "%",
+              "isSeventhChord": false
+            }
+          ]
+        },
+        {
+          "_id": "602dd1b19cf26362c2114aa6",
+          "chords": [
+            {
+              "_id": "602dd1b19cf26362c2114aa7",
+              "functionalNumber": "4",
+              "chordQuality": "Dominant",
+              "isSeventhChord": true
+            },
+            {
+              "_id": "602dd1b19cf26362c2114aa8",
+              "functionalNumber": "%",
+              "chordQuality": "%",
+              "isSeventhChord": false
+            },
+            {
+              "_id": "602dd1b19cf26362c2114aa9",
+              "functionalNumber": "%",
+              "chordQuality": "%",
+              "isSeventhChord": false
+            },
+            {
+              "_id": "602dd1b19cf26362c2114aaa",
+              "functionalNumber": "%",
+              "chordQuality": "%",
+              "isSeventhChord": false
+            }
+          ]
+        },
+        {
+          "_id": "602dd1b19cf26362c2114aab",
+          "chords": [
+            {
+              "_id": "602dd1b19cf26362c2114aac",
+              "functionalNumber": "%",
+              "chordQuality": "%",
+              "isSeventhChord": false
+            },
+            {
+              "_id": "602dd1b19cf26362c2114aad",
+              "functionalNumber": "%",
+              "chordQuality": "%",
+              "isSeventhChord": false
+            },
+            {
+              "_id": "602dd1b19cf26362c2114aae",
+              "functionalNumber": "%",
+              "chordQuality": "%",
+              "isSeventhChord": false
+            },
+            {
+              "_id": "602dd1b19cf26362c2114aaf",
+              "functionalNumber": "%",
+              "chordQuality": "%",
+              "isSeventhChord": false
+            }
+          ]
+        },
+        {
+          "_id": "602dd1b19cf26362c2114ab0",
+          "chords": [
+            {
+              "_id": "602dd1b19cf26362c2114ab1",
+              "functionalNumber": "1",
+              "chordQuality": "Dominant",
+              "isSeventhChord": true
+            },
+            {
+              "_id": "602dd1b19cf26362c2114ab2",
+              "functionalNumber": "%",
+              "chordQuality": "%",
+              "isSeventhChord": false
+            },
+            {
+              "_id": "602dd1b19cf26362c2114ab3",
+              "functionalNumber": "%",
+              "chordQuality": "%",
+              "isSeventhChord": false
+            },
+            {
+              "_id": "602dd1b19cf26362c2114ab4",
+              "functionalNumber": "%",
+              "chordQuality": "%",
+              "isSeventhChord": false
+            }
+          ]
+        },
+        {
+          "_id": "602dd1b19cf26362c2114ab5",
+          "chords": [
+            {
+              "_id": "602dd1b19cf26362c2114ab6",
+              "functionalNumber": "3",
+              "chordQuality": "Half Diminished",
+              "isSeventhChord": true
+            },
+            {
+              "_id": "602dd1b19cf26362c2114ab7",
+              "functionalNumber": "%",
+              "chordQuality": "%",
+              "isSeventhChord": false
+            },
+            {
+              "_id": "602dd1b19cf26362c2114ab8",
+              "functionalNumber": "6",
+              "chordQuality": "Dominant",
+              "isSeventhChord": true
+            },
+            {
+              "_id": "602dd1b19cf26362c2114ab9",
+              "functionalNumber": "%",
+              "chordQuality": "%",
+              "isSeventhChord": false
+            }
+          ]
+        },
+        {
+          "_id": "602dd1b19cf26362c2114aba",
+          "chords": [
+            {
+              "_id": "602dd1b19cf26362c2114abb",
+              "functionalNumber": "2",
+              "chordQuality": "Minor",
+              "isSeventhChord": true
+            },
+            {
+              "_id": "602dd1b19cf26362c2114abc",
+              "functionalNumber": "%",
+              "chordQuality": "%",
+              "isSeventhChord": false
+            },
+            {
+              "_id": "602dd1b19cf26362c2114abd",
+              "functionalNumber": "%",
+              "chordQuality": "%",
+              "isSeventhChord": false
+            },
+            {
+              "_id": "602dd1b19cf26362c2114abe",
+              "functionalNumber": "%",
+              "chordQuality": "%",
+              "isSeventhChord": false
+            }
+          ]
+        },
+        {
+          "_id": "602dd1b19cf26362c2114abf",
+          "chords": [
+            {
+              "_id": "602dd1b19cf26362c2114ac0",
+              "functionalNumber": "5",
+              "chordQuality": "Dominant",
+              "isSeventhChord": true
+            },
+            {
+              "_id": "602dd1b19cf26362c2114ac1",
+              "functionalNumber": "%",
+              "chordQuality": "%",
+              "isSeventhChord": false
+            },
+            {
+              "_id": "602dd1b19cf26362c2114ac2",
+              "functionalNumber": "%",
+              "chordQuality": "%",
+              "isSeventhChord": false
+            },
+            {
+              "_id": "602dd1b19cf26362c2114ac3",
+              "functionalNumber": "%",
+              "chordQuality": "%",
+              "isSeventhChord": false
+            }
+          ]
+        },
+        {
+          "_id": "602dd1b19cf26362c2114ac4",
+          "chords": [
+            {
+              "_id": "602dd1b19cf26362c2114ac5",
+              "functionalNumber": "1",
+              "chordQuality": "Dominant",
+              "isSeventhChord": true
+            },
+            {
+              "_id": "602dd1b19cf26362c2114ac6",
+              "functionalNumber": "%",
+              "chordQuality": "%",
+              "isSeventhChord": false
+            },
+            {
+              "_id": "602dd1b19cf26362c2114ac7",
+              "functionalNumber": "6",
+              "chordQuality": "Dominant",
+              "isSeventhChord": true
+            },
+            {
+              "_id": "602dd1b19cf26362c2114ac8",
+              "functionalNumber": "%",
+              "chordQuality": "%",
+              "isSeventhChord": false
+            }
+          ]
+        },
+        {
+          "_id": "602dd1b19cf26362c2114ac9",
+          "chords": [
+            {
+              "_id": "602dd1b19cf26362c2114aca",
+              "functionalNumber": "2",
+              "chordQuality": "Minor",
+              "isSeventhChord": true
+            },
+            {
+              "_id": "602dd1b19cf26362c2114acb",
+              "functionalNumber": "%",
+              "chordQuality": "%",
+              "isSeventhChord": false
+            },
+            {
+              "_id": "602dd1b19cf26362c2114acc",
+              "functionalNumber": "5",
+              "chordQuality": "Dominant",
+              "isSeventhChord": true
+            },
+            {
+              "_id": "602dd1b19cf26362c2114acd",
+              "functionalNumber": "%",
+              "chordQuality": "%",
+              "isSeventhChord": false
+            }
+          ]
+        }
+      ],
+      "beatsPerMeasure": 4,
+      "noteValuePerBeat": 4,
+      "genre": "Blues",
+      "__v": 0
+    },
+    {
+      "_id": "602dd1c49cf26362c2114ace",
+      "name": "Blues in Hoss Flatssss",
+      "defaultKey": "Db",
+      "numberOfBars": 12,
+      "bars": [
+        {
+          "_id": "602dd1c49cf26362c2114acf",
+          "chords": [
+            {
+              "_id": "602dd1c49cf26362c2114ad0",
+              "functionalNumber": "1",
+              "chordQuality": "Dominant",
+              "isSeventhChord": true
+            },
+            {
+              "_id": "602dd1c49cf26362c2114ad1",
+              "functionalNumber": "%",
+              "chordQuality": "%",
+              "isSeventhChord": false
+            },
+            {
+              "_id": "602dd1c49cf26362c2114ad2",
+              "functionalNumber": "%",
+              "chordQuality": "%",
+              "isSeventhChord": false
+            },
+            {
+              "_id": "602dd1c49cf26362c2114ad3",
+              "functionalNumber": "%",
+              "chordQuality": "%",
+              "isSeventhChord": false
+            }
+          ]
+        },
+        {
+          "_id": "602dd1c49cf26362c2114ad4",
+          "chords": [
+            {
+              "_id": "602dd1c49cf26362c2114ad5",
+              "functionalNumber": "4",
+              "chordQuality": "Dominant",
+              "isSeventhChord": true
+            },
+            {
+              "_id": "602dd1c49cf26362c2114ad6",
+              "functionalNumber": "%",
+              "chordQuality": "%",
+              "isSeventhChord": false
+            },
+            {
+              "_id": "602dd1c49cf26362c2114ad7",
+              "functionalNumber": "%",
+              "chordQuality": "%",
+              "isSeventhChord": false
+            },
+            {
+              "_id": "602dd1c49cf26362c2114ad8",
+              "functionalNumber": "%",
+              "chordQuality": "%",
+              "isSeventhChord": false
+            }
+          ]
+        },
+        {
+          "_id": "602dd1c49cf26362c2114ad9",
+          "chords": [
+            {
+              "_id": "602dd1c49cf26362c2114ada",
+              "functionalNumber": "1",
+              "chordQuality": "Dominant",
+              "isSeventhChord": true
+            },
+            {
+              "_id": "602dd1c49cf26362c2114adb",
+              "functionalNumber": "%",
+              "chordQuality": "%",
+              "isSeventhChord": false
+            },
+            {
+              "_id": "602dd1c49cf26362c2114adc",
+              "functionalNumber": "%",
+              "chordQuality": "%",
+              "isSeventhChord": false
+            },
+            {
+              "_id": "602dd1c49cf26362c2114add",
+              "functionalNumber": "%",
+              "chordQuality": "%",
+              "isSeventhChord": false
+            }
+          ]
+        },
+        {
+          "_id": "602dd1c49cf26362c2114ade",
+          "chords": [
+            {
+              "_id": "602dd1c49cf26362c2114adf",
+              "functionalNumber": "%",
+              "chordQuality": "%",
+              "isSeventhChord": false
+            },
+            {
+              "_id": "602dd1c49cf26362c2114ae0",
+              "functionalNumber": "%",
+              "chordQuality": "%",
+              "isSeventhChord": false
+            },
+            {
+              "_id": "602dd1c49cf26362c2114ae1",
+              "functionalNumber": "%",
+              "chordQuality": "%",
+              "isSeventhChord": false
+            },
+            {
+              "_id": "602dd1c49cf26362c2114ae2",
+              "functionalNumber": "%",
+              "chordQuality": "%",
+              "isSeventhChord": false
+            }
+          ]
+        },
+        {
+          "_id": "602dd1c49cf26362c2114ae3",
+          "chords": [
+            {
+              "_id": "602dd1c49cf26362c2114ae4",
+              "functionalNumber": "4",
+              "chordQuality": "Dominant",
+              "isSeventhChord": true
+            },
+            {
+              "_id": "602dd1c49cf26362c2114ae5",
+              "functionalNumber": "%",
+              "chordQuality": "%",
+              "isSeventhChord": false
+            },
+            {
+              "_id": "602dd1c49cf26362c2114ae6",
+              "functionalNumber": "%",
+              "chordQuality": "%",
+              "isSeventhChord": false
+            },
+            {
+              "_id": "602dd1c49cf26362c2114ae7",
+              "functionalNumber": "%",
+              "chordQuality": "%",
+              "isSeventhChord": false
+            }
+          ]
+        },
+        {
+          "_id": "602dd1c49cf26362c2114ae8",
+          "chords": [
+            {
+              "_id": "602dd1c49cf26362c2114ae9",
+              "functionalNumber": "%",
+              "chordQuality": "%",
+              "isSeventhChord": false
+            },
+            {
+              "_id": "602dd1c49cf26362c2114aea",
+              "functionalNumber": "%",
+              "chordQuality": "%",
+              "isSeventhChord": false
+            },
+            {
+              "_id": "602dd1c49cf26362c2114aeb",
+              "functionalNumber": "%",
+              "chordQuality": "%",
+              "isSeventhChord": false
+            },
+            {
+              "_id": "602dd1c49cf26362c2114aec",
+              "functionalNumber": "%",
+              "chordQuality": "%",
+              "isSeventhChord": false
+            }
+          ]
+        },
+        {
+          "_id": "602dd1c49cf26362c2114aed",
+          "chords": [
+            {
+              "_id": "602dd1c49cf26362c2114aee",
+              "functionalNumber": "1",
+              "chordQuality": "Dominant",
+              "isSeventhChord": true
+            },
+            {
+              "_id": "602dd1c49cf26362c2114aef",
+              "functionalNumber": "%",
+              "chordQuality": "%",
+              "isSeventhChord": false
+            },
+            {
+              "_id": "602dd1c49cf26362c2114af0",
+              "functionalNumber": "%",
+              "chordQuality": "%",
+              "isSeventhChord": false
+            },
+            {
+              "_id": "602dd1c49cf26362c2114af1",
+              "functionalNumber": "%",
+              "chordQuality": "%",
+              "isSeventhChord": false
+            }
+          ]
+        },
+        {
+          "_id": "602dd1c49cf26362c2114af2",
+          "chords": [
+            {
+              "_id": "602dd1c49cf26362c2114af3",
+              "functionalNumber": "3",
+              "chordQuality": "Half Diminished",
+              "isSeventhChord": true
+            },
+            {
+              "_id": "602dd1c49cf26362c2114af4",
+              "functionalNumber": "%",
+              "chordQuality": "%",
+              "isSeventhChord": false
+            },
+            {
+              "_id": "602dd1c49cf26362c2114af5",
+              "functionalNumber": "6",
+              "chordQuality": "Dominant",
+              "isSeventhChord": true
+            },
+            {
+              "_id": "602dd1c49cf26362c2114af6",
+              "functionalNumber": "%",
+              "chordQuality": "%",
+              "isSeventhChord": false
+            }
+          ]
+        },
+        {
+          "_id": "602dd1c49cf26362c2114af7",
+          "chords": [
+            {
+              "_id": "602dd1c49cf26362c2114af8",
+              "functionalNumber": "2",
+              "chordQuality": "Minor",
+              "isSeventhChord": true
+            },
+            {
+              "_id": "602dd1c49cf26362c2114af9",
+              "functionalNumber": "%",
+              "chordQuality": "%",
+              "isSeventhChord": false
+            },
+            {
+              "_id": "602dd1c49cf26362c2114afa",
+              "functionalNumber": "%",
+              "chordQuality": "%",
+              "isSeventhChord": false
+            },
+            {
+              "_id": "602dd1c49cf26362c2114afb",
+              "functionalNumber": "%",
+              "chordQuality": "%",
+              "isSeventhChord": false
+            }
+          ]
+        },
+        {
+          "_id": "602dd1c49cf26362c2114afc",
+          "chords": [
+            {
+              "_id": "602dd1c49cf26362c2114afd",
+              "functionalNumber": "5",
+              "chordQuality": "Dominant",
+              "isSeventhChord": true
+            },
+            {
+              "_id": "602dd1c49cf26362c2114afe",
+              "functionalNumber": "%",
+              "chordQuality": "%",
+              "isSeventhChord": false
+            },
+            {
+              "_id": "602dd1c49cf26362c2114aff",
+              "functionalNumber": "%",
+              "chordQuality": "%",
+              "isSeventhChord": false
+            },
+            {
+              "_id": "602dd1c49cf26362c2114b00",
+              "functionalNumber": "%",
+              "chordQuality": "%",
+              "isSeventhChord": false
+            }
+          ]
+        },
+        {
+          "_id": "602dd1c49cf26362c2114b01",
+          "chords": [
+            {
+              "_id": "602dd1c49cf26362c2114b02",
+              "functionalNumber": "1",
+              "chordQuality": "Dominant",
+              "isSeventhChord": true
+            },
+            {
+              "_id": "602dd1c49cf26362c2114b03",
+              "functionalNumber": "%",
+              "chordQuality": "%",
+              "isSeventhChord": false
+            },
+            {
+              "_id": "602dd1c49cf26362c2114b04",
+              "functionalNumber": "6",
+              "chordQuality": "Dominant",
+              "isSeventhChord": true
+            },
+            {
+              "_id": "602dd1c49cf26362c2114b05",
+              "functionalNumber": "%",
+              "chordQuality": "%",
+              "isSeventhChord": false
+            }
+          ]
+        },
+        {
+          "_id": "602dd1c49cf26362c2114b06",
+          "chords": [
+            {
+              "_id": "602dd1c49cf26362c2114b07",
+              "functionalNumber": "2",
+              "chordQuality": "Minor",
+              "isSeventhChord": true
+            },
+            {
+              "_id": "602dd1c49cf26362c2114b08",
+              "functionalNumber": "%",
+              "chordQuality": "%",
+              "isSeventhChord": false
+            },
+            {
+              "_id": "602dd1c49cf26362c2114b09",
+              "functionalNumber": "5",
+              "chordQuality": "Dominant",
+              "isSeventhChord": true
+            },
+            {
+              "_id": "602dd1c49cf26362c2114b0a",
+              "functionalNumber": "%",
+              "chordQuality": "%",
+              "isSeventhChord": false
+            }
+          ]
+        }
+      ],
+      "beatsPerMeasure": 4,
+      "noteValuePerBeat": 4,
+      "genre": "Blues",
+      "__v": 0
+    },
+    {
+      "_id": "602dd1da9cf26362c2114b0b",
+      "name": "Blues in Hoss Fla",
+      "defaultKey": "Db",
+      "numberOfBars": 12,
+      "bars": [
+        {
+          "_id": "602dd1da9cf26362c2114b0c",
+          "chords": [
+            {
+              "_id": "602dd1da9cf26362c2114b0d",
+              "functionalNumber": "1",
+              "chordQuality": "Dominant",
+              "isSeventhChord": true
+            },
+            {
+              "_id": "602dd1da9cf26362c2114b0e",
+              "functionalNumber": "%",
+              "chordQuality": "%",
+              "isSeventhChord": false
+            },
+            {
+              "_id": "602dd1da9cf26362c2114b0f",
+              "functionalNumber": "%",
+              "chordQuality": "%",
+              "isSeventhChord": false
+            },
+            {
+              "_id": "602dd1da9cf26362c2114b10",
+              "functionalNumber": "%",
+              "chordQuality": "%",
+              "isSeventhChord": false
+            }
+          ]
+        },
+        {
+          "_id": "602dd1da9cf26362c2114b11",
+          "chords": [
+            {
+              "_id": "602dd1da9cf26362c2114b12",
+              "functionalNumber": "4",
+              "chordQuality": "Dominant",
+              "isSeventhChord": true
+            },
+            {
+              "_id": "602dd1da9cf26362c2114b13",
+              "functionalNumber": "%",
+              "chordQuality": "%",
+              "isSeventhChord": false
+            },
+            {
+              "_id": "602dd1da9cf26362c2114b14",
+              "functionalNumber": "%",
+              "chordQuality": "%",
+              "isSeventhChord": false
+            },
+            {
+              "_id": "602dd1da9cf26362c2114b15",
+              "functionalNumber": "%",
+              "chordQuality": "%",
+              "isSeventhChord": false
+            }
+          ]
+        },
+        {
+          "_id": "602dd1da9cf26362c2114b16",
+          "chords": [
+            {
+              "_id": "602dd1da9cf26362c2114b17",
+              "functionalNumber": "1",
+              "chordQuality": "Dominant",
+              "isSeventhChord": true
+            },
+            {
+              "_id": "602dd1da9cf26362c2114b18",
+              "functionalNumber": "%",
+              "chordQuality": "%",
+              "isSeventhChord": false
+            },
+            {
+              "_id": "602dd1da9cf26362c2114b19",
+              "functionalNumber": "%",
+              "chordQuality": "%",
+              "isSeventhChord": false
+            },
+            {
+              "_id": "602dd1da9cf26362c2114b1a",
+              "functionalNumber": "%",
+              "chordQuality": "%",
+              "isSeventhChord": false
+            }
+          ]
+        },
+        {
+          "_id": "602dd1da9cf26362c2114b1b",
+          "chords": [
+            {
+              "_id": "602dd1da9cf26362c2114b1c",
+              "functionalNumber": "%",
+              "chordQuality": "%",
+              "isSeventhChord": false
+            },
+            {
+              "_id": "602dd1da9cf26362c2114b1d",
+              "functionalNumber": "%",
+              "chordQuality": "%",
+              "isSeventhChord": false
+            },
+            {
+              "_id": "602dd1da9cf26362c2114b1e",
+              "functionalNumber": "%",
+              "chordQuality": "%",
+              "isSeventhChord": false
+            },
+            {
+              "_id": "602dd1da9cf26362c2114b1f",
+              "functionalNumber": "%",
+              "chordQuality": "%",
+              "isSeventhChord": false
+            }
+          ]
+        },
+        {
+          "_id": "602dd1da9cf26362c2114b20",
+          "chords": [
+            {
+              "_id": "602dd1da9cf26362c2114b21",
+              "functionalNumber": "4",
+              "chordQuality": "Dominant",
+              "isSeventhChord": true
+            },
+            {
+              "_id": "602dd1da9cf26362c2114b22",
+              "functionalNumber": "%",
+              "chordQuality": "%",
+              "isSeventhChord": false
+            },
+            {
+              "_id": "602dd1da9cf26362c2114b23",
+              "functionalNumber": "%",
+              "chordQuality": "%",
+              "isSeventhChord": false
+            },
+            {
+              "_id": "602dd1da9cf26362c2114b24",
+              "functionalNumber": "%",
+              "chordQuality": "%",
+              "isSeventhChord": false
+            }
+          ]
+        },
+        {
+          "_id": "602dd1da9cf26362c2114b25",
+          "chords": [
+            {
+              "_id": "602dd1da9cf26362c2114b26",
+              "functionalNumber": "%",
+              "chordQuality": "%",
+              "isSeventhChord": false
+            },
+            {
+              "_id": "602dd1da9cf26362c2114b27",
+              "functionalNumber": "%",
+              "chordQuality": "%",
+              "isSeventhChord": false
+            },
+            {
+              "_id": "602dd1da9cf26362c2114b28",
+              "functionalNumber": "%",
+              "chordQuality": "%",
+              "isSeventhChord": false
+            },
+            {
+              "_id": "602dd1da9cf26362c2114b29",
+              "functionalNumber": "%",
+              "chordQuality": "%",
+              "isSeventhChord": false
+            }
+          ]
+        },
+        {
+          "_id": "602dd1da9cf26362c2114b2a",
+          "chords": [
+            {
+              "_id": "602dd1da9cf26362c2114b2b",
+              "functionalNumber": "1",
+              "chordQuality": "Dominant",
+              "isSeventhChord": true
+            },
+            {
+              "_id": "602dd1da9cf26362c2114b2c",
+              "functionalNumber": "%",
+              "chordQuality": "%",
+              "isSeventhChord": false
+            },
+            {
+              "_id": "602dd1da9cf26362c2114b2d",
+              "functionalNumber": "%",
+              "chordQuality": "%",
+              "isSeventhChord": false
+            },
+            {
+              "_id": "602dd1da9cf26362c2114b2e",
+              "functionalNumber": "%",
+              "chordQuality": "%",
+              "isSeventhChord": false
+            }
+          ]
+        },
+        {
+          "_id": "602dd1da9cf26362c2114b2f",
+          "chords": [
+            {
+              "_id": "602dd1da9cf26362c2114b30",
+              "functionalNumber": "3",
+              "chordQuality": "Half Diminished",
+              "isSeventhChord": true
+            },
+            {
+              "_id": "602dd1da9cf26362c2114b31",
+              "functionalNumber": "%",
+              "chordQuality": "%",
+              "isSeventhChord": false
+            },
+            {
+              "_id": "602dd1da9cf26362c2114b32",
+              "functionalNumber": "6",
+              "chordQuality": "Dominant",
+              "isSeventhChord": true
+            },
+            {
+              "_id": "602dd1da9cf26362c2114b33",
+              "functionalNumber": "%",
+              "chordQuality": "%",
+              "isSeventhChord": false
+            }
+          ]
+        },
+        {
+          "_id": "602dd1da9cf26362c2114b34",
+          "chords": [
+            {
+              "_id": "602dd1da9cf26362c2114b35",
+              "functionalNumber": "2",
+              "chordQuality": "Minor",
+              "isSeventhChord": true
+            },
+            {
+              "_id": "602dd1da9cf26362c2114b36",
+              "functionalNumber": "%",
+              "chordQuality": "%",
+              "isSeventhChord": false
+            },
+            {
+              "_id": "602dd1da9cf26362c2114b37",
+              "functionalNumber": "%",
+              "chordQuality": "%",
+              "isSeventhChord": false
+            },
+            {
+              "_id": "602dd1da9cf26362c2114b38",
+              "functionalNumber": "%",
+              "chordQuality": "%",
+              "isSeventhChord": false
+            }
+          ]
+        },
+        {
+          "_id": "602dd1da9cf26362c2114b39",
+          "chords": [
+            {
+              "_id": "602dd1da9cf26362c2114b3a",
+              "functionalNumber": "5",
+              "chordQuality": "Dominant",
+              "isSeventhChord": true
+            },
+            {
+              "_id": "602dd1da9cf26362c2114b3b",
+              "functionalNumber": "%",
+              "chordQuality": "%",
+              "isSeventhChord": false
+            },
+            {
+              "_id": "602dd1da9cf26362c2114b3c",
+              "functionalNumber": "%",
+              "chordQuality": "%",
+              "isSeventhChord": false
+            },
+            {
+              "_id": "602dd1da9cf26362c2114b3d",
+              "functionalNumber": "%",
+              "chordQuality": "%",
+              "isSeventhChord": false
+            }
+          ]
+        },
+        {
+          "_id": "602dd1da9cf26362c2114b3e",
+          "chords": [
+            {
+              "_id": "602dd1da9cf26362c2114b3f",
+              "functionalNumber": "1",
+              "chordQuality": "Dominant",
+              "isSeventhChord": true
+            },
+            {
+              "_id": "602dd1da9cf26362c2114b40",
+              "functionalNumber": "%",
+              "chordQuality": "%",
+              "isSeventhChord": false
+            },
+            {
+              "_id": "602dd1da9cf26362c2114b41",
+              "functionalNumber": "6",
+              "chordQuality": "Dominant",
+              "isSeventhChord": true
+            },
+            {
+              "_id": "602dd1da9cf26362c2114b42",
+              "functionalNumber": "%",
+              "chordQuality": "%",
+              "isSeventhChord": false
+            }
+          ]
+        },
+        {
+          "_id": "602dd1da9cf26362c2114b43",
+          "chords": [
+            {
+              "_id": "602dd1da9cf26362c2114b44",
+              "functionalNumber": "2",
+              "chordQuality": "Minor",
+              "isSeventhChord": true
+            },
+            {
+              "_id": "602dd1da9cf26362c2114b45",
+              "functionalNumber": "%",
+              "chordQuality": "%",
+              "isSeventhChord": false
+            },
+            {
+              "_id": "602dd1da9cf26362c2114b46",
+              "functionalNumber": "5",
+              "chordQuality": "Dominant",
+              "isSeventhChord": true
+            },
+            {
+              "_id": "602dd1da9cf26362c2114b47",
+              "functionalNumber": "%",
+              "chordQuality": "%",
+              "isSeventhChord": false
+            }
+          ]
+        }
+      ],
+      "beatsPerMeasure": 4,
+      "noteValuePerBeat": 4,
+      "genre": "Blues",
+      "__v": 0
+    },
+    {
+      "_id": "602dd2c49cf26362c2114b48",
+      "name": "Blues in Hoss Flatkl",
+      "defaultKey": "Db",
+      "numberOfBars": 12,
+      "bars": [
+        {
+          "_id": "602dd2c49cf26362c2114b49",
+          "chords": [
+            {
+              "_id": "602dd2c49cf26362c2114b4a",
+              "functionalNumber": "1",
+              "chordQuality": "Dominant",
+              "isSeventhChord": true
+            },
+            {
+              "_id": "602dd2c49cf26362c2114b4b",
+              "functionalNumber": "%",
+              "chordQuality": "%",
+              "isSeventhChord": false
+            },
+            {
+              "_id": "602dd2c49cf26362c2114b4c",
+              "functionalNumber": "%",
+              "chordQuality": "%",
+              "isSeventhChord": false
+            },
+            {
+              "_id": "602dd2c49cf26362c2114b4d",
+              "functionalNumber": "%",
+              "chordQuality": "%",
+              "isSeventhChord": false
+            }
+          ]
+        },
+        {
+          "_id": "602dd2c49cf26362c2114b4e",
+          "chords": [
+            {
+              "_id": "602dd2c49cf26362c2114b4f",
+              "functionalNumber": "4",
+              "chordQuality": "Dominant",
+              "isSeventhChord": true
+            },
+            {
+              "_id": "602dd2c49cf26362c2114b50",
+              "functionalNumber": "%",
+              "chordQuality": "%",
+              "isSeventhChord": false
+            },
+            {
+              "_id": "602dd2c49cf26362c2114b51",
+              "functionalNumber": "%",
+              "chordQuality": "%",
+              "isSeventhChord": false
+            },
+            {
+              "_id": "602dd2c49cf26362c2114b52",
+              "functionalNumber": "%",
+              "chordQuality": "%",
+              "isSeventhChord": false
+            }
+          ]
+        },
+        {
+          "_id": "602dd2c49cf26362c2114b53",
+          "chords": [
+            {
+              "_id": "602dd2c49cf26362c2114b54",
+              "functionalNumber": "1",
+              "chordQuality": "Dominant",
+              "isSeventhChord": true
+            },
+            {
+              "_id": "602dd2c49cf26362c2114b55",
+              "functionalNumber": "%",
+              "chordQuality": "%",
+              "isSeventhChord": false
+            },
+            {
+              "_id": "602dd2c49cf26362c2114b56",
+              "functionalNumber": "%",
+              "chordQuality": "%",
+              "isSeventhChord": false
+            },
+            {
+              "_id": "602dd2c49cf26362c2114b57",
+              "functionalNumber": "%",
+              "chordQuality": "%",
+              "isSeventhChord": false
+            }
+          ]
+        },
+        {
+          "_id": "602dd2c49cf26362c2114b58",
+          "chords": [
+            {
+              "_id": "602dd2c49cf26362c2114b59",
+              "functionalNumber": "%",
+              "chordQuality": "%",
+              "isSeventhChord": false
+            },
+            {
+              "_id": "602dd2c49cf26362c2114b5a",
+              "functionalNumber": "%",
+              "chordQuality": "%",
+              "isSeventhChord": false
+            },
+            {
+              "_id": "602dd2c49cf26362c2114b5b",
+              "functionalNumber": "%",
+              "chordQuality": "%",
+              "isSeventhChord": false
+            },
+            {
+              "_id": "602dd2c49cf26362c2114b5c",
+              "functionalNumber": "%",
+              "chordQuality": "%",
+              "isSeventhChord": false
+            }
+          ]
+        },
+        {
+          "_id": "602dd2c49cf26362c2114b5d",
+          "chords": [
+            {
+              "_id": "602dd2c49cf26362c2114b5e",
+              "functionalNumber": "4",
+              "chordQuality": "Dominant",
+              "isSeventhChord": true
+            },
+            {
+              "_id": "602dd2c49cf26362c2114b5f",
+              "functionalNumber": "%",
+              "chordQuality": "%",
+              "isSeventhChord": false
+            },
+            {
+              "_id": "602dd2c49cf26362c2114b60",
+              "functionalNumber": "%",
+              "chordQuality": "%",
+              "isSeventhChord": false
+            },
+            {
+              "_id": "602dd2c49cf26362c2114b61",
+              "functionalNumber": "%",
+              "chordQuality": "%",
+              "isSeventhChord": false
+            }
+          ]
+        },
+        {
+          "_id": "602dd2c49cf26362c2114b62",
+          "chords": [
+            {
+              "_id": "602dd2c49cf26362c2114b63",
+              "functionalNumber": "%",
+              "chordQuality": "%",
+              "isSeventhChord": false
+            },
+            {
+              "_id": "602dd2c49cf26362c2114b64",
+              "functionalNumber": "%",
+              "chordQuality": "%",
+              "isSeventhChord": false
+            },
+            {
+              "_id": "602dd2c49cf26362c2114b65",
+              "functionalNumber": "%",
+              "chordQuality": "%",
+              "isSeventhChord": false
+            },
+            {
+              "_id": "602dd2c49cf26362c2114b66",
+              "functionalNumber": "%",
+              "chordQuality": "%",
+              "isSeventhChord": false
+            }
+          ]
+        },
+        {
+          "_id": "602dd2c49cf26362c2114b67",
+          "chords": [
+            {
+              "_id": "602dd2c49cf26362c2114b68",
+              "functionalNumber": "1",
+              "chordQuality": "Dominant",
+              "isSeventhChord": true
+            },
+            {
+              "_id": "602dd2c49cf26362c2114b69",
+              "functionalNumber": "%",
+              "chordQuality": "%",
+              "isSeventhChord": false
+            },
+            {
+              "_id": "602dd2c49cf26362c2114b6a",
+              "functionalNumber": "%",
+              "chordQuality": "%",
+              "isSeventhChord": false
+            },
+            {
+              "_id": "602dd2c49cf26362c2114b6b",
+              "functionalNumber": "%",
+              "chordQuality": "%",
+              "isSeventhChord": false
+            }
+          ]
+        },
+        {
+          "_id": "602dd2c49cf26362c2114b6c",
+          "chords": [
+            {
+              "_id": "602dd2c49cf26362c2114b6d",
+              "functionalNumber": "3",
+              "chordQuality": "Half Diminished",
+              "isSeventhChord": true
+            },
+            {
+              "_id": "602dd2c49cf26362c2114b6e",
+              "functionalNumber": "%",
+              "chordQuality": "%",
+              "isSeventhChord": false
+            },
+            {
+              "_id": "602dd2c49cf26362c2114b6f",
+              "functionalNumber": "6",
+              "chordQuality": "Dominant",
+              "isSeventhChord": true
+            },
+            {
+              "_id": "602dd2c49cf26362c2114b70",
+              "functionalNumber": "%",
+              "chordQuality": "%",
+              "isSeventhChord": false
+            }
+          ]
+        },
+        {
+          "_id": "602dd2c49cf26362c2114b71",
+          "chords": [
+            {
+              "_id": "602dd2c49cf26362c2114b72",
+              "functionalNumber": "2",
+              "chordQuality": "Minor",
+              "isSeventhChord": true
+            },
+            {
+              "_id": "602dd2c49cf26362c2114b73",
+              "functionalNumber": "%",
+              "chordQuality": "%",
+              "isSeventhChord": false
+            },
+            {
+              "_id": "602dd2c49cf26362c2114b74",
+              "functionalNumber": "%",
+              "chordQuality": "%",
+              "isSeventhChord": false
+            },
+            {
+              "_id": "602dd2c49cf26362c2114b75",
+              "functionalNumber": "%",
+              "chordQuality": "%",
+              "isSeventhChord": false
+            }
+          ]
+        },
+        {
+          "_id": "602dd2c49cf26362c2114b76",
+          "chords": [
+            {
+              "_id": "602dd2c49cf26362c2114b77",
+              "functionalNumber": "5",
+              "chordQuality": "Dominant",
+              "isSeventhChord": true
+            },
+            {
+              "_id": "602dd2c49cf26362c2114b78",
+              "functionalNumber": "%",
+              "chordQuality": "%",
+              "isSeventhChord": false
+            },
+            {
+              "_id": "602dd2c49cf26362c2114b79",
+              "functionalNumber": "%",
+              "chordQuality": "%",
+              "isSeventhChord": false
+            },
+            {
+              "_id": "602dd2c49cf26362c2114b7a",
+              "functionalNumber": "%",
+              "chordQuality": "%",
+              "isSeventhChord": false
+            }
+          ]
+        },
+        {
+          "_id": "602dd2c49cf26362c2114b7b",
+          "chords": [
+            {
+              "_id": "602dd2c49cf26362c2114b7c",
+              "functionalNumber": "1",
+              "chordQuality": "Dominant",
+              "isSeventhChord": true
+            },
+            {
+              "_id": "602dd2c49cf26362c2114b7d",
+              "functionalNumber": "%",
+              "chordQuality": "%",
+              "isSeventhChord": false
+            },
+            {
+              "_id": "602dd2c49cf26362c2114b7e",
+              "functionalNumber": "6",
+              "chordQuality": "Dominant",
+              "isSeventhChord": true
+            },
+            {
+              "_id": "602dd2c49cf26362c2114b7f",
+              "functionalNumber": "%",
+              "chordQuality": "%",
+              "isSeventhChord": false
+            }
+          ]
+        },
+        {
+          "_id": "602dd2c49cf26362c2114b80",
+          "chords": [
+            {
+              "_id": "602dd2c49cf26362c2114b81",
+              "functionalNumber": "2",
+              "chordQuality": "Minor",
+              "isSeventhChord": true
+            },
+            {
+              "_id": "602dd2c49cf26362c2114b82",
+              "functionalNumber": "%",
+              "chordQuality": "%",
+              "isSeventhChord": false
+            },
+            {
+              "_id": "602dd2c49cf26362c2114b83",
+              "functionalNumber": "5",
+              "chordQuality": "Dominant",
+              "isSeventhChord": true
+            },
+            {
+              "_id": "602dd2c49cf26362c2114b84",
+              "functionalNumber": "%",
+              "chordQuality": "%",
+              "isSeventhChord": false
+            }
+          ]
+        }
+      ],
+      "beatsPerMeasure": 4,
+      "noteValuePerBeat": 4,
+      "genre": "Blues",
+      "__v": 0
+    }
+  ]
+}
