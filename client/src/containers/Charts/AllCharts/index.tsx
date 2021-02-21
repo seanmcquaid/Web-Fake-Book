@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useMemo, useReducer } from 'react';
+import { useEffect, useReducer } from 'react';
 import styled from 'styled-components';
 import Button from '../../../components/Button';
 import TextInput from '../../../components/TextInput';
@@ -25,15 +25,10 @@ const initialState: AllChartsStateTypes = {
 
 const AllCharts: React.FC = () => {
   const [state, dispatch] = useReducer(reducer, initialState);
-  const searchText = useMemo(() => state.searchText, [state.searchText]);
-  const filteredCharts = useMemo(() => state.filteredCharts, [
-    state.filteredCharts,
-  ]);
-  const currentPage = useMemo(() => state.currentPage, [state.currentPage]);
-  const totalPages = useMemo(() => state.totalPages, [state.totalPages]);
-  const currentCharts = useMemo(
-    () => filteredCharts.slice(currentPage * 5, (currentPage + 1) * 5),
-    [filteredCharts, currentPage]
+  const { searchText, filteredCharts, currentPage, totalPages } = state;
+  const currentCharts = filteredCharts.slice(
+    currentPage * 5,
+    (currentPage + 1) * 5
   );
 
   useEffect(() => {
@@ -50,18 +45,18 @@ const AllCharts: React.FC = () => {
     );
   }, []);
 
-  const onChange = useCallback((event: React.ChangeEvent<HTMLInputElement>) => {
+  const onChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const searchValue = event.currentTarget.value;
     dispatch(searchTextAction(searchValue));
-  }, []);
+  };
 
-  const nextPageButtonOnClick = useCallback(() => {
+  const nextPageButtonOnClick = () => {
     dispatch(incrementPageAction());
-  }, []);
+  };
 
-  const prevPageButtonOnClick = useCallback(() => {
+  const prevPageButtonOnClick = () => {
     dispatch(decrementPageAction());
-  }, []);
+  };
 
   return (
     <>

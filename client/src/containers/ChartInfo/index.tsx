@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useMemo, useReducer } from 'react';
+import { useEffect, useReducer } from 'react';
 import { useHistory, useParams } from 'react-router-dom';
 import styled from 'styled-components';
 import Button from '../../components/Button';
@@ -53,17 +53,11 @@ const ChartInfo: React.FC = () => {
   const { id } = useParams<ParamTypes>();
   const history = useHistory();
   const [state, dispatch] = useReducer(reducer, initialState);
-  const isLoading = useMemo(() => state.isLoading, [state.isLoading]);
-  const selectedKey = useMemo(() => state.selectedKey, [state.selectedKey]);
-  const chartInfo = useMemo(() => state.chartInfo, [state.chartInfo]);
-  const name = useMemo(() => chartInfo.name, [chartInfo.name]);
-  const beatsPerMeasure = useMemo(() => chartInfo.beatsPerMeasure, [
-    chartInfo.beatsPerMeasure,
-  ]);
-  const noteValuePerBeat = useMemo(() => chartInfo.noteValuePerBeat, [
-    chartInfo.noteValuePerBeat,
-  ]);
-  const bars = useMemo(() => chartInfo.bars, [chartInfo.bars]);
+  const {
+    isLoading,
+    selectedKey,
+    chartInfo: { name, bars, beatsPerMeasure, noteValuePerBeat },
+  } = state;
 
   useEffect(() => {
     dispatch(loadingChartInfoAction());
@@ -95,7 +89,7 @@ const ChartInfo: React.FC = () => {
     );
   };
 
-  const deleteButtonOnClick = useCallback(() => {
+  const deleteButtonOnClick = () => {
     deleteChart(id).subscribe(
       (resp) => {
         history.push('/charts');
@@ -104,7 +98,7 @@ const ChartInfo: React.FC = () => {
         throw err;
       }
     );
-  }, [id, history]);
+  };
 
   if (isLoading) {
     return <div>LOADING</div>;

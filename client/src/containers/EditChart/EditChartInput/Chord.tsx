@@ -1,4 +1,3 @@
-import { memo, useCallback } from 'react';
 import styled from 'styled-components';
 import Checkbox from '../../../components/Checkbox';
 import Dropdown from '../../../components/Dropdown';
@@ -47,54 +46,49 @@ type ChordProps = {
   ) => void;
 };
 
-const Chord: React.FC<ChordProps> = memo(
-  ({
-    barIndex,
-    beatIndex,
-    functionalNumber,
-    chordQuality,
-    isSeventhChord,
-    updateChord,
-  }) => {
-    const onChange = useCallback(
-      (event: React.ChangeEvent<HTMLSelectElement | HTMLInputElement>) => {
-        const key: string = event.currentTarget.name;
-        const value: string | boolean =
-          key === 'isSeventhChord'
-            ? !isSeventhChord
-            : event.currentTarget.value;
-        updateChord(barIndex, beatIndex, key, value);
-      },
-      [barIndex, beatIndex, isSeventhChord, updateChord]
-    );
+const Chord: React.FC<ChordProps> = ({
+  barIndex,
+  beatIndex,
+  functionalNumber,
+  chordQuality,
+  isSeventhChord,
+  updateChord,
+}) => {
+  const onChange = (
+    event: React.ChangeEvent<HTMLSelectElement | HTMLInputElement>
+  ) => {
+    const key: string = event.currentTarget.name;
+    const value: string | boolean =
+      key === 'isSeventhChord' ? !isSeventhChord : event.currentTarget.value;
+    updateChord(barIndex, beatIndex, key, value);
+  };
 
-    return (
-      <StyledChord data-testid={`bar${barIndex + 1}beat${beatIndex + 1}`}>
-        {`Beat ${beatIndex + 1}`}
-        <Dropdown
-          onChange={onChange}
-          name="functionalNumber"
-          value={functionalNumber}
-          options={functionalNumberOptions}
-          label="Func Num"
-        />
-        <Dropdown
-          onChange={onChange}
-          name="chordQuality"
-          value={chordQuality}
-          options={chordQualityOptions}
-          label="Quality"
-        />
-        <Checkbox
-          onChange={onChange}
-          name="isSeventhChord"
-          checked={isSeventhChord}
-          label="7th Chord?"
-        />
-      </StyledChord>
-    );
-  }
-);
+  return (
+    <StyledChord data-testid={`bar${barIndex + 1}beat${beatIndex + 1}`}>
+      {`Beat ${beatIndex + 1}`}
+      <Dropdown
+        onChange={onChange}
+        name="functionalNumber"
+        value={functionalNumber}
+        options={functionalNumberOptions}
+        label="Func Num"
+      />
+      <Dropdown
+        onChange={onChange}
+        name="chordQuality"
+        value={chordQuality}
+        options={chordQualityOptions}
+        label="Quality"
+      />
+      <Checkbox
+        onChange={onChange}
+        name="isSeventhChord"
+        checked={isSeventhChord}
+        label="7th Chord?"
+      />
+    </StyledChord>
+  );
+};
 
 const StyledChord = styled.li`
   list-style: none;

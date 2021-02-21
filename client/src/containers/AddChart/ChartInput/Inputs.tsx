@@ -1,4 +1,3 @@
-import { useCallback } from 'react';
 import styled from 'styled-components';
 import Dropdown from '../../../components/Dropdown';
 import TextInput from '../../../components/TextInput';
@@ -54,13 +53,12 @@ const Inputs: React.FC<InputsPropTypes> = ({
   noteValuePerBeat,
   genre,
 }) => {
-  const onChange = useCallback(
-    (event: React.ChangeEvent<HTMLSelectElement | HTMLInputElement>) => {
-      const { name, value } = event.currentTarget;
-      valueOnChange(name, value);
-    },
-    [valueOnChange]
-  );
+  const onChange = (
+    event: React.ChangeEvent<HTMLSelectElement | HTMLInputElement>
+  ) => {
+    const { name, value } = event.currentTarget;
+    valueOnChange(name, value);
+  };
 
   return (
     <InputsContainer>

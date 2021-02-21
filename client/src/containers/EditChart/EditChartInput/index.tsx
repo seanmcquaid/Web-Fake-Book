@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useMemo, useReducer } from 'react';
+import { useEffect, useReducer } from 'react';
 import styled from 'styled-components';
 import Chord from './Chord';
 import { nanoid } from 'nanoid';
@@ -34,9 +34,11 @@ type ParamTypes = {
 const EditChartInput: React.FC = () => {
   const { id } = useParams<ParamTypes>();
   const [state, dispatch] = useReducer(reducer, initialState);
-  const isLoading = useMemo(() => state.isLoading, [state.isLoading]);
-  const bars = useMemo(() => state.chartInfo.bars, [state.chartInfo.bars]);
-  const name = useMemo(() => state.chartInfo.name, [state.chartInfo.name]);
+  const {
+    isLoading,
+    chartInfo: { bars, name },
+  } = state;
+
   const history = useHistory();
 
   useEffect(() => {
@@ -52,7 +54,7 @@ const EditChartInput: React.FC = () => {
     );
   }, [id]);
 
-  const editButtonOnClick = useCallback(() => {
+  const editButtonOnClick = () => {
     editChart(id, state.chartInfo).subscribe(
       (resp) => {
         history.push('/charts');
@@ -61,19 +63,16 @@ const EditChartInput: React.FC = () => {
         throw err;
       }
     );
-  }, [id, state.chartInfo, history]);
+  };
 
-  const updateChord = useCallback(
-    (
-      barIndex: number,
-      beatIndex: number,
-      key: string,
-      value: string | boolean
-    ) => {
-      dispatch(updateChordInBarAction(barIndex, beatIndex, key, value));
-    },
-    []
-  );
+  const updateChord = (
+    barIndex: number,
+    beatIndex: number,
+    key: string,
+    value: string | boolean
+  ) => {
+    dispatch(updateChordInBarAction(barIndex, beatIndex, key, value));
+  };
 
   if (isLoading) {
     return <div>LOADING</div>;
