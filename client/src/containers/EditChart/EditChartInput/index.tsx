@@ -9,9 +9,9 @@ import { useHistory, useParams } from 'react-router-dom';
 import { EditChartInputStateTypes } from './reducer/types';
 import reducer from './reducer';
 import {
-  loadChartSuccess,
-  loadingChart,
-  updateChordInBar,
+  loadChartSuccessAction,
+  loadingChartAction,
+  updateChordInBarAction,
 } from './reducer/actions';
 
 const initialState: EditChartInputStateTypes = {
@@ -40,11 +40,11 @@ const EditChartInput: React.FC = () => {
   const history = useHistory();
 
   useEffect(() => {
-    dispatch(loadingChart());
+    dispatch(loadingChartAction());
 
     getChartInfo(id).subscribe(
       ({ data }) => {
-        dispatch(loadChartSuccess(data.chart as any));
+        dispatch(loadChartSuccessAction(data.chart as any));
       },
       (err) => {
         throw err;
@@ -70,7 +70,7 @@ const EditChartInput: React.FC = () => {
       key: string,
       value: string | boolean
     ) => {
-      dispatch(updateChordInBar(barIndex, beatIndex, key, value));
+      dispatch(updateChordInBarAction(barIndex, beatIndex, key, value));
     },
     []
   );

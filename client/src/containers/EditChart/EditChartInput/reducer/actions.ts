@@ -1,11 +1,11 @@
 import { ChartInfoTypes } from '../../../../types/chartTypes';
 import { EditChartInputActions, EditChartInputActionTypes } from './types';
 
-export const loadingChart = (): EditChartInputActionTypes => ({
+export const loadingChartAction = (): EditChartInputActionTypes => ({
   type: EditChartInputActions.LOADING,
 });
 
-export const updateChordInBar = (
+export const updateChordInBarAction = (
   barIndex: number,
   beatIndex: number,
   key: string,
@@ -20,7 +20,7 @@ export const updateChordInBar = (
   },
 });
 
-export const loadChartSuccess = (
+export const loadChartSuccessAction = (
   chartInfo: ChartInfoTypes
 ): EditChartInputActionTypes => ({
   type: EditChartInputActions.LOAD_CHART_SUCCESS,
