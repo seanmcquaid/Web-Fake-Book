@@ -5,9 +5,15 @@ import Button from '../../components/Button';
 import Dropdown from '../../components/Dropdown';
 import LinkButton from '../../components/LinkButton';
 import H1 from '../../components/Typography/H1';
-import { ChartInfoTypes } from '../../types/chartTypes';
 import { deleteChart, getChartInfo } from '../../services';
 import Chart from './Chart';
+import reducer from './reducer';
+import {
+  changeKeyAction,
+  loadChartInfoSuccess,
+  loadingChartInfoAction,
+} from './reducer/actions';
+import { ChartInfoStateTypes } from './reducer/types';
 
 const keyOptions = [
   'C',
@@ -24,19 +30,7 @@ const keyOptions = [
   'G',
 ];
 
-type State = {
-  isLoading: boolean;
-  selectedKey: string;
-  errorMessage: string;
-  chartInfo: ChartInfoTypes;
-};
-
-type Action =
-  | { type: 'LOADING' }
-  | { type: 'SUCCESS'; payload: { chartInfo: ChartInfoTypes; key: string } }
-  | { type: 'CHANGE_KEY'; payload: { key: string } };
-
-const initialState = {
+const initialState: ChartInfoStateTypes = {
   isLoading: false,
   selectedKey: 'C',
   errorMessage: '',
@@ -49,30 +43,6 @@ const initialState = {
     noteValuePerBeat: 4,
     genre: 'Standard',
   },
-};
-
-const reducer = (state: State, action: Action) => {
-  switch (action.type) {
-    case 'LOADING':
-      return { ...state, isLoading: true };
-    case 'CHANGE_KEY':
-      return {
-        ...state,
-        isLoading: true,
-        selectedKey: action.payload.key,
-      };
-    case 'SUCCESS':
-      return {
-        ...state,
-        isLoading: false,
-        chartInfo: action.payload.chartInfo,
-        selectedKey: action.payload.key,
-      };
-    default:
-      return {
-        ...state,
-      };
-  }
 };
 
 type ParamTypes = {
@@ -96,13 +66,13 @@ const ChartInfo: React.FC = () => {
   const bars = useMemo(() => chartInfo.bars, [chartInfo.bars]);
 
   useEffect(() => {
-    dispatch({ type: 'LOADING' });
+    dispatch(loadingChartInfoAction());
 
     getChartInfo(id).subscribe(
       (resp) => {
         const chartInfo = resp.data.chart;
         const key = resp.data.currentKey;
-        dispatch({ type: 'SUCCESS', payload: { chartInfo, key } });
+        dispatch(loadChartInfoSuccess(chartInfo, key));
       },
       (err) => {
         throw err;
@@ -112,15 +82,12 @@ const ChartInfo: React.FC = () => {
 
   const onChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
     const key = event.currentTarget.value;
-    dispatch({
-      type: 'CHANGE_KEY',
-      payload: { key },
-    });
+    dispatch(changeKeyAction(key));
     getChartInfo(id, key).subscribe(
       (resp) => {
         const chartInfo = resp.data.chart;
         const key = resp.data.currentKey;
-        dispatch({ type: 'SUCCESS', payload: { chartInfo, key } });
+        dispatch(loadChartInfoSuccess(chartInfo, key));
       },
       (err) => {
         throw err;
