@@ -1,9 +1,7 @@
-import { useCallback, useContext, useMemo } from 'react';
+import { useCallback } from 'react';
 import styled from 'styled-components';
 import Dropdown from '../../../components/Dropdown';
 import TextInput from '../../../components/TextInput';
-import { AddChartContext } from '../../../context/AddChartContext';
-import { setValue } from '../../../context/AddChartContext/actions';
 
 const defaultKeyOptions = [
   'C',
@@ -37,25 +35,31 @@ const genreOptions = [
   'Swing',
 ];
 
-const Inputs: React.FC = () => {
-  const { state, dispatch } = useContext(AddChartContext);
-  const name = useMemo(() => state.name, [state.name]);
-  const defaultKey = useMemo(() => state.defaultKey, [state.defaultKey]);
-  const numberOfBars = useMemo(() => state.numberOfBars, [state.numberOfBars]);
-  const beatsPerMeasure = useMemo(() => state.beatsPerMeasure, [
-    state.beatsPerMeasure,
-  ]);
-  const noteValuePerBeat = useMemo(() => state.noteValuePerBeat, [
-    state.noteValuePerBeat,
-  ]);
-  const genre = useMemo(() => state.genre, [state.genre]);
+type InputsPropTypes = {
+  valueOnChange: (name: string, value: string | number) => void;
+  name: string;
+  defaultKey: string;
+  numberOfBars: number;
+  beatsPerMeasure: number;
+  noteValuePerBeat: number;
+  genre: string;
+};
 
+const Inputs: React.FC<InputsPropTypes> = ({
+  valueOnChange,
+  name,
+  defaultKey,
+  numberOfBars,
+  beatsPerMeasure,
+  noteValuePerBeat,
+  genre,
+}) => {
   const onChange = useCallback(
     (event: React.ChangeEvent<HTMLSelectElement | HTMLInputElement>) => {
       const { name, value } = event.currentTarget;
-      dispatch(setValue(name, value));
+      valueOnChange(name, value);
     },
-    [dispatch]
+    [valueOnChange]
   );
 
   return (

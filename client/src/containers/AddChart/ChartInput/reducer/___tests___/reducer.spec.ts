@@ -1,6 +1,6 @@
-import reducer from '../../AddChartContext/reducer';
-import { ChartInfoTypes } from '../../../types/chartTypes';
-import { Actions, ActionTypes } from '../../AddChartContext/types';
+import reducer from '../';
+import { ChartInfoTypes } from '../../../../../types/chartTypes';
+import { AddChartActions, AddChartActionTypes } from '../types';
 
 describe('Add Chart Context - Reducer', () => {
   describe('SET_VALUE', () => {
@@ -14,8 +14,8 @@ describe('Add Chart Context - Reducer', () => {
         noteValuePerBeat: 4,
         genre: 'Standard',
       };
-      const action: ActionTypes = {
-        type: Actions.SET_VALUE,
+      const action: AddChartActionTypes = {
+        type: AddChartActions.SET_VALUE,
         payload: {
           key: 'numberOfBars',
           value: 12,
@@ -38,8 +38,8 @@ describe('Add Chart Context - Reducer', () => {
         noteValuePerBeat: 4,
         genre: 'Standard',
       };
-      const action: ActionTypes = {
-        type: Actions.SET_VALUE,
+      const action: AddChartActionTypes = {
+        type: AddChartActions.SET_VALUE,
         payload: {
           key: 'beatsPerMeasure',
           value: 5,
@@ -61,8 +61,8 @@ describe('Add Chart Context - Reducer', () => {
         noteValuePerBeat: 4,
         genre: 'Standard',
       };
-      const action: ActionTypes = {
-        type: Actions.SET_VALUE,
+      const action: AddChartActionTypes = {
+        type: AddChartActions.SET_VALUE,
         payload: {
           key: 'beatsPerMeasure',
           value: 6,
@@ -102,8 +102,8 @@ describe('Add Chart Context - Reducer', () => {
       noteValuePerBeat: 4,
       genre: 'Standard',
     };
-    const action: ActionTypes = {
-      type: Actions.UPDATE_CHORD_IN_BAR,
+    const action: AddChartActionTypes = {
+      type: AddChartActions.UPDATE_CHORD_IN_BAR,
       payload: {
         key: 'functionalNumber',
         value: 'b2',
@@ -128,32 +128,6 @@ describe('Add Chart Context - Reducer', () => {
           ],
         },
       ],
-      beatsPerMeasure: 4,
-      noteValuePerBeat: 4,
-      genre: 'Standard',
-    });
-  });
-
-  it('ADD_CHART_SUCCESS clears state back to initial state', () => {
-    const state: ChartInfoTypes = {
-      name: 'HELLO',
-      defaultKey: 'C',
-      numberOfBars: 0,
-      bars: [],
-      beatsPerMeasure: 4,
-      noteValuePerBeat: 4,
-      genre: 'Standard',
-    };
-    const action: ActionTypes = {
-      type: Actions.ADD_CHART_SUCCESS,
-    };
-
-    const result = reducer(state, action);
-    expect(result).toEqual({
-      name: '',
-      defaultKey: 'C',
-      numberOfBars: 0,
-      bars: [],
       beatsPerMeasure: 4,
       noteValuePerBeat: 4,
       genre: 'Standard',

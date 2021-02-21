@@ -2,20 +2,52 @@ import styled from 'styled-components';
 import Inputs from './Inputs';
 import Chart from './Chart';
 import Button from '../../../components/Button';
-import { useContext } from 'react';
-import { AddChartContext } from '../../../context/AddChartContext';
+import { useReducer } from 'react';
 import { postAddChart } from '../../../services';
-import { addChartSuccess } from '../../../context/AddChartContext/actions';
 import { useHistory } from 'react-router-dom';
+import reducer from './reducer';
+import { ChartInfoTypes } from '../../../types/chartTypes';
+import { setValueAction, updateChordInBarAction } from './reducer/actions';
+
+const initialState: ChartInfoTypes = {
+  name: '',
+  defaultKey: 'C',
+  numberOfBars: 0,
+  bars: [],
+  beatsPerMeasure: 4,
+  noteValuePerBeat: 4,
+  genre: 'Standard',
+};
 
 const ChartInput: React.FC = () => {
-  const { state, dispatch } = useContext(AddChartContext);
+  const [state, dispatch] = useReducer(reducer, initialState);
+  const {
+    name,
+    defaultKey,
+    numberOfBars,
+    bars,
+    beatsPerMeasure,
+    noteValuePerBeat,
+    genre,
+  } = state;
   const history = useHistory();
 
-  const onClick = () => {
+  const inputValueOnChange = (name: string, value: string | number) => {
+    dispatch(setValueAction(name, value));
+  };
+
+  const updateChordOnChange = (
+    barIndex: number,
+    beatIndex: number,
+    name: string,
+    value: string | boolean
+  ) => {
+    dispatch(updateChordInBarAction(barIndex, beatIndex, name, value));
+  };
+
+  const addChartButtonOnClick = () => {
     postAddChart({ ...state }).subscribe(
       (resp) => {
-        dispatch(addChartSuccess());
         history.push('/charts');
       },
       (err) => {
@@ -26,11 +58,19 @@ const ChartInput: React.FC = () => {
 
   return (
     <ChartInputContainer>
-      <Inputs />
-      <Button type="button" onClick={onClick}>
+      <Inputs
+        valueOnChange={inputValueOnChange}
+        defaultKey={defaultKey}
+        numberOfBars={numberOfBars}
+        name={name}
+        noteValuePerBeat={noteValuePerBeat}
+        genre={genre}
+        beatsPerMeasure={beatsPerMeasure}
+      />
+      <Button type="button" onClick={addChartButtonOnClick}>
         Add This Chart
       </Button>
-      <Chart />
+      <Chart bars={bars} updateChordOnChange={updateChordOnChange} />
     </ChartInputContainer>
   );
 };

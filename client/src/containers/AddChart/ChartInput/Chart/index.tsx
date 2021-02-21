@@ -1,35 +1,40 @@
-import { memo, useContext, useMemo } from 'react';
 import styled from 'styled-components';
-import { AddChartContext } from '../../../../context/AddChartContext';
 import Chord from './Chord';
 import { nanoid } from 'nanoid';
+import { BarType } from '../../../../types/chartTypes';
 
-const Chart: React.FC = memo(() => {
-  const { state } = useContext(AddChartContext);
-  const bars = useMemo(() => state.bars, [state.bars]);
+type ChartPropTypes = {
+  bars: BarType[];
+  updateChordOnChange: (
+    barIndex: number,
+    beatIndex: number,
+    name: string,
+    value: string | boolean
+  ) => void;
+};
 
-  return (
-    <StyledChart>
-      {bars.map(({ chords }, barIndex) => (
-        <Bar key={nanoid()}>
-          Bar {barIndex + 1}
-          <Chords>
-            {chords.map((chord, beatIndex) => (
-              <Chord
-                key={nanoid()}
-                barIndex={barIndex}
-                beatIndex={beatIndex}
-                functionalNumber={chord.functionalNumber}
-                chordQuality={chord.chordQuality}
-                isSeventhChord={chord.isSeventhChord}
-              />
-            ))}
-          </Chords>
-        </Bar>
-      ))}
-    </StyledChart>
-  );
-});
+const Chart: React.FC<ChartPropTypes> = ({ bars, updateChordOnChange }) => (
+  <StyledChart>
+    {bars.map(({ chords }, barIndex) => (
+      <Bar key={nanoid()}>
+        Bar {barIndex + 1}
+        <Chords>
+          {chords.map((chord, beatIndex) => (
+            <Chord
+              key={nanoid()}
+              barIndex={barIndex}
+              beatIndex={beatIndex}
+              functionalNumber={chord.functionalNumber}
+              chordQuality={chord.chordQuality}
+              isSeventhChord={chord.isSeventhChord}
+              updateChordOnChange={updateChordOnChange}
+            />
+          ))}
+        </Chords>
+      </Bar>
+    ))}
+  </StyledChart>
+);
 
 const StyledChart = styled.ol``;
 
