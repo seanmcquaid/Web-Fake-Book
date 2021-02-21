@@ -1,7 +1,7 @@
 import { setValueAction, updateChordInBarAction } from '../actions';
 
-describe('Add Chart Context - Actions', () => {
-  it('SET_VALUE', () => {
+describe('Chart Input - Actions', () => {
+  it('setValueAction', () => {
     expect(setValueAction('numberOfBars', 12)).toEqual({
       type: 'SET_VALUE',
       payload: {
@@ -11,7 +11,7 @@ describe('Add Chart Context - Actions', () => {
     });
   });
 
-  it('UPDATE_CHORD_IN_BAR', () => {
+  it('updateChordInBarAction', () => {
     expect(updateChordInBarAction(0, 0, 'functionalNumber', 'b2')).toEqual({
       payload: {
         barIndex: 0,

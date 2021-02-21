@@ -2,7 +2,7 @@ import reducer from '../';
 import { ChartInfoTypes } from '../../../../../types/chartTypes';
 import { AddChartActions, AddChartActionTypes } from '../types';
 
-describe('Add Chart Context - Reducer', () => {
+describe('Chart Input - Reducer', () => {
   describe('SET_VALUE', () => {
     it('numberOfBars changes and adds the appropriate number of bars with the appropriate amount of chords', () => {
       const state: ChartInfoTypes = {
