@@ -1,6 +1,6 @@
 import styled from 'styled-components';
-import LinkButton from '../../components/LinkButton';
-import { ChartInfoTypes } from '../../types/chartTypes';
+import LinkButton from '../../../components/LinkButton';
+import { ChartInfoTypes } from '../../../types/chartTypes';
 
 type ChartsListProps = {
   charts: ChartInfoTypes[];
