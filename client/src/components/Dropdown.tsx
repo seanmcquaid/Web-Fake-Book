@@ -1,5 +1,4 @@
 import { nanoid } from 'nanoid';
-import { memo } from 'react';
 import styled from 'styled-components';
 
 type DropdownProps = {
@@ -10,24 +9,28 @@ type DropdownProps = {
   label?: string;
 };
 
-const Dropdown: React.FC<DropdownProps> = memo(
-  ({ onChange, value, options, name, label }) => (
-    <Label htmlFor={name}>
-      {label}
-      <StyledDropdown
-        onChange={onChange}
-        value={value}
-        name={name}
-        data-testid={`${name}Dropdown`}
-      >
-        {options.map((option: string | number) => (
-          <Option key={nanoid()} value={option}>
-            {option}
-          </Option>
-        ))}
-      </StyledDropdown>
-    </Label>
-  )
+const Dropdown: React.FC<DropdownProps> = ({
+  onChange,
+  value,
+  options,
+  name,
+  label,
+}) => (
+  <Label htmlFor={name}>
+    {label}
+    <StyledDropdown
+      onChange={onChange}
+      value={value}
+      name={name}
+      data-testid={`${name}Dropdown`}
+    >
+      {options.map((option: string | number) => (
+        <Option key={nanoid()} value={option}>
+          {option}
+        </Option>
+      ))}
+    </StyledDropdown>
+  </Label>
 );
 
 const Label = styled.label``;

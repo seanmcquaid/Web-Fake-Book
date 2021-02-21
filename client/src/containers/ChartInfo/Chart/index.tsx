@@ -1,5 +1,4 @@
 import { nanoid } from 'nanoid';
-import { memo } from 'react';
 import styled from 'styled-components';
 import { BarType } from '../../../types/chartTypes';
 import Bar from './Bar';
@@ -10,23 +9,25 @@ type ChartProps = {
   noteValuePerBeat: number;
 };
 
-const Chart: React.FC<ChartProps> = memo(
-  ({ bars, beatsPerMeasure, noteValuePerBeat }) => {
-    return (
-      <ChartContainer key={nanoid()}>
-        <TimeSignature>
-          <BeatsPerMeasure>{beatsPerMeasure}</BeatsPerMeasure>
-          <NoteValuePerBeat>{noteValuePerBeat}</NoteValuePerBeat>
-        </TimeSignature>
-        <Bars>
-          {bars.map(({ chords }) => (
-            <Bar chords={chords} key={nanoid()} />
-          ))}
-        </Bars>
-      </ChartContainer>
-    );
-  }
-);
+const Chart: React.FC<ChartProps> = ({
+  bars,
+  beatsPerMeasure,
+  noteValuePerBeat,
+}) => {
+  return (
+    <ChartContainer key={nanoid()}>
+      <TimeSignature>
+        <BeatsPerMeasure>{beatsPerMeasure}</BeatsPerMeasure>
+        <NoteValuePerBeat>{noteValuePerBeat}</NoteValuePerBeat>
+      </TimeSignature>
+      <Bars>
+        {bars.map(({ chords }) => (
+          <Bar chords={chords} key={nanoid()} />
+        ))}
+      </Bars>
+    </ChartContainer>
+  );
+};
 
 const ChartContainer = styled.div``;
 

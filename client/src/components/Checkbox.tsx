@@ -1,4 +1,3 @@
-import { memo } from 'react';
 import styled from 'styled-components';
 
 type CheckboxProps = {
@@ -8,18 +7,21 @@ type CheckboxProps = {
   name: string;
 };
 
-const Checkbox: React.FC<CheckboxProps> = memo(
-  ({ onChange, checked, label, name }) => (
-    <Label>
-      {label}
-      <StyledCheckbox
-        onChange={onChange}
-        type="checkbox"
-        checked={checked}
-        name={name}
-      />
-    </Label>
-  )
+const Checkbox: React.FC<CheckboxProps> = ({
+  onChange,
+  checked,
+  label,
+  name,
+}) => (
+  <Label>
+    {label}
+    <StyledCheckbox
+      onChange={onChange}
+      type="checkbox"
+      checked={checked}
+      name={name}
+    />
+  </Label>
 );
 
 const StyledCheckbox = styled.input``;

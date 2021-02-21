@@ -1,4 +1,3 @@
-import { memo } from 'react';
 import styled from 'styled-components';
 
 type TextInputProps = {
@@ -9,19 +8,23 @@ type TextInputProps = {
   placeholder?: string;
 };
 
-const TextInput: React.FC<TextInputProps> = memo(
-  ({ onChange, value, name, label, placeholder }) => (
-    <Label>
-      {label}
-      <StyledTextInput
-        onChange={onChange}
-        value={value}
-        name={name}
-        type="text"
-        placeholder={placeholder}
-      />
-    </Label>
-  )
+const TextInput: React.FC<TextInputProps> = ({
+  onChange,
+  value,
+  name,
+  label,
+  placeholder,
+}) => (
+  <Label>
+    {label}
+    <StyledTextInput
+      onChange={onChange}
+      value={value}
+      name={name}
+      type="text"
+      placeholder={placeholder}
+    />
+  </Label>
 );
 
 const Label = styled.label``;

@@ -1,4 +1,3 @@
-import { memo } from 'react';
 import styled from 'styled-components';
 
 type ButtonProps = {
@@ -7,12 +6,15 @@ type ButtonProps = {
   disabled?: boolean;
 };
 
-const Button: React.FC<ButtonProps> = memo(
-  ({ children, onClick, type, disabled }) => (
-    <StyledButton onClick={onClick} type={type} disabled={disabled}>
-      {children}
-    </StyledButton>
-  )
+const Button: React.FC<ButtonProps> = ({
+  children,
+  onClick,
+  type,
+  disabled,
+}) => (
+  <StyledButton onClick={onClick} type={type} disabled={disabled}>
+    {children}
+  </StyledButton>
 );
 
 const StyledButton = styled.button``;
