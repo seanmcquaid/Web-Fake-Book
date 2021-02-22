@@ -47,6 +47,11 @@ const reducer = (state: AllChartsStateTypes, action: AllChartsActionTypes) => {
           filteredCharts.length / 5 < 1 ? 0 : filteredCharts.length / 5
         ),
       };
+    case AllChartsActions.SET_ERROR_MESSAGE:
+      return {
+        ...state,
+        errorMessage: action.payload.errorMessage,
+      };
     default:
       return {
         ...state,

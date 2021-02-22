@@ -28,3 +28,10 @@ export const incrementPageAction = (): AllChartsActionTypes => ({
 export const decrementPageAction = (): AllChartsActionTypes => ({
   type: AllChartsActions.DECREMENT_PAGE,
 });
+
+export const setErrorMessageAction = (
+  errorMessage: string
+): AllChartsActionTypes => ({
+  type: AllChartsActions.SET_ERROR_MESSAGE,
+  payload: { errorMessage },
+});

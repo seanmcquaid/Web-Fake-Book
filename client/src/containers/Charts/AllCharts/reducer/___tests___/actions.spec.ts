@@ -4,6 +4,7 @@ import {
   loadAllChartsSuccessAction,
   loadingAllChartsAction,
   searchTextAction,
+  setErrorMessageAction,
 } from '../actions';
 
 describe('AllCharts - Actions', () => {
@@ -40,6 +41,15 @@ describe('AllCharts - Actions', () => {
   it('decrementPageAction', () => {
     expect(decrementPageAction()).toEqual({
       type: 'DECREMENT_PAGE',
+    });
+  });
+
+  it('setErrorMessageAction', () => {
+    expect(setErrorMessageAction('Error here')).toEqual({
+      type: 'SET_ERROR_MESSAGE',
+      payload: {
+        errorMessage: 'Error here',
+      },
     });
   });
 });

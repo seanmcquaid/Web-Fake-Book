@@ -6,6 +6,7 @@ export enum AllChartsActions {
   SEARCH_TEXT = 'SEARCH_TEXT',
   INCREMENT_PAGE = 'INCREMENT_PAGE',
   DECREMENT_PAGE = 'DECREMENT_PAGE',
+  SET_ERROR_MESSAGE = 'SET_ERROR_MESSAGE',
 }
 
 export type AllChartsStateTypes = {
@@ -15,6 +16,7 @@ export type AllChartsStateTypes = {
   filteredCharts: ChartInfoTypes[];
   totalPages: number;
   currentPage: number;
+  errorMessage: string;
 };
 
 export type AllChartsActionTypes =
@@ -25,4 +27,8 @@ export type AllChartsActionTypes =
     }
   | { type: AllChartsActions.SEARCH_TEXT; payload: { searchText: string } }
   | { type: AllChartsActions.INCREMENT_PAGE }
-  | { type: AllChartsActions.DECREMENT_PAGE };
+  | { type: AllChartsActions.DECREMENT_PAGE }
+  | {
+      type: AllChartsActions.SET_ERROR_MESSAGE;
+      payload: { errorMessage: string };
+    };

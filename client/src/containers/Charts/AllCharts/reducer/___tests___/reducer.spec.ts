@@ -14,6 +14,7 @@ describe('AllCharts - Reducer', () => {
       searchText: '',
       totalPages: 0,
       currentPage: 0,
+      errorMessage: '',
     };
 
     const action: AllChartsActionTypes = {
@@ -27,6 +28,7 @@ describe('AllCharts - Reducer', () => {
       isLoading: true,
       searchText: '',
       totalPages: 0,
+      errorMessage: '',
     });
   });
 
@@ -38,6 +40,7 @@ describe('AllCharts - Reducer', () => {
       searchText: '',
       totalPages: 0,
       currentPage: 0,
+      errorMessage: '',
     };
 
     const action: AllChartsActionTypes = {
@@ -84,6 +87,7 @@ describe('AllCharts - Reducer', () => {
       searchText: '',
       totalPages: 0,
       currentPage: 0,
+      errorMessage: '',
     });
   });
 
@@ -95,6 +99,7 @@ describe('AllCharts - Reducer', () => {
       searchText: '',
       totalPages: 0,
       currentPage: 0,
+      errorMessage: '',
     };
 
     const action: AllChartsActionTypes = {
@@ -109,6 +114,7 @@ describe('AllCharts - Reducer', () => {
       isLoading: false,
       searchText: 'SEARCH TEXT',
       totalPages: 0,
+      errorMessage: '',
     });
   });
 
@@ -120,6 +126,7 @@ describe('AllCharts - Reducer', () => {
       searchText: '',
       totalPages: 0,
       currentPage: 0,
+      errorMessage: '',
     };
 
     const action: AllChartsActionTypes = {
@@ -133,6 +140,7 @@ describe('AllCharts - Reducer', () => {
       isLoading: false,
       searchText: '',
       totalPages: 0,
+      errorMessage: '',
     });
   });
 
@@ -144,6 +152,7 @@ describe('AllCharts - Reducer', () => {
       searchText: '',
       totalPages: 0,
       currentPage: 1,
+      errorMessage: '',
     };
 
     const action: AllChartsActionTypes = {
@@ -157,6 +166,36 @@ describe('AllCharts - Reducer', () => {
       isLoading: false,
       searchText: '',
       totalPages: 0,
+      errorMessage: '',
+    });
+  });
+
+  it('SET_ERROR_MESSAGE', () => {
+    const state: AllChartsStateTypes = {
+      isLoading: false,
+      charts: [],
+      filteredCharts: [],
+      searchText: '',
+      totalPages: 0,
+      currentPage: 0,
+      errorMessage: '',
+    };
+
+    const action: AllChartsActionTypes = {
+      type: AllChartsActions.SET_ERROR_MESSAGE,
+      payload: {
+        errorMessage: 'Error here',
+      },
+    };
+
+    expect(reducer(state, action)).toEqual({
+      charts: [],
+      currentPage: 0,
+      filteredCharts: [],
+      isLoading: false,
+      searchText: '',
+      totalPages: 0,
+      errorMessage: 'Error here',
     });
   });
 });

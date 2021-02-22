@@ -12,7 +12,9 @@ import {
   loadAllChartsSuccessAction,
   loadingAllChartsAction,
   searchTextAction,
+  setErrorMessageAction,
 } from './reducer/actions';
+import P from '../../../components/Typography/P';
 
 const initialState: AllChartsStateTypes = {
   isLoading: false,
@@ -21,11 +23,18 @@ const initialState: AllChartsStateTypes = {
   searchText: '',
   totalPages: 0,
   currentPage: 0,
+  errorMessage: '',
 };
 
 const AllCharts: React.FC = () => {
   const [state, dispatch] = useReducer(reducer, initialState);
-  const { searchText, filteredCharts, currentPage, totalPages } = state;
+  const {
+    searchText,
+    filteredCharts,
+    currentPage,
+    totalPages,
+    errorMessage,
+  } = state;
   const currentCharts = filteredCharts.slice(
     currentPage * 5,
     (currentPage + 1) * 5
@@ -40,7 +49,12 @@ const AllCharts: React.FC = () => {
         dispatch(loadAllChartsSuccessAction(charts));
       },
       (err) => {
-        console.log(err);
+        dispatch(
+          setErrorMessageAction(
+            'There was a problem getting all charts right now, please try again later'
+          )
+        );
+        throw err;
       }
     );
   }, []);
@@ -61,6 +75,7 @@ const AllCharts: React.FC = () => {
   return (
     <>
       <TextInput onChange={onChange} value={searchText} name="searchText" />
+      <P>{errorMessage}</P>
       <ChartsList charts={currentCharts} />
       <PageButtonsContainer>
         <Button
