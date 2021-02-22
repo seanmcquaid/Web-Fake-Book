@@ -1,22 +1,22 @@
+import { BarType, ChordTypes } from '../../../../types/chartTypes';
 import {
-  BarType,
-  ChartInfoTypes,
-  ChordTypes,
-} from '../../../../types/chartTypes';
-import { AddChartActionTypes, AddChartActions } from './types';
+  AddChartInputActionTypes,
+  AddChartInputActions,
+  AddChartInputStateTypes,
+} from './types';
 
 const reducer = (
-  state: ChartInfoTypes,
-  action: AddChartActionTypes
-): ChartInfoTypes => {
+  state: AddChartInputStateTypes,
+  action: AddChartInputActionTypes
+): AddChartInputStateTypes => {
   switch (action.type) {
-    case AddChartActions.SET_VALUE:
+    case AddChartInputActions.SET_VALUE:
       if (action.payload.key === 'numberOfBars') {
         let bars: BarType[] = [];
 
         for (let i = 0; i < action.payload.value; i++) {
           const bar: BarType = { chords: [] };
-          for (let j = 0; j < state.beatsPerMeasure; j++) {
+          for (let j = 0; j < state.chartInfo.beatsPerMeasure; j++) {
             const chord: ChordTypes = {
               functionalNumber: '%',
               chordQuality: '%',
@@ -31,15 +31,18 @@ const reducer = (
 
         return {
           ...state,
-          numberOfBars,
-          bars,
+          chartInfo: {
+            ...state.chartInfo,
+            numberOfBars,
+            bars,
+          },
         };
       }
 
       if (action.payload.key === 'beatsPerMeasure') {
         let bars: BarType[] = [];
 
-        for (let i = 0; i < state.numberOfBars; i++) {
+        for (let i = 0; i < state.chartInfo.numberOfBars; i++) {
           const bar: BarType = { chords: [] };
           for (let j = 0; j < action.payload.value; j++) {
             const chord: ChordTypes = {
@@ -56,17 +59,23 @@ const reducer = (
 
         return {
           ...state,
-          beatsPerMeasure,
-          bars,
+          chartInfo: {
+            ...state.chartInfo,
+            beatsPerMeasure,
+            bars,
+          },
         };
       }
 
       return {
         ...state,
-        [action.payload.key]: action.payload.value,
+        chartInfo: {
+          ...state.chartInfo,
+          [action.payload.key]: action.payload.value,
+        },
       };
-    case AddChartActions.UPDATE_CHORD_IN_BAR:
-      const currentBars: BarType[] = [...state.bars];
+    case AddChartInputActions.UPDATE_CHORD_IN_BAR:
+      const currentBars: BarType[] = [...state.chartInfo.bars];
       currentBars[action.payload.barIndex].chords[action.payload.beatIndex] = {
         ...currentBars[action.payload.barIndex].chords[
           action.payload.beatIndex
@@ -75,7 +84,15 @@ const reducer = (
       };
       return {
         ...state,
-        bars: currentBars,
+        chartInfo: {
+          ...state.chartInfo,
+          bars: currentBars,
+        },
+      };
+    case AddChartInputActions.SET_ERROR_MESSAGE:
+      return {
+        ...state,
+        errorMessage: action.payload.errorMessage,
       };
     default:
       return {

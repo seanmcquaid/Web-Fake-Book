@@ -6,29 +6,40 @@ import { useReducer } from 'react';
 import { postAddChart } from '../../../services';
 import { useHistory } from 'react-router-dom';
 import reducer from './reducer';
-import { ChartInfoTypes } from '../../../types/chartTypes';
-import { setValueAction, updateChordInBarAction } from './reducer/actions';
+import {
+  setErrorMessageAction,
+  setValueAction,
+  updateChordInBarAction,
+} from './reducer/actions';
+import { AddChartInputStateTypes } from './reducer/types';
+import P from '../../../components/Typography/P';
 
-const initialState: ChartInfoTypes = {
-  name: '',
-  defaultKey: 'C',
-  numberOfBars: 0,
-  bars: [],
-  beatsPerMeasure: 4,
-  noteValuePerBeat: 4,
-  genre: 'Standard',
+const initialState: AddChartInputStateTypes = {
+  chartInfo: {
+    name: '',
+    defaultKey: 'C',
+    numberOfBars: 0,
+    bars: [],
+    beatsPerMeasure: 4,
+    noteValuePerBeat: 4,
+    genre: 'Standard',
+  },
+  errorMessage: '',
 };
 
 const AddChartInput: React.FC = () => {
   const [state, dispatch] = useReducer(reducer, initialState);
   const {
-    name,
-    defaultKey,
-    numberOfBars,
-    bars,
-    beatsPerMeasure,
-    noteValuePerBeat,
-    genre,
+    chartInfo: {
+      name,
+      defaultKey,
+      numberOfBars,
+      bars,
+      beatsPerMeasure,
+      noteValuePerBeat,
+      genre,
+    },
+    errorMessage,
   } = state;
   const history = useHistory();
 
@@ -46,11 +57,22 @@ const AddChartInput: React.FC = () => {
   };
 
   const addChartButtonOnClick = () => {
-    postAddChart({ ...state }).subscribe(
+    if (name.length === 0) {
+      dispatch(setErrorMessageAction('Please enter a name!'));
+      return;
+    }
+
+    if (numberOfBars === 0) {
+      dispatch(setErrorMessageAction('Please select a number of bars!'));
+      return;
+    }
+
+    postAddChart({ ...state.chartInfo }).subscribe(
       (resp) => {
         history.push('/charts');
       },
       (err) => {
+        dispatch(setErrorMessageAction(err.response.data.error));
         throw err;
       }
     );
@@ -58,6 +80,7 @@ const AddChartInput: React.FC = () => {
 
   return (
     <AddChartInputContainer>
+      <P>{errorMessage}</P>
       <Inputs
         valueOnChange={inputValueOnChange}
         defaultKey={defaultKey}

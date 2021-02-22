@@ -1,10 +1,10 @@
-import { AddChartActionTypes, AddChartActions } from './types';
+import { AddChartInputActionTypes, AddChartInputActions } from './types';
 
 export const setValueAction = (
   key: string,
   value: string | number
-): AddChartActionTypes => ({
-  type: AddChartActions.SET_VALUE,
+): AddChartInputActionTypes => ({
+  type: AddChartInputActions.SET_VALUE,
   payload: {
     key,
     value,
@@ -16,7 +16,16 @@ export const updateChordInBarAction = (
   beatIndex: number,
   key: string,
   value: string | boolean
-): AddChartActionTypes => ({
-  type: AddChartActions.UPDATE_CHORD_IN_BAR,
+): AddChartInputActionTypes => ({
+  type: AddChartInputActions.UPDATE_CHORD_IN_BAR,
   payload: { barIndex, beatIndex, key, value },
+});
+
+export const setErrorMessageAction = (
+  errorMessage: string
+): AddChartInputActionTypes => ({
+  type: AddChartInputActions.SET_ERROR_MESSAGE,
+  payload: {
+    errorMessage,
+  },
 });
