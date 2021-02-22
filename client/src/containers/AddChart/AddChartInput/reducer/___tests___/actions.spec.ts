@@ -1,4 +1,8 @@
-import { setValueAction, updateChordInBarAction } from '../actions';
+import {
+  setErrorMessageAction,
+  setValueAction,
+  updateChordInBarAction,
+} from '../actions';
 
 describe('Chart Input - Actions', () => {
   it('setValueAction', () => {
@@ -20,6 +24,15 @@ describe('Chart Input - Actions', () => {
         value: 'b2',
       },
       type: 'UPDATE_CHORD_IN_BAR',
+    });
+  });
+
+  it('setErrorMessageAction', () => {
+    expect(setErrorMessageAction('Error here')).toEqual({
+      type: 'SET_ERROR_MESSAGE',
+      payload: {
+        errorMessage: 'Error here',
+      },
     });
   });
 });
