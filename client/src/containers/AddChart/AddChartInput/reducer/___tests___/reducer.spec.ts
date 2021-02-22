@@ -155,4 +155,40 @@ describe('Chart Input - Reducer', () => {
       errorMessage: '',
     });
   });
+
+  it('SET_ERROR_MESSAGE', () => {
+    const state: AddChartInputStateTypes = {
+      chartInfo: {
+        name: '',
+        defaultKey: 'C',
+        numberOfBars: 0,
+        bars: [],
+        beatsPerMeasure: 4,
+        noteValuePerBeat: 4,
+        genre: 'Standard',
+      },
+      errorMessage: '',
+    };
+    const action: AddChartInputActionTypes = {
+      type: AddChartInputActions.SET_ERROR_MESSAGE,
+      payload: {
+        errorMessage: 'Error here',
+      },
+    };
+
+    const result = reducer(state, action);
+
+    expect(result).toEqual({
+      chartInfo: {
+        name: '',
+        defaultKey: 'C',
+        numberOfBars: 0,
+        bars: [],
+        beatsPerMeasure: 4,
+        noteValuePerBeat: 4,
+        genre: 'Standard',
+      },
+      errorMessage: 'Error here',
+    });
+  });
 });
