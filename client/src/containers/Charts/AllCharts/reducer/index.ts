@@ -26,6 +26,7 @@ const reducer = (state: AllChartsStateTypes, action: AllChartsActionTypes) => {
         ...state,
         charts: action.payload.charts,
         filteredCharts: action.payload.charts,
+        isLoading: false,
         totalPages: Math.ceil(
           action.payload.charts.length / 5 < 1
             ? 0
