@@ -19,7 +19,7 @@ const initialState: ChartInfoTypes = {
   genre: 'Standard',
 };
 
-const ChartInput: React.FC = () => {
+const AddChartInput: React.FC = () => {
   const [state, dispatch] = useReducer(reducer, initialState);
   const {
     name,
@@ -57,7 +57,7 @@ const ChartInput: React.FC = () => {
   };
 
   return (
-    <ChartInputContainer>
+    <AddChartInputContainer>
       <Inputs
         valueOnChange={inputValueOnChange}
         defaultKey={defaultKey}
@@ -71,10 +71,10 @@ const ChartInput: React.FC = () => {
         Add This Chart
       </Button>
       <Chart bars={bars} updateChordOnChange={updateChordOnChange} />
-    </ChartInputContainer>
+    </AddChartInputContainer>
   );
 };
 
-const ChartInputContainer = styled.div``;
+const AddChartInputContainer = styled.div``;
 
-export default ChartInput;
+export default AddChartInput;
