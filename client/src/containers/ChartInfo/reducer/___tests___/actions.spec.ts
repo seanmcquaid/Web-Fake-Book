@@ -2,6 +2,7 @@ import {
   loadingChartInfoAction,
   loadChartInfoSuccess,
   changeKeyAction,
+  setErrorMessageAction,
 } from '../actions';
 
 describe('Chart Info - Actions', () => {
@@ -48,6 +49,15 @@ describe('Chart Info - Actions', () => {
         key: 'Ab',
       },
       type: 'CHANGE_KEY',
+    });
+  });
+
+  it('setErrorMessageAction', () => {
+    expect(setErrorMessageAction('Error here')).toEqual({
+      type: 'SET_ERROR_MESSAGE',
+      payload: {
+        errorMessage: 'Error here',
+      },
     });
   });
 });

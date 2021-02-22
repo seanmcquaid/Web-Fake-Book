@@ -17,3 +17,10 @@ export const changeKeyAction = (key: string): ChartInfoActionTypes => ({
   type: ChartInfoActions.CHANGE_KEY,
   payload: { key },
 });
+
+export const setErrorMessageAction = (
+  errorMessage: string
+): ChartInfoActionTypes => ({
+  type: ChartInfoActions.SET_ERROR_MESSAGE,
+  payload: { errorMessage },
+});

@@ -128,4 +128,43 @@ describe('Chart Info - Reducer', () => {
       selectedKey: 'Gb',
     });
   });
+
+  it('SET_ERROR_MESSAGE', () => {
+    const state: ChartInfoStateTypes = {
+      isLoading: false,
+      selectedKey: 'Ab',
+      errorMessage: '',
+      chartInfo: {
+        name: '',
+        defaultKey: '',
+        numberOfBars: 0,
+        bars: [],
+        noteValuePerBeat: 4,
+        beatsPerMeasure: 4,
+        genre: 'Standard',
+      },
+    };
+
+    const action: ChartInfoActionTypes = {
+      type: ChartInfoActions.SET_ERROR_MESSAGE,
+      payload: {
+        errorMessage: 'Error here',
+      },
+    };
+
+    expect(reducer(state, action)).toEqual({
+      isLoading: false,
+      selectedKey: 'Ab',
+      errorMessage: 'Error here',
+      chartInfo: {
+        name: '',
+        defaultKey: '',
+        numberOfBars: 0,
+        bars: [],
+        noteValuePerBeat: 4,
+        beatsPerMeasure: 4,
+        genre: 'Standard',
+      },
+    });
+  });
 });

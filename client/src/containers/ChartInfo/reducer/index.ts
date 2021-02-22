@@ -21,6 +21,11 @@ const reducer = (state: ChartInfoStateTypes, action: ChartInfoActionTypes) => {
         chartInfo: action.payload.chartInfo,
         selectedKey: action.payload.key,
       };
+    case ChartInfoActions.SET_ERROR_MESSAGE:
+      return {
+        ...state,
+        errorMessage: action.payload.errorMessage,
+      };
     default:
       return {
         ...state,

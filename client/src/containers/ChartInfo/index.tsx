@@ -5,6 +5,7 @@ import Button from '../../components/Button';
 import Dropdown from '../../components/Dropdown';
 import LinkButton from '../../components/LinkButton';
 import H1 from '../../components/Typography/H1';
+import P from '../../components/Typography/P';
 import { deleteChart, getChartInfo } from '../../services';
 import Chart from './Chart';
 import reducer from './reducer';
@@ -12,6 +13,7 @@ import {
   changeKeyAction,
   loadChartInfoSuccess,
   loadingChartInfoAction,
+  setErrorMessageAction,
 } from './reducer/actions';
 import { ChartInfoStateTypes } from './reducer/types';
 
@@ -57,6 +59,7 @@ const ChartInfo: React.FC = () => {
     isLoading,
     selectedKey,
     chartInfo: { name, bars, beatsPerMeasure, noteValuePerBeat },
+    errorMessage,
   } = state;
 
   useEffect(() => {
@@ -69,6 +72,11 @@ const ChartInfo: React.FC = () => {
         dispatch(loadChartInfoSuccess(chartInfo, key));
       },
       (err) => {
+        dispatch(
+          setErrorMessageAction(
+            'There was an issue getting Chart Info right now, please try again later'
+          )
+        );
         throw err;
       }
     );
@@ -84,6 +92,11 @@ const ChartInfo: React.FC = () => {
         dispatch(loadChartInfoSuccess(chartInfo, key));
       },
       (err) => {
+        dispatch(
+          setErrorMessageAction(
+            'There was an issue getting Chart Info right now, please try again later'
+          )
+        );
         throw err;
       }
     );
@@ -95,6 +108,12 @@ const ChartInfo: React.FC = () => {
         history.push('/charts');
       },
       (err) => {
+        dispatch(
+          setErrorMessageAction(
+            'There was an issue getting deleting this chart right now, please try again later'
+          )
+        );
+
         throw err;
       }
     );
@@ -110,6 +129,7 @@ const ChartInfo: React.FC = () => {
         <H1>{name}</H1>
       </Header>
       <Main>
+        <P>{errorMessage}</P>
         <Dropdown
           options={keyOptions}
           name="selectedKey"
