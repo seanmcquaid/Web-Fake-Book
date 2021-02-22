@@ -15,7 +15,7 @@ describe('Chart Info', () => {
 
     cy.get('[data-testid=selectedKeyDropdown]').select('Eb');
 
-    cy.get(':nth-child(1) > .sc-bkzZxe > :nth-child(1)').should(
+    cy.get(':nth-child(1) > .sc-idOhPF > :nth-child(1)').should(
       'have.text',
       'Eb Dominant 7'
     );
@@ -42,7 +42,7 @@ describe('Chart Info', () => {
       fixture: 'chartInfo.json',
     });
 
-    cy.get('.sc-fodVxV').click();
+    cy.get('.sc-fFubgz').click();
 
     cy.get('.sc-bdfBwQ').should('have.text', 'Edit Chart');
   });
