@@ -1,6 +1,7 @@
 import {
   loadChartSuccessAction,
   loadingChartAction,
+  setErrorMessageAction,
   updateChordInBarAction,
 } from '../actions';
 
@@ -37,6 +38,15 @@ describe('EditChartInput - Actions', () => {
       type: 'LOAD_CHART_SUCCESS',
       payload: {
         chartInfo,
+      },
+    });
+  });
+
+  it('setErrorMessageAction', () => {
+    expect(setErrorMessageAction('Error here')).toEqual({
+      type: 'SET_ERROR_MESSAGE',
+      payload: {
+        errorMessage: 'Error here',
       },
     });
   });

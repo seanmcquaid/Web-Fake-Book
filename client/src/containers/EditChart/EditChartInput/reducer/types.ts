@@ -4,11 +4,13 @@ export enum EditChartInputActions {
   LOADING = 'LOADING',
   UPDATE_CHORD_IN_BAR = 'UPDATE_CHORD_IN_BAR',
   LOAD_CHART_SUCCESS = 'LOAD_CHART_SUCCESS',
+  SET_ERROR_MESSAGE = 'SET_ERROR_MESSAGE',
 }
 
 export type EditChartInputStateTypes = {
   isLoading: boolean;
   chartInfo: ChartInfoTypes;
+  errorMessage: string;
 };
 
 export type EditChartInputActionTypes =
@@ -27,4 +29,8 @@ export type EditChartInputActionTypes =
       payload: {
         chartInfo: ChartInfoTypes;
       };
+    }
+  | {
+      type: EditChartInputActions.SET_ERROR_MESSAGE;
+      payload: { errorMessage: string };
     };

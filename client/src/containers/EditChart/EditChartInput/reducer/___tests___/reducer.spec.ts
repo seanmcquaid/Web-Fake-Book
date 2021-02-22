@@ -18,6 +18,7 @@ describe('EditChartInput - Reducer', () => {
         noteValuePerBeat: 4,
         genre: 'Standard',
       },
+      errorMessage: '',
     };
 
     const action: EditChartInputActionTypes = {
@@ -35,6 +36,7 @@ describe('EditChartInput - Reducer', () => {
         noteValuePerBeat: 4,
         genre: 'Standard',
       },
+      errorMessage: '',
     });
   });
 
@@ -60,6 +62,7 @@ describe('EditChartInput - Reducer', () => {
         noteValuePerBeat: 4,
         genre: 'Standard',
       },
+      errorMessage: '',
     };
 
     const action: EditChartInputActionTypes = {
@@ -93,6 +96,7 @@ describe('EditChartInput - Reducer', () => {
         noteValuePerBeat: 4,
         genre: 'Standard',
       },
+      errorMessage: '',
     });
   });
 
@@ -108,6 +112,7 @@ describe('EditChartInput - Reducer', () => {
         noteValuePerBeat: 4,
         genre: 'Standard',
       },
+      errorMessage: '',
     };
 
     const action: EditChartInputActionTypes = {
@@ -136,6 +141,44 @@ describe('EditChartInput - Reducer', () => {
         noteValuePerBeat: 4,
         genre: 'Standard',
       },
+      errorMessage: '',
+    });
+  });
+
+  it('SET_ERROR_MESSAGE', () => {
+    const state: EditChartInputStateTypes = {
+      isLoading: false,
+      chartInfo: {
+        name: '',
+        defaultKey: 'C',
+        numberOfBars: 0,
+        bars: [],
+        beatsPerMeasure: 4,
+        noteValuePerBeat: 4,
+        genre: 'Standard',
+      },
+      errorMessage: 'Error here',
+    };
+
+    const action: EditChartInputActionTypes = {
+      type: EditChartInputActions.SET_ERROR_MESSAGE,
+      payload: {
+        errorMessage: 'Error here',
+      },
+    };
+
+    expect(reducer(state, action)).toEqual({
+      isLoading: false,
+      chartInfo: {
+        name: '',
+        defaultKey: 'C',
+        numberOfBars: 0,
+        bars: [],
+        beatsPerMeasure: 4,
+        noteValuePerBeat: 4,
+        genre: 'Standard',
+      },
+      errorMessage: 'Error here',
     });
   });
 });

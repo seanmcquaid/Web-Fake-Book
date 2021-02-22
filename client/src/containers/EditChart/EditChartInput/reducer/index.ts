@@ -34,7 +34,12 @@ const reducer = (
           ...action.payload.chartInfo,
         },
       };
-
+    case EditChartInputActions.SET_ERROR_MESSAGE:
+      return {
+        ...state,
+        errorMessage: action.payload.errorMessage,
+        isLoading: false,
+      };
     default:
       return { ...state };
   }

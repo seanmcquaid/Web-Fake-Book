@@ -28,3 +28,12 @@ export const loadChartSuccessAction = (
     chartInfo,
   },
 });
+
+export const setErrorMessageAction = (
+  errorMessage: string
+): EditChartInputActionTypes => ({
+  type: EditChartInputActions.SET_ERROR_MESSAGE,
+  payload: {
+    errorMessage,
+  },
+});

@@ -11,8 +11,10 @@ import reducer from './reducer';
 import {
   loadChartSuccessAction,
   loadingChartAction,
+  setErrorMessageAction,
   updateChordInBarAction,
 } from './reducer/actions';
+import P from '../../../components/Typography/P';
 
 const initialState: EditChartInputStateTypes = {
   isLoading: false,
@@ -25,6 +27,7 @@ const initialState: EditChartInputStateTypes = {
     noteValuePerBeat: 4,
     genre: 'Standard',
   },
+  errorMessage: '',
 };
 
 type ParamTypes = {
@@ -37,6 +40,7 @@ const EditChartInput: React.FC = () => {
   const {
     isLoading,
     chartInfo: { bars, name },
+    errorMessage,
   } = state;
 
   const history = useHistory();
@@ -49,6 +53,11 @@ const EditChartInput: React.FC = () => {
         dispatch(loadChartSuccessAction(data.chart as any));
       },
       (err) => {
+        dispatch(
+          setErrorMessageAction(
+            'There was a problem loading this chart, try again later'
+          )
+        );
         throw err;
       }
     );
@@ -60,6 +69,11 @@ const EditChartInput: React.FC = () => {
         history.push('/charts');
       },
       (err) => {
+        dispatch(
+          setErrorMessageAction(
+            'There was a problem editing this chart, try again later'
+          )
+        );
         throw err;
       }
     );
@@ -81,6 +95,7 @@ const EditChartInput: React.FC = () => {
   return (
     <>
       <H2>{name}</H2>
+      <P>{errorMessage}</P>
       <Button type="button" onClick={editButtonOnClick}>
         Edit This Chart
       </Button>

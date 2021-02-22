@@ -25,6 +25,7 @@ const reducer = (state: ChartInfoStateTypes, action: ChartInfoActionTypes) => {
       return {
         ...state,
         errorMessage: action.payload.errorMessage,
+        isLoading: false,
       };
     default:
       return {
