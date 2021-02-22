@@ -8,12 +8,12 @@ describe('Chart Info', () => {
     cy.visit('/chartInfo/602863701c3bf60865decdb2');
   });
   it('Changing key requests chart in the new key', () => {
-    cy.get('[data-testid=selectedKeyDropdown]').select('Eb');
-
     cy.intercept('GET', 'http://localhost:8080/charts/chart/*/Eb', {
       statusCode: 200,
       fixture: 'chartInfoInKey.json',
     });
+
+    cy.get('[data-testid=selectedKeyDropdown]').select('Eb');
 
     cy.get(':nth-child(1) > .sc-bkzZxe > :nth-child(1)').should(
       'have.text',

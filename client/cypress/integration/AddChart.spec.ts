@@ -3,6 +3,20 @@ describe('Add Chart', () => {
     cy.visit('/addChart');
   });
 
+  it("Prevents a user from submitting if they don't provide a name", () => {
+    cy.get('.sc-crrsfI').click();
+
+    cy.get('.sc-dQppl').should('have.text', 'Please enter a name!');
+  });
+
+  it("Prevents a user from submitting if they don't provide any bars", () => {
+    cy.get('.sc-jSgupP').type('Blues in Hoss Flat');
+
+    cy.get('.sc-crrsfI').click();
+
+    cy.get('.sc-dQppl').should('have.text', 'Please select a number of bars!');
+  });
+
   it('Successfully added chart with unique configurations redirects user to charts page', () => {
     cy.get('.sc-jSgupP').type('Blues in Hoss Flat');
     cy.get('[data-testid=defaultKeyDropdown]').select('Db');
