@@ -17,10 +17,24 @@ const Home: React.FC = () => (
 const PageContainer = styled.div`
   height: 100%;
   width: 100%;
+  display: flex;
+  flex-direction: column;
 `;
 
-const Header = styled.header``;
+const Header = styled.header`
+  height: 100px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+`;
 
-const Main = styled.main``;
+const Main = styled.main`
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
 
 export default Home;

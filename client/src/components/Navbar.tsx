@@ -25,11 +25,11 @@ const StyledNav = styled.nav`
   left: 0;
   top: 0;
   background-color: ${constants.lightBackgroundColor};
-  position: fixed;
   display: flex;
   justify-content: flex-start;
   align-items: center;
   font-family: ${constants.normalFont};
+  position: fixed;
 `;
 
 const HomeIcon = styled(AiFillHome)`

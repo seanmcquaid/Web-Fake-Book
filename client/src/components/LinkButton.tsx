@@ -17,6 +17,9 @@ const StyledLinkButton = styled(Link)`
   color: ${constants.foregroundColor};
   padding: 1rem;
   margin: 1rem;
+  width: 100px;
+  text-align: center;
+  border-radius: 6px;
 `;
 
 export default LinkButton;

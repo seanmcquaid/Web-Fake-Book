@@ -6,16 +6,14 @@ import constants from './constants';
 import reportWebVitals from './reportWebVitals';
 
 const GlobalStyles = createGlobalStyle`
-  * {
-    margin: 0;
-    padding: 0;
-  }
-  
   body,
   html,
   #root {
     height: 100%;
     width: 100%;
+    margin: 0;
+    padding: 0;
+    position: relative;
     background-color: ${constants.darkBackgroundColor}
   }
 `;

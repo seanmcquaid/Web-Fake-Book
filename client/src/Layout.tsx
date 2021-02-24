@@ -3,28 +3,28 @@ import Navbar from './components/Navbar';
 import constants from './constants';
 
 const Layout: React.FC = ({ children }) => (
-  <>
+  <LayoutContainer>
     <Navbar />
-    <ContentContainer>{children}</ContentContainer>
+    {children}
     <Footer>Footer Here</Footer>
-  </>
+  </LayoutContainer>
 );
 
-const ContentContainer = styled.div`
-  margin-top: 5rem;
-  min-width: 100%;
-  min-height: 100%;
+const LayoutContainer = styled.div`
+  width: 100%;
+  height: 100%;
+  margin-top: 3.75rem;
 `;
 
 const Footer = styled.footer`
-  width: 100%;
   text-align: center;
   font-family: ${constants.normalFont};
   background-color: ${constants.lightBackgroundColor};
   color: ${constants.foregroundColor};
   padding: 1rem;
   position: absolute;
-  bottom: 0;
+  left: 0;
+  right: 0;
 `;
 
 export default Layout;
