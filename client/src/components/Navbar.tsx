@@ -1,10 +1,13 @@
 import styled from 'styled-components';
 import { AiFillHome } from 'react-icons/ai';
 import { Link } from 'react-router-dom';
+import constants from '../constants';
 
 const Navbar: React.FC = () => (
   <StyledNav>
-    <HomeIcon />
+    <NavLink to="/" aria-label="Home">
+      <HomeIcon />
+    </NavLink>
     <LinksList>
       <LinkItem>
         <NavLink to="/addChart">Add Chart</NavLink>
@@ -21,11 +24,12 @@ const StyledNav = styled.nav`
   height: 60px;
   left: 0;
   top: 0;
-  background-color: red;
+  background-color: ${constants.lightBackgroundColor};
   position: fixed;
   display: flex;
   justify-content: flex-start;
   align-items: center;
+  font-family: ${constants.paragraphFont};
 `;
 
 const HomeIcon = styled(AiFillHome)`
@@ -44,6 +48,9 @@ const LinkItem = styled.li`
   padding: 0.5rem;
 `;
 
-const NavLink = styled(Link)``;
+const NavLink = styled(Link)`
+  text-decoration: none;
+  color: ${constants.foregroundColor};
+`;
 
 export default Navbar;

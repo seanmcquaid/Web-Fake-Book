@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { createGlobalStyle } from 'styled-components';
 import App from './App';
+import constants from './constants';
 import reportWebVitals from './reportWebVitals';
 
 const GlobalStyles = createGlobalStyle`
@@ -15,8 +16,14 @@ const GlobalStyles = createGlobalStyle`
   #root {
     height: 100%;
     width: 100%;
+    background-color: ${constants.darkBackgroundColor}
   }
 `;
+
+if (process.env.NODE_ENV === 'development') {
+  const axe = require('@axe-core/react');
+  axe(React, ReactDOM, 1000);
+}
 
 ReactDOM.render(
   <React.StrictMode>
