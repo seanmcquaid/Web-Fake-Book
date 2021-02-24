@@ -8,8 +8,8 @@ import Home from './containers/Home';
 import Layout from './Layout';
 
 const App: React.FC = () => (
-  <Layout>
-    <BrowserRouter>
+  <BrowserRouter>
+    <Layout>
       <Switch>
         <Route exact path="/" component={Home} />
         <Route exact path="/addChart" component={AddChart} />
@@ -18,8 +18,8 @@ const App: React.FC = () => (
         <Route exact path="/editChart/:id" component={EditChart} />
         <Route component={Error} />
       </Switch>
-    </BrowserRouter>
-  </Layout>
+    </Layout>
+  </BrowserRouter>
 );
 
 export default App;
