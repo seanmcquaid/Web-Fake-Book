@@ -29,7 +29,7 @@ const StyledNav = styled.nav`
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  font-family: ${constants.paragraphFont};
+  font-family: ${constants.normalFont};
 `;
 
 const HomeIcon = styled(AiFillHome)`
