@@ -36,13 +36,13 @@ const Label = styled.label`
 `;
 
 const StyledTextInput = styled.input`
-  padding: 1rem;
+  padding: 0.5rem;
   font-family: ${constants.normalFont};
   width: 260px;
   border-radius: 6px;
   outline: none;
   border: none;
-  margin: 1rem;
+  margin: 0.5rem;
 `;
 
 export default TextInput;
