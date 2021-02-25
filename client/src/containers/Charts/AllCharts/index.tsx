@@ -74,7 +74,13 @@ const AllCharts: React.FC = () => {
 
   return (
     <>
-      <TextInput onChange={onChange} value={searchText} name="searchText" />
+      <TextInput
+        onChange={onChange}
+        value={searchText}
+        name="searchText"
+        label="Search chart name"
+        placeholder="Enter the chart name you'd like to search for"
+      />
       <P>{errorMessage}</P>
       <ChartsList charts={currentCharts} />
       <PageButtonsContainer>
@@ -100,7 +106,12 @@ const AllCharts: React.FC = () => {
   );
 };
 
-const PageButtonsContainer = styled.div``;
+const PageButtonsContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+`;
 
 const PageNumber = styled.span``;
 

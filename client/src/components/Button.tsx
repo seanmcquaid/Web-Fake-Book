@@ -23,11 +23,12 @@ const StyledButton = styled.button`
   font-family: ${constants.normalFont};
   text-decoration: none;
   color: ${constants.foregroundColor};
-  padding: 1rem;
-  margin: 1rem;
-  width: 100px;
+  padding: 0.5rem;
+  margin: 0.5rem;
+  max-width: 100px;
   text-align: center;
   border-radius: 6px;
+  border: none;
 `;
 
 export default Button;

@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import constants from '../constants';
 
 type TextInputProps = {
   onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
@@ -15,7 +16,7 @@ const TextInput: React.FC<TextInputProps> = ({
   label,
   placeholder,
 }) => (
-  <Label>
+  <Label htmlFor={name}>
     {label}
     <StyledTextInput
       onChange={onChange}
@@ -27,8 +28,21 @@ const TextInput: React.FC<TextInputProps> = ({
   </Label>
 );
 
-const Label = styled.label``;
+const Label = styled.label`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+`;
 
-const StyledTextInput = styled.input``;
+const StyledTextInput = styled.input`
+  padding: 1rem;
+  font-family: ${constants.normalFont};
+  width: 260px;
+  border-radius: 6px;
+  outline: none;
+  border: none;
+  margin: 1rem;
+`;
 
 export default TextInput;
