@@ -15,6 +15,7 @@ import {
   setErrorMessageAction,
 } from './reducer/actions';
 import P from '../../../components/Typography/P';
+import LoadingSpinner from '../../../components/LoadingSpinner';
 
 const initialState: AllChartsStateTypes = {
   isLoading: false,
@@ -29,6 +30,7 @@ const initialState: AllChartsStateTypes = {
 const AllCharts: React.FC = () => {
   const [state, dispatch] = useReducer(reducer, initialState);
   const {
+    isLoading,
     searchText,
     filteredCharts,
     currentPage,
@@ -71,6 +73,10 @@ const AllCharts: React.FC = () => {
   const prevPageButtonOnClick = () => {
     dispatch(decrementPageAction());
   };
+
+  if (isLoading) {
+    return <LoadingSpinner />;
+  }
 
   return (
     <>
