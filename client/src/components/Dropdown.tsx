@@ -1,5 +1,6 @@
 import { nanoid } from 'nanoid';
 import styled from 'styled-components';
+import constants from '../constants';
 
 type DropdownProps = {
   onChange: (event: React.ChangeEvent<HTMLSelectElement>) => void;
@@ -33,9 +34,25 @@ const Dropdown: React.FC<DropdownProps> = ({
   </Label>
 );
 
-const Label = styled.label``;
+const Label = styled.label`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5rem;
+  width: 100%;
+  max-width: 160px;
+`;
 
-const StyledDropdown = styled.select``;
+const StyledDropdown = styled.select`
+  padding: 0.5rem;
+  font-family: ${constants.normalFont};
+  width: 100px;
+  border-radius: 6px;
+  outline: none;
+  border: none;
+  margin-top: 0.5rem;
+`;
 
 const Option = styled.option``;
 

@@ -98,6 +98,12 @@ const AddChartInput: React.FC = () => {
   );
 };
 
-const AddChartInputContainer = styled.div``;
+const AddChartInputContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+`;
 
 export default AddChartInput;

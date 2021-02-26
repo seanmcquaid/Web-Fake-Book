@@ -108,6 +108,11 @@ const Inputs: React.FC<InputsPropTypes> = ({
   );
 };
 
-const InputsContainer = styled.div``;
+const InputsContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+`;
 
 export default Inputs;

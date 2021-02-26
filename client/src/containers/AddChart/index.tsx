@@ -13,10 +13,26 @@ const AddChart: React.FC = () => (
   </PageContainer>
 );
 
-const PageContainer = styled.div``;
+const PageContainer = styled.div`
+  height: 100%;
+  width: 100%;
+`;
 
-const Header = styled.header``;
+const Header = styled.header`
+  display: flex;
+  flex-direction: center;
+  align-items: center;
+  justify-content: center;
+  height: 100px;
+  width: 100%;
+`;
 
-const Main = styled.main``;
+const Main = styled.main`
+  display: flex;
+  flex-direction: center;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+`;
 
 export default AddChart;

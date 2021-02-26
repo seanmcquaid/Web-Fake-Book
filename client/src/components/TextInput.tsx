@@ -31,8 +31,8 @@ const TextInput: React.FC<TextInputProps> = ({
 const Label = styled.label`
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  margin: 0.5rem;
+  padding: 0.5rem;
 `;
 
 const StyledTextInput = styled.input`
@@ -42,7 +42,7 @@ const StyledTextInput = styled.input`
   border-radius: 6px;
   outline: none;
   border: none;
-  margin: 0.5rem;
+  margin-top: 0.5rem;
 `;
 
 export default TextInput;

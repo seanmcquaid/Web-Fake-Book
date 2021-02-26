@@ -24,8 +24,21 @@ const Checkbox: React.FC<CheckboxProps> = ({
   </Label>
 );
 
-const StyledCheckbox = styled.input``;
+const Label = styled.label`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 0.5rem;
+  padding: 0.5rem;
+`;
 
-const Label = styled.label``;
+const StyledCheckbox = styled.input`
+  border-radius: 6px;
+  outline: none;
+  border: none;
+  margin-top: 0.5rem;
+  padding: 0.5rem;
+`;
 
 export default Checkbox;
