@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import Chord from './Chord';
 import { nanoid } from 'nanoid';
 import { BarType } from '../../../../types/chartTypes';
+import constants from '../../../../constants';
 
 type ChartPropTypes = {
   bars: BarType[];
@@ -43,6 +44,9 @@ const Bar = styled.li`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  border: 2px solid ${constants.lightBackgroundColor};
+  margin-top: 0.5rem;
+  padding: 0.25rem;
 `;
 
 const Chords = styled.ol`
@@ -50,6 +54,9 @@ const Chords = styled.ol`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  @media (min-width: ${constants.desktopSize}) {
+    flex-direction: row;
+  }
 `;
 
 export default Chart;

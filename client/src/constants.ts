@@ -4,7 +4,7 @@ const constants = {
   darkBackgroundColor: '#1C304A',
   headerFont: "'Asap', sans-serif;",
   normalFont: "'Asap', sans-serif;",
-  desktopSize: '1000px',
+  desktopSize: '1280px',
 };
 
 export default constants;

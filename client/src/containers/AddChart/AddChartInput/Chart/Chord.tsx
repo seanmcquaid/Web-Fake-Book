@@ -65,7 +65,6 @@ const Chord: React.FC<ChordProps> = ({
 
   return (
     <StyledChord data-testid={`bar${barIndex + 1}beat${beatIndex + 1}`}>
-      <Beat>{beatIndex + 1}</Beat>
       <Dropdown
         onChange={onChange}
         name="functionalNumber"
@@ -92,13 +91,6 @@ const Chord: React.FC<ChordProps> = ({
 
 const StyledChord = styled.li`
   list-style: none;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-`;
-
-const Beat = styled.span`
-  padding: 0.5rem;
   display: flex;
   justify-content: center;
   align-items: center;
