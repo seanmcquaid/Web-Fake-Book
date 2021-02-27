@@ -33,8 +33,9 @@ const ChartContainer = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   width: 100%;
+  height: 100%;
 `;
 
 const TimeSignature = styled.div`
@@ -42,6 +43,8 @@ const TimeSignature = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
+  height: 100%;
+  padding-right: 0.5rem;
 `;
 
 const BeatsPerMeasure = styled.span``;
