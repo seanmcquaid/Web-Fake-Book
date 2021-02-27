@@ -20,7 +20,7 @@ const PageContainer = styled.div`
 
 const Header = styled.header`
   display: flex;
-  flex-direction: center;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   height: 100px;
@@ -29,7 +29,7 @@ const Header = styled.header`
 
 const Main = styled.main`
   display: flex;
-  flex-direction: center;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   width: 100%;

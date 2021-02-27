@@ -16,10 +16,16 @@ const Bar: React.FC<BarProps> = ({ chords }) => (
   </StyledBar>
 );
 
-const StyledBar = styled.li``;
+const StyledBar = styled.li`
+  width: 100%;
+`;
 
-const Chords = styled.ol``;
+const Chords = styled.ol`
+  display: flex;
+`;
 
-const Chord = styled.li``;
+const Chord = styled.li`
+  display: flex;
+`;
 
 export default Bar;

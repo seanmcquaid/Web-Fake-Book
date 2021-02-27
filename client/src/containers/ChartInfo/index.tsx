@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import Button from '../../components/Button';
 import Dropdown from '../../components/Dropdown';
 import LinkButton from '../../components/LinkButton';
+import LoadingSpinner from '../../components/LoadingSpinner';
 import H1 from '../../components/Typography/H1';
 import P from '../../components/Typography/P';
 import { deleteChart, getChartInfo } from '../../services';
@@ -120,7 +121,7 @@ const ChartInfo: React.FC = () => {
   };
 
   if (isLoading) {
-    return <div>LOADING</div>;
+    return <LoadingSpinner />;
   }
 
   return (
@@ -135,6 +136,7 @@ const ChartInfo: React.FC = () => {
           name="selectedKey"
           onChange={onChange}
           value={selectedKey}
+          label="Key"
         />
         <Chart
           bars={bars}
@@ -152,12 +154,34 @@ const ChartInfo: React.FC = () => {
   );
 };
 
-const PageContainer = styled.div``;
+const PageContainer = styled.div`
+  height: 100%;
+  width: 100%;
+`;
 
-const Header = styled.header``;
+const Header = styled.header`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100px;
+  width: 100%;
+`;
 
-const Main = styled.main``;
+const Main = styled.main`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+`;
 
-const ButtonsContainer = styled.div``;
+const ButtonsContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+`;
 
 export default ChartInfo;
