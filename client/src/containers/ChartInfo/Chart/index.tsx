@@ -15,7 +15,7 @@ const Chart: React.FC<ChartProps> = ({
   noteValuePerBeat,
 }) => {
   return (
-    <ChartContainer key={nanoid()}>
+    <ChartContainer>
       <TimeSignature>
         <BeatsPerMeasure>{beatsPerMeasure}</BeatsPerMeasure>
         <NoteValuePerBeat>{noteValuePerBeat}</NoteValuePerBeat>
@@ -47,12 +47,10 @@ const BeatsPerMeasure = styled.span``;
 const NoteValuePerBeat = styled.span``;
 
 const Bars = styled.ol`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
   list-style: none;
+  justify-items: center;
 `;
 
 export default Chart;

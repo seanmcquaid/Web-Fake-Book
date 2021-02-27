@@ -16,9 +16,7 @@ const Bar: React.FC<BarProps> = ({ chords }) => (
   </StyledBar>
 );
 
-const StyledBar = styled.li`
-  width: 100%;
-`;
+const StyledBar = styled.li``;
 
 const Chords = styled.ol`
   display: flex;
