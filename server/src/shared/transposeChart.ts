@@ -1,4 +1,5 @@
 import Chart from 'src/models/Chart';
+import chordSymbols, { ChordTypes } from './chordSymbols';
 import keys, { KeyTypes } from './keys';
 
 const transposeChart = (chart: Chart, key: KeyTypes): Chart => {
@@ -10,10 +11,11 @@ const transposeChart = (chart: Chart, key: KeyTypes): Chart => {
       const isSeventhChord = newChord.isSeventhChord;
       const keyName: { [key: string]: string } = keys[key];
       const chordName = keyName[functionalNumber];
+      const chordSymbol = chordSymbols[chordQuality as ChordTypes];
       newChord.displayName =
         chordName === '%'
           ? ''
-          : `${chordName} ${chordQuality}${isSeventhChord ? ' 7' : ''}`;
+          : `${chordName}${chordSymbol}${isSeventhChord ? '7' : ''}`;
       return newChord;
     });
 
