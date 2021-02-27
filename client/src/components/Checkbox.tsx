@@ -26,10 +26,9 @@ const Checkbox: React.FC<CheckboxProps> = ({
 
 const Label = styled.label`
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
-  margin: 0.5rem;
   padding: 0.5rem;
 `;
 

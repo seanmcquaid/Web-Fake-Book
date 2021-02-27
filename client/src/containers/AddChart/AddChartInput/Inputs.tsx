@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import Dropdown from '../../../components/Dropdown';
 import TextInput from '../../../components/TextInput';
+import constants from '../../../constants';
 
 const defaultKeyOptions = [
   'C',
@@ -69,41 +70,43 @@ const Inputs: React.FC<InputsPropTypes> = ({
         label="Name"
         placeholder="Tune name here"
       />
-      <Dropdown
-        options={defaultKeyOptions}
-        value={defaultKey}
-        onChange={onChange}
-        name="defaultKey"
-        label="Default Key"
-      />
-      <Dropdown
-        options={numberOfBarsOptions}
-        value={numberOfBars}
-        onChange={onChange}
-        name="numberOfBars"
-        label="Number of Bars"
-      />
-      <Dropdown
-        options={beatsPerMeasureOptions}
-        value={beatsPerMeasure}
-        onChange={onChange}
-        name="beatsPerMeasure"
-        label="Beats Per Measure"
-      />
-      <Dropdown
-        options={noteValuePerBeatOptions}
-        value={noteValuePerBeat}
-        onChange={onChange}
-        name="noteValuePerBeat"
-        label="Note Value Per Beat"
-      />
-      <Dropdown
-        options={genreOptions}
-        value={genre}
-        onChange={onChange}
-        name="genre"
-        label="Genre"
-      />
+      <DropdownsContainer>
+        <Dropdown
+          options={defaultKeyOptions}
+          value={defaultKey}
+          onChange={onChange}
+          name="defaultKey"
+          label="Default Key"
+        />
+        <Dropdown
+          options={numberOfBarsOptions}
+          value={numberOfBars}
+          onChange={onChange}
+          name="numberOfBars"
+          label="Number of Bars"
+        />
+        <Dropdown
+          options={beatsPerMeasureOptions}
+          value={beatsPerMeasure}
+          onChange={onChange}
+          name="beatsPerMeasure"
+          label="Beats Per Measure"
+        />
+        <Dropdown
+          options={noteValuePerBeatOptions}
+          value={noteValuePerBeat}
+          onChange={onChange}
+          name="noteValuePerBeat"
+          label="Note Value Per Beat"
+        />
+        <Dropdown
+          options={genreOptions}
+          value={genre}
+          onChange={onChange}
+          name="genre"
+          label="Genre"
+        />
+      </DropdownsContainer>
     </InputsContainer>
   );
 };
@@ -113,6 +116,18 @@ const InputsContainer = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  width: 100%;
+`;
+
+const DropdownsContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  @media (min-width: ${constants.desktopSize}) {
+    flex-direction: row;
+  }
 `;
 
 export default Inputs;
