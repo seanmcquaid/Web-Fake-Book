@@ -11,9 +11,10 @@ const transposeChart = (chart: Chart, key: KeyTypes): Chart => {
         const isSeventhChord = newChord.isSeventhChord;
         const keyName: { [key: string]: string } = keys[key];
         const chordName = keyName[functionalNumber];
-        newChord.displayName = `${chordName} ${chordQuality}${
-          isSeventhChord ? ' 7' : ''
-        }`;
+        newChord.displayName =
+          chordName === '%'
+            ? '%'
+            : `${chordName} ${chordQuality}${isSeventhChord ? ' 7' : ''}`;
         return newChord;
       }),
     };
