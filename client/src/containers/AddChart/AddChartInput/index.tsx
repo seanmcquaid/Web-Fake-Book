@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 import Inputs from './Inputs';
-import Chart from './Chart';
 import Button from '../../../components/Button';
 import { useReducer } from 'react';
 import { postAddChart } from '../../../services';
@@ -13,6 +12,7 @@ import {
 } from './reducer/actions';
 import { AddChartInputStateTypes } from './reducer/types';
 import P from '../../../components/Typography/P';
+import UpdateChart from '../../../components/UpdateChart';
 
 const initialState: AddChartInputStateTypes = {
   chartInfo: {
@@ -93,7 +93,7 @@ const AddChartInput: React.FC = () => {
       <Button type="button" onClick={addChartButtonOnClick}>
         Add This Chart
       </Button>
-      <Chart bars={bars} updateChordOnChange={updateChordOnChange} />
+      <UpdateChart bars={bars} updateChordOnChange={updateChordOnChange} />
     </AddChartInputContainer>
   );
 };

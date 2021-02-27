@@ -1,7 +1,5 @@
 import { useEffect, useReducer } from 'react';
 import styled from 'styled-components';
-import Chord from './Chord';
-import { nanoid } from 'nanoid';
 import Button from '../../../components/Button';
 import H2 from '../../../components/Typography/H2';
 import { editChart, getChartInfo } from '../../../services';
@@ -15,6 +13,8 @@ import {
   updateChordInBarAction,
 } from './reducer/actions';
 import P from '../../../components/Typography/P';
+import LoadingSpinner from '../../../components/LoadingSpinner';
+import UpdateChart from '../../../components/UpdateChart';
 
 const initialState: EditChartInputStateTypes = {
   isLoading: false,
@@ -79,7 +79,7 @@ const EditChartInput: React.FC = () => {
     );
   };
 
-  const updateChord = (
+  const updateChordOnChange = (
     barIndex: number,
     beatIndex: number,
     key: string,
@@ -89,54 +89,27 @@ const EditChartInput: React.FC = () => {
   };
 
   if (isLoading) {
-    return <div>LOADING</div>;
+    return <LoadingSpinner />;
   }
 
   return (
-    <>
+    <EditChartInputContainer>
       <H2>{name}</H2>
       <P>{errorMessage}</P>
       <Button type="button" onClick={editButtonOnClick}>
         Edit This Chart
       </Button>
-      <StyledChart>
-        {bars.map(({ chords }, barIndex) => (
-          <Bar key={nanoid()}>
-            Bar {barIndex + 1}
-            <Chords>
-              {chords.map((chord, beatIndex) => (
-                <Chord
-                  key={nanoid()}
-                  barIndex={barIndex}
-                  beatIndex={beatIndex}
-                  functionalNumber={chord.functionalNumber}
-                  chordQuality={chord.chordQuality}
-                  isSeventhChord={chord.isSeventhChord}
-                  updateChord={updateChord}
-                />
-              ))}
-            </Chords>
-          </Bar>
-        ))}
-      </StyledChart>
-    </>
+      <UpdateChart bars={bars} updateChordOnChange={updateChordOnChange} />
+    </EditChartInputContainer>
   );
 };
 
-const StyledChart = styled.ol``;
-
-const Bar = styled.li`
+const EditChartInputContainer = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-`;
-
-const Chords = styled.ol`
-  display: flex;
-  flex-direction: column;
   justify-content: center;
-  align-items: center;
+  width: 100%;
 `;
 
 export default EditChartInput;

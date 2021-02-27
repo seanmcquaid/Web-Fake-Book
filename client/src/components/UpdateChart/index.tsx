@@ -1,10 +1,10 @@
 import styled from 'styled-components';
 import Chord from './Chord';
 import { nanoid } from 'nanoid';
-import { BarType } from '../../../../types/chartTypes';
-import constants from '../../../../constants';
+import { BarType } from '../../types/chartTypes';
+import constants from '../../constants';
 
-type ChartPropTypes = {
+type UpdateChartPropTypes = {
   bars: BarType[];
   updateChordOnChange: (
     barIndex: number,
@@ -14,8 +14,11 @@ type ChartPropTypes = {
   ) => void;
 };
 
-const Chart: React.FC<ChartPropTypes> = ({ bars, updateChordOnChange }) => (
-  <StyledChart>
+const UpdateChart: React.FC<UpdateChartPropTypes> = ({
+  bars,
+  updateChordOnChange,
+}) => (
+  <StyledUpdateChart>
     {bars.map(({ chords }, barIndex) => (
       <Bar key={nanoid()}>
         Bar {barIndex + 1}
@@ -34,10 +37,10 @@ const Chart: React.FC<ChartPropTypes> = ({ bars, updateChordOnChange }) => (
         </Chords>
       </Bar>
     ))}
-  </StyledChart>
+  </StyledUpdateChart>
 );
 
-const StyledChart = styled.ol``;
+const StyledUpdateChart = styled.ol``;
 
 const Bar = styled.li`
   display: flex;
@@ -45,7 +48,7 @@ const Bar = styled.li`
   justify-content: center;
   align-items: center;
   border: 2px solid ${constants.lightBackgroundColor};
-  margin-top: 0.5rem;
+  margin: 0.5rem 0;
   padding: 0.25rem;
 `;
 
@@ -59,4 +62,4 @@ const Chords = styled.ol`
   }
 `;
 
-export default Chart;
+export default UpdateChart;

@@ -1,10 +1,10 @@
 import styled from 'styled-components';
-import Checkbox from '../../../components/Checkbox';
-import Dropdown from '../../../components/Dropdown';
+import Checkbox from '../Checkbox';
+import Dropdown from '../Dropdown';
 import {
   ChordQualityTypes,
   FunctionalNumberTypes,
-} from '../../../types/chartTypes';
+} from '../../types/chartTypes';
 
 const functionalNumberOptions = [
   '%',
@@ -38,10 +38,10 @@ type ChordProps = {
   functionalNumber: FunctionalNumberTypes;
   chordQuality: ChordQualityTypes;
   isSeventhChord: boolean;
-  updateChord: (
+  updateChordOnChange: (
     barIndex: number,
     beatIndex: number,
-    key: string,
+    name: string,
     value: string | boolean
   ) => void;
 };
@@ -52,20 +52,19 @@ const Chord: React.FC<ChordProps> = ({
   functionalNumber,
   chordQuality,
   isSeventhChord,
-  updateChord,
+  updateChordOnChange,
 }) => {
   const onChange = (
     event: React.ChangeEvent<HTMLSelectElement | HTMLInputElement>
   ) => {
-    const key: string = event.currentTarget.name;
+    const name: string = event.currentTarget.name;
     const value: string | boolean =
-      key === 'isSeventhChord' ? !isSeventhChord : event.currentTarget.value;
-    updateChord(barIndex, beatIndex, key, value);
+      name === 'isSeventhChord' ? !isSeventhChord : event.currentTarget.value;
+    updateChordOnChange(barIndex, beatIndex, name, value);
   };
 
   return (
     <StyledChord data-testid={`bar${barIndex + 1}beat${beatIndex + 1}`}>
-      {`Beat ${beatIndex + 1}`}
       <Dropdown
         onChange={onChange}
         name="functionalNumber"
@@ -92,6 +91,9 @@ const Chord: React.FC<ChordProps> = ({
 
 const StyledChord = styled.li`
   list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
 
 export default Chord;
