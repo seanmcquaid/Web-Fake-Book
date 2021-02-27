@@ -20,6 +20,7 @@ const Bar: React.FC<BarProps> = ({ chords }) => (
 const StyledBar = styled.li`
   border-right: 2px solid ${constants.lightBackgroundColor};
   width: 100%;
+  margin-top: 0.5rem;
 `;
 
 const Chords = styled.ol`
@@ -28,6 +29,7 @@ const Chords = styled.ol`
 
 const Chord = styled.li`
   display: flex;
+  padding-left: 0.125rem;
 `;
 
 export default Bar;
