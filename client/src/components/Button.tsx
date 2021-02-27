@@ -26,9 +26,11 @@ const StyledButton = styled.button`
   padding: 0.5rem;
   margin: 0.5rem;
   max-width: 100px;
+  width: 100%;
   text-align: center;
   border-radius: 6px;
   border: none;
+  font-size: 1rem;
 `;
 
 export default Button;

@@ -21,6 +21,7 @@ const StyledLinkButton = styled(Link)`
   width: 100%;
   text-align: center;
   border-radius: 6px;
+  font-size: 1rem;
 `;
 
 export default LinkButton;
