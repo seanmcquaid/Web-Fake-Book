@@ -188,12 +188,8 @@ describe('Charts Routes', () => {
       agent.get('/charts/chart/IDHERE').end((err: Error, res: IResponse) => {
         pErr(err);
         expect(res.status).toBe(OK);
-        expect(res.body.chart.bars[0].chords[0].displayName).toEqual(
-          'Gb Major 7'
-        );
-        expect(res.body.chart.bars[0].chords[1].displayName).toEqual(
-          'F Minor 7'
-        );
+        expect(res.body.chart.bars[0].chords[0].displayName).toEqual('Gb△7');
+        expect(res.body.chart.bars[0].chords[1].displayName).toEqual('F-7');
         expect(res.body.currentKey).toEqual('F');
         done();
       });
@@ -207,12 +203,8 @@ describe('Charts Routes', () => {
       agent.get('/charts/chart/IDHERE/G').end((err: Error, res: IResponse) => {
         pErr(err);
         expect(res.status).toBe(OK);
-        expect(res.body.chart.bars[0].chords[0].displayName).toEqual(
-          'Ab Major 7'
-        );
-        expect(res.body.chart.bars[0].chords[1].displayName).toEqual(
-          'G Minor 7'
-        );
+        expect(res.body.chart.bars[0].chords[0].displayName).toEqual('Ab△7');
+        expect(res.body.chart.bars[0].chords[1].displayName).toEqual('G-7');
         expect(res.body.currentKey).toEqual('G');
         done();
       });
