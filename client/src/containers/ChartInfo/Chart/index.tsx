@@ -32,6 +32,8 @@ const Chart: React.FC<ChartProps> = ({
 const ChartContainer = styled.div`
   display: flex;
   flex-direction: row;
+  justify-content: center;
+  align-items: center;
   width: 100%;
 `;
 
@@ -48,7 +50,7 @@ const NoteValuePerBeat = styled.span``;
 
 const Bars = styled.ol`
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: 70px 70px 70px 70px;
   list-style: none;
   justify-items: center;
 `;
