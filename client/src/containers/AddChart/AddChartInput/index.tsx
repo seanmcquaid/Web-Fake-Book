@@ -80,7 +80,7 @@ const AddChartInput: React.FC = () => {
 
   return (
     <AddChartInputContainer>
-      <P>{errorMessage}</P>
+      <P data-testid="errorMessage">{errorMessage}</P>
       <Inputs
         valueOnChange={inputValueOnChange}
         defaultKey={defaultKey}

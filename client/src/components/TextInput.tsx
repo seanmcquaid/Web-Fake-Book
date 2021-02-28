@@ -24,6 +24,7 @@ const TextInput: React.FC<TextInputProps> = ({
       name={name}
       type="text"
       placeholder={placeholder}
+      data-testid={`${name}TextInput`}
     />
   </Label>
 );

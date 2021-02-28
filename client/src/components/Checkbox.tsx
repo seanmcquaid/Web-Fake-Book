@@ -13,9 +13,10 @@ const Checkbox: React.FC<CheckboxProps> = ({
   label,
   name,
 }) => (
-  <Label>
+  <Label htmlFor={name}>
     {label}
     <StyledCheckbox
+      data-testid={`${name}Checkbox`}
       onChange={onChange}
       type="checkbox"
       checked={checked}

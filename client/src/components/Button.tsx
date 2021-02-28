@@ -13,7 +13,12 @@ const Button: React.FC<ButtonProps> = ({
   type,
   disabled,
 }) => (
-  <StyledButton onClick={onClick} type={type} disabled={disabled}>
+  <StyledButton
+    onClick={onClick}
+    type={type}
+    disabled={disabled}
+    data-testid={`${children}Button`}
+  >
     {children}
   </StyledButton>
 );

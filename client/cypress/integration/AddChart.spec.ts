@@ -4,21 +4,27 @@ describe('Add Chart', () => {
   });
 
   it("Prevents a user from submitting if they don't provide a name", () => {
-    cy.get('.sc-crrsfI').click();
+    cy.get('[data-testid="Add This ChartButton"]').click();
 
-    cy.get('.sc-dQppl').should('have.text', 'Please enter a name!');
+    cy.get('[data-testid=errorMessage]').should(
+      'have.text',
+      'Please enter a name!'
+    );
   });
 
   it("Prevents a user from submitting if they don't provide any bars", () => {
-    cy.get('.sc-jSgupP').type('Blues in Hoss Flat');
+    cy.get('[data-testid="nameTextInput"]').type('Blues in Hoss Flat');
 
-    cy.get('.sc-crrsfI').click();
+    cy.get('[data-testid="Add This ChartButton"]').click();
 
-    cy.get('.sc-dQppl').should('have.text', 'Please select a number of bars!');
+    cy.get('[data-testid=errorMessage]').should(
+      'have.text',
+      'Please select a number of bars!'
+    );
   });
 
   it('Successfully added chart with unique configurations redirects user to charts page', () => {
-    cy.get('.sc-jSgupP').type('Blues in Hoss Flat');
+    cy.get('[data-testid="nameTextInput"]').type('Blues in Hoss Flat');
     cy.get('[data-testid=defaultKeyDropdown]').select('Db');
     cy.get('[data-testid=numberOfBarsDropdown]').select('12');
     cy.get('[data-testid=genreDropdown]').select('Blues');
@@ -29,7 +35,9 @@ describe('Add Chart', () => {
     cy.get(
       '[data-testid=bar1beat1] > [for="chordQuality"] > [data-testid=chordQualityDropdown]'
     ).select('Dominant');
-    cy.get('[data-testid=bar1beat1] > .sc-fubCfw > .sc-iBPRYJ').click();
+    cy.get(
+      '[data-testid=bar1beat1] > [for="isSeventhChord"] > [data-testid=isSeventhChordCheckbox]'
+    ).click();
 
     cy.get(
       '[data-testid=bar2beat1] > [for="functionalNumber"] > [data-testid=functionalNumberDropdown]'
@@ -37,7 +45,9 @@ describe('Add Chart', () => {
     cy.get(
       '[data-testid=bar2beat1] > [for="chordQuality"] > [data-testid=chordQualityDropdown]'
     ).select('Dominant');
-    cy.get('[data-testid=bar2beat1] > .sc-fubCfw > .sc-iBPRYJ').click();
+    cy.get(
+      '[data-testid=bar2beat1] > [for="isSeventhChord"] > [data-testid=isSeventhChordCheckbox]'
+    ).click();
 
     cy.get(
       '[data-testid=bar3beat1] > [for="functionalNumber"] > [data-testid=functionalNumberDropdown]'
@@ -45,7 +55,9 @@ describe('Add Chart', () => {
     cy.get(
       '[data-testid=bar3beat1] > [for="chordQuality"] > [data-testid=chordQualityDropdown]'
     ).select('Dominant');
-    cy.get('[data-testid=bar3beat1] > .sc-fubCfw > .sc-iBPRYJ').click();
+    cy.get(
+      '[data-testid=bar3beat1] > [for="isSeventhChord"] > [data-testid=isSeventhChordCheckbox]'
+    ).click();
 
     cy.get(
       '[data-testid=bar5beat1] > [for="functionalNumber"] > [data-testid=functionalNumberDropdown]'
@@ -53,7 +65,9 @@ describe('Add Chart', () => {
     cy.get(
       '[data-testid=bar5beat1] > [for="chordQuality"] > [data-testid=chordQualityDropdown]'
     ).select('Dominant');
-    cy.get('[data-testid=bar5beat1] > .sc-fubCfw > .sc-iBPRYJ').click();
+    cy.get(
+      '[data-testid=bar5beat1] > [for="isSeventhChord"] > [data-testid=isSeventhChordCheckbox]'
+    ).click();
 
     cy.get(
       '[data-testid=bar7beat1] > [for="functionalNumber"] > [data-testid=functionalNumberDropdown]'
@@ -61,7 +75,9 @@ describe('Add Chart', () => {
     cy.get(
       '[data-testid=bar7beat1] > [for="chordQuality"] > [data-testid=chordQualityDropdown]'
     ).select('Dominant');
-    cy.get('[data-testid=bar7beat1] > .sc-fubCfw > .sc-iBPRYJ').click();
+    cy.get(
+      '[data-testid=bar7beat1] > [for="isSeventhChord"] > [data-testid=isSeventhChordCheckbox]'
+    ).click();
 
     cy.get(
       '[data-testid=bar8beat1] > [for="functionalNumber"] > [data-testid=functionalNumberDropdown]'
@@ -69,7 +85,9 @@ describe('Add Chart', () => {
     cy.get(
       '[data-testid=bar8beat1] > [for="chordQuality"] > [data-testid=chordQualityDropdown]'
     ).select('Half Diminished');
-    cy.get('[data-testid=bar8beat1] > .sc-fubCfw > .sc-iBPRYJ').click();
+    cy.get(
+      '[data-testid=bar8beat1] > [for="isSeventhChord"] > [data-testid=isSeventhChordCheckbox]'
+    ).click();
 
     cy.get(
       '[data-testid=bar8beat3] > [for="functionalNumber"] > [data-testid=functionalNumberDropdown]'
@@ -77,7 +95,9 @@ describe('Add Chart', () => {
     cy.get(
       '[data-testid=bar8beat3] > [for="chordQuality"] > [data-testid=chordQualityDropdown]'
     ).select('Dominant');
-    cy.get('[data-testid=bar8beat3] > .sc-fubCfw > .sc-iBPRYJ').click();
+    cy.get(
+      '[data-testid=bar8beat3] > [for="isSeventhChord"] > [data-testid=isSeventhChordCheckbox]'
+    ).click();
 
     cy.get(
       '[data-testid=bar9beat1] > [for="functionalNumber"] > [data-testid=functionalNumberDropdown]'
@@ -85,7 +105,9 @@ describe('Add Chart', () => {
     cy.get(
       '[data-testid=bar9beat1] > [for="chordQuality"] > [data-testid=chordQualityDropdown]'
     ).select('Minor');
-    cy.get('[data-testid=bar9beat1] > .sc-fubCfw > .sc-iBPRYJ').click();
+    cy.get(
+      '[data-testid=bar9beat1] > [for="isSeventhChord"] > [data-testid=isSeventhChordCheckbox]'
+    ).click();
 
     cy.get(
       '[data-testid=bar10beat1] > [for="functionalNumber"] > [data-testid=functionalNumberDropdown]'
@@ -93,7 +115,9 @@ describe('Add Chart', () => {
     cy.get(
       '[data-testid=bar10beat1] > [for="chordQuality"] > [data-testid=chordQualityDropdown]'
     ).select('Dominant');
-    cy.get('[data-testid=bar10beat1] > .sc-fubCfw > .sc-iBPRYJ').click();
+    cy.get(
+      '[data-testid=bar10beat1] > [for="isSeventhChord"] > [data-testid=isSeventhChordCheckbox]'
+    ).click();
 
     cy.get(
       '[data-testid=bar11beat1] > [for="functionalNumber"] > [data-testid=functionalNumberDropdown]'
@@ -101,7 +125,9 @@ describe('Add Chart', () => {
     cy.get(
       '[data-testid=bar11beat1] > [for="chordQuality"] > [data-testid=chordQualityDropdown]'
     ).select('Dominant');
-    cy.get('[data-testid=bar11beat1] > .sc-fubCfw > .sc-iBPRYJ').click();
+    cy.get(
+      '[data-testid=bar11beat1] > [for="isSeventhChord"] > [data-testid=isSeventhChordCheckbox]'
+    ).click();
 
     cy.get(
       '[data-testid=bar11beat3] > [for="functionalNumber"] > [data-testid=functionalNumberDropdown]'
@@ -109,7 +135,9 @@ describe('Add Chart', () => {
     cy.get(
       '[data-testid=bar11beat3] > [for="chordQuality"] > [data-testid=chordQualityDropdown]'
     ).select('Dominant');
-    cy.get('[data-testid=bar11beat3] > .sc-fubCfw > .sc-iBPRYJ').click();
+    cy.get(
+      '[data-testid=bar11beat3] > [for="isSeventhChord"] > [data-testid=isSeventhChordCheckbox]'
+    ).click();
 
     cy.get(
       '[data-testid=bar12beat1] > [for="functionalNumber"] > [data-testid=functionalNumberDropdown]'
@@ -117,7 +145,9 @@ describe('Add Chart', () => {
     cy.get(
       '[data-testid=bar12beat1] > [for="chordQuality"] > [data-testid=chordQualityDropdown]'
     ).select('Minor');
-    cy.get('[data-testid=bar12beat1] > .sc-fubCfw > .sc-iBPRYJ').click();
+    cy.get(
+      '[data-testid=bar12beat1] > [for="isSeventhChord"] > [data-testid=isSeventhChordCheckbox]'
+    ).click();
 
     cy.get(
       '[data-testid=bar12beat3] > [for="functionalNumber"] > [data-testid=functionalNumberDropdown]'
@@ -125,7 +155,9 @@ describe('Add Chart', () => {
     cy.get(
       '[data-testid=bar12beat3] > [for="chordQuality"] > [data-testid=chordQualityDropdown]'
     ).select('Dominant');
-    cy.get('[data-testid=bar12beat3] > .sc-fubCfw > .sc-iBPRYJ').click();
+    cy.get(
+      '[data-testid=bar12beat3] > [for="isSeventhChord"] > [data-testid=isSeventhChordCheckbox]'
+    ).click();
 
     cy.intercept('POST', 'http://localhost:8080/charts/add', {
       statusCode: 200,
@@ -136,9 +168,9 @@ describe('Add Chart', () => {
       fixture: 'allCharts.json',
     });
 
-    cy.get('.sc-crrsfI').click();
+    cy.get('[data-testid="Add This ChartButton"]').click();
 
-    cy.get('.sc-bdfBwQ').should('have.text', 'Charts');
+    cy.get('[data-testid=mainHeaderText]').should('have.text', 'Charts');
   });
 });
 
