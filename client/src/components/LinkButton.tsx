@@ -7,7 +7,9 @@ type LinkButtonProps = {
 };
 
 const LinkButton: React.FC<LinkButtonProps> = ({ children, to }) => (
-  <StyledLinkButton to={to}>{children}</StyledLinkButton>
+  <StyledLinkButton to={to} data-testid={`${children}Button`}>
+    {children}
+  </StyledLinkButton>
 );
 
 const StyledLinkButton = styled(Link)`

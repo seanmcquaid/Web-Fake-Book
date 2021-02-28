@@ -15,10 +15,7 @@ describe('Chart Info', () => {
 
     cy.get('[data-testid=selectedKeyDropdown]').select('Eb');
 
-    cy.get(':nth-child(1) > .sc-idOhPF > :nth-child(1)').should(
-      'have.text',
-      'Eb Dominant 7'
-    );
+    cy.get('[data-testid=bar1beat1]').should('have.text', 'Eb Dominant 7');
   });
 
   it('Delete chart - redirect', () => {
@@ -31,9 +28,9 @@ describe('Chart Info', () => {
       body: { charts: [] },
     });
 
-    cy.get('.sc-crrsfI').click();
+    cy.get('[data-testid=DeleteButton]').click();
 
-    cy.get('.sc-bdfBwQ').should('have.text', 'Charts');
+    cy.get('[data-testid=mainHeaderText]').should('have.text', 'Charts');
   });
 
   it('Edit chart - redirect', () => {
@@ -42,9 +39,9 @@ describe('Chart Info', () => {
       fixture: 'chartInfo.json',
     });
 
-    cy.get('.sc-fFubgz').click();
+    cy.get('[data-testid=EditButton]').click();
 
-    cy.get('.sc-bdfBwQ').should('have.text', 'Edit Chart');
+    cy.get('[data-testid=mainHeaderText]').should('have.text', 'Edit Chart');
   });
 });
 

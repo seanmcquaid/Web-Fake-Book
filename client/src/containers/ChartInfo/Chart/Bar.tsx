@@ -5,13 +5,19 @@ import { ChordTypes } from '../../../types/chartTypes';
 
 type BarProps = {
   chords: ChordTypes[];
+  barIndex: number;
 };
 
-const Bar: React.FC<BarProps> = ({ chords }) => (
+const Bar: React.FC<BarProps> = ({ chords, barIndex }) => (
   <StyledBar>
-    <Chords>
-      {chords.map(({ displayName }) => (
-        <Chord key={nanoid()}>{displayName}</Chord>
+    <Chords data-testid={`bar${barIndex + 1}Chords`}>
+      {chords.map(({ displayName }, beatIndex) => (
+        <Chord
+          key={nanoid()}
+          data-testid={`bar${barIndex + 1}beat${beatIndex + 1}`}
+        >
+          {displayName}
+        </Chord>
       ))}
     </Chords>
   </StyledBar>

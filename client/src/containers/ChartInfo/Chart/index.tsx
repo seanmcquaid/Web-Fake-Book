@@ -20,9 +20,9 @@ const Chart: React.FC<ChartProps> = ({
         <BeatsPerMeasure>{beatsPerMeasure}</BeatsPerMeasure>
         <NoteValuePerBeat>{noteValuePerBeat}</NoteValuePerBeat>
       </TimeSignature>
-      <Bars>
-        {bars.map(({ chords }) => (
-          <Bar chords={chords} key={nanoid()} />
+      <Bars data-testid="bars">
+        {bars.map(({ chords }, barIndex) => (
+          <Bar chords={chords} key={nanoid()} barIndex={barIndex} />
         ))}
       </Bars>
     </ChartContainer>
