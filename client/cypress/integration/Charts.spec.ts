@@ -8,18 +8,18 @@ describe('Charts', () => {
     cy.visit('/charts');
   });
   it('Filter charts by search terms lessens amount of results', () => {
-    cy.get('.sc-jSgupP').type('Flat');
+    cy.get('[data-testid=searchTextTextInput]').type('Flat');
 
-    cy.get('.sc-kLgntA').should('have.text', 'Page 1 of 1');
+    cy.get('[data-testid=pageNumberText]').should('have.text', 'Page 1 of 1');
   });
 
   it('Next page button disabled when user gets to last page', () => {
-    cy.get('.sc-bYEvPH > :nth-child(3)').click();
-    cy.get('.sc-bYEvPH > :nth-child(3)').should('be.disabled');
+    cy.get('[data-testid=NextButton]').click();
+    cy.get('[data-testid=NextButton]').should('be.disabled');
   });
 
   it('Prev page button disabled on load', () => {
-    cy.get('.sc-bYEvPH > :nth-child(1)').should('be.disabled');
+    cy.get('[data-testid=PrevButton]').should('be.disabled');
   });
 });
 

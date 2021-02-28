@@ -25,9 +25,9 @@ describe('EditChart', () => {
       body: { charts: [] },
     });
 
-    cy.get('.sc-crrsfI').click();
+    cy.get('[data-testid="Edit This ChartButton"]').click();
 
-    cy.get('.sc-bdfBwQ').should('have.text', 'Charts');
+    cy.get('[data-testid=mainHeaderText]').should('have.text', 'Charts');
   });
 });
 

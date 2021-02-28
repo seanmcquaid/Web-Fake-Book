@@ -97,7 +97,7 @@ const AllCharts: React.FC = () => {
         >
           Prev
         </Button>
-        <PageNumber>
+        <PageNumber data-testid="pageNumberText">
           Page {currentPage + 1} of {totalPages}
         </PageNumber>
         <Button
